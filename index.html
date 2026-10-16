@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZ Research Institute — Cetak Biru Siklus Likuiditas, Titik Terminal Fiat 2028 & Strategi 50:50</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        canvas: '#090D16',
+                        cardDark: '#111827',
+                        ink: '#F8FAFC',
+                        muted: '#94A3B8',
+                        brandBlue: '#3B82F6',
+                        brandGold: '#F59E0B',
+                        brandEmerald: '#10B981',
+                        brandRose: '#F43F5E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            background-color: #090D16;
+            color: #F8FAFC;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        .visual-card {
+            background: #111827;
+            border: 1px solid #1E293B;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.55);
+        }
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.8125rem;
+            letter-spacing: 0.02em;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #F59E0B;
+            cursor: pointer;
+            border: 3px solid #090D16;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.75);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-blue-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            <a href="#" class="flex items-center gap-3.5 shrink-0 group">
+                <!-- Custom SVG Logo sesuai gambar upload UZ -->
+                <div class="w-11 h-11 rounded-xl bg-black border border-slate-700/80 flex items-center justify-center shadow-lg shrink-0 overflow-hidden group-hover:border-slate-500 transition">
+                    <svg viewBox="0 0 100 100" class="w-8 h-8" aria-label="UZ Research Institute Logo">
+                        <rect width="100" height="100" fill="#000000"/>
+                        <path d="M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z" fill="#FFFFFF"/>
+                        <polygon points="62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33" fill="#FFFFFF"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-extrabold text-white text-lg sm:text-xl leading-none tracking-tight">UZ Research Institute</div>
+                    <div class="text-xs font-semibold text-slate-400 mt-1.5">Cetak Biru Makro, Terminal Fiat 2028 &amp; Strategi 50:50</div>
+                </div>
+            </a>
+
+            <nav class="w-full lg:w-auto flex flex-col items-start lg:items-end gap-1.5 text-xs sm:text-sm font-bold text-slate-200">
+                <div class="flex flex-wrap items-center lg:justify-end gap-x-5 sm:gap-x-7 gap-y-1">
+                    <a href="#bab-1" class="py-1 hover:text-blue-400 transition whitespace-nowrap">1. Entity &amp; Fiat</a>
+                    <a href="#bab-2" class="py-1 hover:text-blue-400 transition whitespace-nowrap">2. Grafik Siklus</a>
+                    <a href="#bab-3" class="py-1 hover:text-blue-400 transition whitespace-nowrap">3. Histori Bottom</a>
+                </div>
+                <div class="flex flex-wrap items-center lg:justify-end gap-x-4 sm:gap-x-6 gap-y-1.5">
+                    <a href="#bab-4" class="py-1 hover:text-amber-400 transition whitespace-nowrap">4. Tabung Darurat 2023 vs 2028</a>
+                    <a href="#bab-5" class="py-1 hover:text-emerald-400 transition whitespace-nowrap">5. Peta Jalan Reset</a>
+                    <a href="#bab-6" class="px-4 py-1.5 rounded-xl bg-amber-500 text-slate-950 hover:bg-amber-400 transition shadow-md shadow-amber-500/20 whitespace-nowrap font-extrabold">6. Strategi 50:50</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-12 sm:py-16 bg-gradient-to-b from-blue-950/30 via-slate-950 to-[#090D16] border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl">
+                    <span class="step-badge bg-amber-500/15 text-amber-300 border border-amber-500/30 mb-5">
+                        <span>🏛️</span> LAPORAN RISET UTAMA • UZ RESEARCH INSTITUTE
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.16]">
+                        Bukti Matematis Berakhirnya Siklus Uang Fiat di 2028 &amp; <span class="text-amber-400">Revaluasi 10x Aset Keras (50:50)</span>
+                    </h1>
+                    <p class="mt-5 text-lg sm:text-xl text-slate-300 leading-relaxed">
+                        Sejak tahun 1971, setiap kali ekonomi jatuh ke titik krisis (<em>Macro Bottom</em>), pengendali moneter dunia (<em>The Entity</em>) selalu menciptakan siklus baru dengan mencetak uang Fiat bebas yang menggerus daya beli masyarakat. Namun setelah menguras <strong class="text-white">3 Tabung Darurat Terakhir pada 2023</strong> untuk memompa euforia puncak <strong class="text-blue-400">2027</strong>, sistem Fiat menabrak jalan buntu matematis di <strong class="text-rose-400">Macro Bottom 2028</strong>—memaksa transisi mutlak ke <strong class="text-white">CBDC</strong> yang menerbangkan nilai <strong class="text-amber-300">50% Bitcoin &amp; 50% Emas Fisik</strong> sebesar <strong class="text-emerald-400">10x lipat</strong>.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                    <div class="visual-card rounded-2xl p-6 border-t-4 border-t-blue-500 flex flex-col h-full">
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0 text-xl">
+                                🔄
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-blue-500/15 text-blue-300 border border-blue-500/30 text-xs font-extrabold uppercase whitespace-nowrap">
+                                POLA SIKLUS MAKRO
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white leading-snug min-h-[3.25rem] flex items-center">
+                            M2 Naik vs. Credit Spread
+                        </h3>
+                        <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                            Siklus pasar selalu diputar ulang saat <em>Credit Spread</em> meledak di <em>Macro Bottom</em> dan <em>Stochastic M2</em> memantul dari dasar untuk memompa harga saham &amp; kripto.
+                        </p>
+                    </div>
+
+                    <div class="visual-card rounded-2xl p-6 border-t-4 border-t-amber-500 flex flex-col h-full">
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0 text-xl">
+                                ⛽
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30 text-xs font-extrabold uppercase whitespace-nowrap">
+                                2023 VS 2028
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white leading-snug min-h-[3.25rem] flex items-center">
+                            3 Tabung Darurat = $0
+                        </h3>
+                        <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                            Krisis 2023 selamat karena menguras <em>Reverse Repo</em> ($2,55T), BTFP, &amp; <em>T-Bills</em>. Di 2028, ketiganya sudah bersaldo <strong class="text-amber-300">$0</strong> tanpa ada tabung cadangan lagi.
+                        </p>
+                    </div>
+
+                    <div class="visual-card rounded-2xl p-6 border-t-4 border-t-rose-500 flex flex-col h-full">
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center shrink-0 text-xl">
+                                🔒
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-rose-500/15 text-rose-300 border border-rose-500/30 text-xs font-extrabold uppercase whitespace-nowrap">
+                                TITIK TERMINAL 2028
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white leading-snug min-h-[3.25rem] flex items-center">
+                            Transisi Mutlak CBDC
+                        </h3>
+                        <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                            Mencetak +$40 Triliun Fiat bebas di 2028 akan memicu hiperinflasi jalanan instan. Uang baru wajib dikunci secara algoritmik di dalam sistem <strong class="text-white">CBDC</strong>.
+                        </p>
+                    </div>
+
+                    <div class="visual-card rounded-2xl p-6 border-t-4 border-t-emerald-500 flex flex-col h-full">
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0 text-xl">
+                                ⚖️
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-xs font-extrabold uppercase whitespace-nowrap">
+                                REVALUASI 10X LIPAT
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white leading-snug min-h-[3.25rem] flex items-center">
+                            50% BTC : 50% Emas Fisik
+                        </h3>
+                        <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                            Devaluasi mata uang sebesar 90% saat <em>Great Reset</em> otomatis mengangkat nilai kolateral dasar (<strong class="text-emerald-300">50% Native BTC &amp; 50% Emas Fisik</strong>) naik <strong class="text-white">10x lipat</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bab-1" class="py-16 sm:py-20 border-b border-slate-800/80 bg-[#090D16] scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="step-badge bg-blue-500/15 text-blue-300 border border-blue-500/30">BAB 1 • TEORI SEJARAH "THE ENTITY" &amp; SISTEM UANG FIAT</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
+                        Siapa Arsitek Siklus Pasar &amp; Mengapa Rezim Uang Kertas Fiat (1971–2027) Mencapai Batas Umurnya?
+                    </h2>
+                    <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
+                        Sejak Presiden AS Richard Nixon mencabut jaminan emas dari Dolar pada <strong class="text-white">15 Agustus 1971 (Nixon Shock)</strong>, dunia hidup di atas uang kertas berbasis utang (<em>Fiat</em>). Perputaran likuiditas ini dikendalikan oleh tiga lapisan institusi raksasa yang kita sebut sebagai <strong class="text-amber-400">"The Entity"</strong>:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- Piramida 3 Lapis The Entity -->
+                    <div class="lg:col-span-5 visual-card rounded-3xl p-6 sm:p-8 flex flex-col gap-5">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-white text-center">Struktur Piramida "The Entity"</h3>
+                            <p class="text-sm sm:text-base text-slate-400 text-center mt-1">Rantai komando global yang mengatur kapan pasar dipompa dan kapan pasar dihancurkan:</p>
+                        </div>
+
+                        <div class="bg-slate-950/70 rounded-2xl p-4 border border-slate-800/80">
+                            <svg viewBox="0 0 440 290" class="w-full h-auto">
+                                <!-- Lapis 1 -->
+                                <polygon points="105,12 335,12 360,90 80,90" fill="#451A03" stroke="#F59E0B" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="220" y="44" text-anchor="middle" fill="#FDE68A" font-weight="800" font-size="14">1. ARSITEK BANK SENTRAL</text>
+                                <text x="220" y="66" text-anchor="middle" fill="#FCD34D" font-weight="600" font-size="12">BIS • The Fed • IMF (Pengendali Keran Likuiditas)</text>
+
+                                <!-- Lapis 2 -->
+                                <polygon points="70,104 370,104 400,184 40,184" fill="#172554" stroke="#3B82F6" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="220" y="138" text-anchor="middle" fill="#DBEAFE" font-weight="800" font-size="15">2. MANAJER ASET RAKSASA</text>
+                                <text x="220" y="160" text-anchor="middle" fill="#93C5FD" font-weight="600" font-size="12">BlackRock • Vanguard • Fidelity • State Street (&gt;$25T)</text>
+
+                                <!-- Lapis 3 -->
+                                <polygon points="30,198 410,198 435,278 5,278" fill="#064E3B" stroke="#10B981" stroke-width="2.5" stroke-linejoin="round"/>
+                                <text x="220" y="232" text-anchor="middle" fill="#D1FAE5" font-weight="800" font-size="15">3. JARINGAN AI &amp; BUKU BESAR DIGITAL</text>
+                                <text x="220" y="254" text-anchor="middle" fill="#6EE7B7" font-weight="600" font-size="12">Aladdin AI • Palantir • Unified CBDC Ledger</text>
+                            </svg>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2.5 text-center">
+                            <div class="p-3 rounded-xl bg-amber-950/30 border border-amber-500/30">
+                                <div class="text-xs font-extrabold text-amber-400">KEBIJAKAN</div>
+                                <div class="text-xs text-slate-300 mt-0.5">Suku Bunga &amp; Kuota M2</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-blue-950/30 border border-blue-500/30">
+                                <div class="text-xs font-extrabold text-blue-400">AKUMULASI</div>
+                                <div class="text-xs text-slate-300 mt-0.5">ETF BTC &amp; Emas Fisik</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
+                                <div class="text-xs font-extrabold text-emerald-400">ALGORITMA</div>
+                                <div class="text-xs text-slate-300 mt-0.5">Pengunci Aliran CBDC</div>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-950/90 border border-slate-800 text-sm sm:text-base text-slate-300 leading-relaxed mt-auto">
+                            <strong class="text-white">Tujuan Akhir The Entity:</strong> Menggunakan krisis utang untuk memindahkan kepemilikan aset keras dunia (Emas Fisik &amp; Bitcoin) dari tangan masyarakat yang panik ke dalam neraca institusi mereka sebelum sistem uang dikunci dengan CBDC.
+                        </div>
+                    </div>
+
+                    <!-- Perbandingan Mekanisme Fiat vs CBDC -->
+                    <div class="lg:col-span-7 flex flex-col justify-between gap-6">
+                        <div class="visual-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-amber-500 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span class="px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 font-extrabold text-xs sm:text-sm">ERA 1: SISTEM UANG FIAT (1971 – 2027)</span>
+                                    <span class="text-sm font-bold text-amber-400">Mekanisme "Banjir Bandang"</span>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-extrabold text-white">Mengapa Sistem Fiat Selalu Menciptakan Siklus "Pump and Dump"?</h4>
+                                <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                                    Sejak 1971, uang Fiat tidak memiliki jaminan fisik dan diciptakan melalui penerbitan utang baru. Karena utang berbunga, jumlah uang harus terus ditambah secara eksponensial agar sistem tidak runtuh. Di era Fiat, ketika Bank Sentral mencetak uang (QE), <strong class="text-white">mereka tidak bisa mengontrol ke mana uang itu mengalir</strong>—sehingga likuiditas tumpah membanjiri saham dan kripto secara bebas.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <div class="p-3.5 rounded-2xl bg-amber-950/40 border border-amber-700/50 flex items-center gap-3">
+                                    <span class="text-2xl shrink-0">🖨️</span>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-amber-400 uppercase">TAHAP 1</div>
+                                        <div class="text-sm font-extrabold text-amber-100 leading-snug">Cetak Uang di Saat Krisis</div>
+                                    </div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-amber-950/40 border border-amber-700/50 flex items-center gap-3">
+                                    <span class="text-2xl shrink-0">🌊</span>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-amber-400 uppercase">TAHAP 2</div>
+                                        <div class="text-sm font-extrabold text-amber-100 leading-snug">Mengalir Bebas ke Aset Risiko</div>
+                                    </div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-amber-900/40 border border-amber-500/60 flex items-center gap-3">
+                                    <span class="text-2xl shrink-0">📉</span>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-amber-300 uppercase">TAHAP 3</div>
+                                        <div class="text-sm font-extrabold text-white leading-snug">Daya Beli Uang Kertas Turun</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="visual-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-blue-500 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span class="px-3.5 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 font-extrabold text-xs sm:text-sm">ERA 2: SISTEM UANG TERPROGRAM CBDC (PASCA-2028)</span>
+                                    <span class="text-sm font-bold text-blue-400">Mekanisme "Irigasi Terkunci"</span>
+                                </div>
+                                <h4 class="text-xl sm:text-2xl font-extrabold text-white">Mengapa The Entity Mengakhiri Siklus Fiat dan Beralih ke CBDC?</h4>
+                                <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                                    Di tahun 2028, beban utang global sudah terlalu raksasa untuk diselamatkan dengan uang Fiat biasa tanpa memicu hiperinflasi jalanan. Dengan mengganti sistem ke <strong class="text-white">CBDC (Uang Digital Bank Sentral &amp; Buku Besar Terpadu)</strong>, Bank Sentral bisa mencetak puluhan triliun Dolar untuk menghapus utang di tingkat atas sembari <strong class="text-white">mengunci kecepatan dan tujuan belanja uang masyarakat ritel menggunakan algoritma</strong>.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <div class="p-3.5 rounded-2xl bg-blue-950/40 border border-blue-700/50 flex items-center gap-3">
+                                    <span class="text-2xl shrink-0">📲</span>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-blue-400 uppercase">TAHAP 1</div>
+                                        <div class="text-sm font-extrabold text-blue-100 leading-snug">Reset Utang via Cetak CBDC</div>
+                                    </div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-blue-950/40 border border-blue-700/50 flex items-center gap-3">
+                                    <span class="text-2xl shrink-0">🔒</span>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-blue-400 uppercase">TAHAP 2</div>
+                                        <div class="text-sm font-extrabold text-blue-100 leading-snug">Kuota &amp; Spekulasi Dikunci</div>
+                                    </div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-blue-900/40 border border-blue-500/60 flex items-center gap-3">
+                                    <span class="text-2xl shrink-0">💎</span>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-blue-300 uppercase">TAHAP 3</div>
+                                        <div class="text-sm font-extrabold text-white leading-snug">BTC &amp; Emas Naik 10x Stabil</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bab-2" class="py-16 sm:py-20 border-b border-slate-800/80 bg-slate-950/60 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto mb-12">
+                    <span class="step-badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">BAB 2 • TEORI MAKRO SIKLUS LIKUIDITAS &amp; INDIKATOR BERTOLAK BELAKANG</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
+                        Bagaimana Siklus Selalu Diciptakan Kembali Saat <em>Macro Bottom</em>: Korelasi Terbalik <span class="text-blue-400">Stochastic M2</span> vs. <span class="text-rose-400">Credit Spread</span>
+                    </h2>
+                    <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
+                        Siklus naik-turunnya harga <strong class="text-white">Aset Risiko (Kripto/Bitcoin &amp; Saham S&amp;P 500)</strong> dikendalikan oleh dua indikator yang bergerak <strong class="text-amber-300">saling bertolak belakang (terbalik 180°)</strong>: saat <strong class="text-rose-400">Credit Spread (stres kredit bank)</strong> meledak ke puncak <em>Macro Bottom</em>, Bank Sentral terpaksa memompa uang sehingga <strong class="text-blue-400">Global M2 Stochastic RSI</strong> berbalik naik dari lantai bawah dan memulai reli baru. Klik 5 fase waktu di bawah ini:
+                    </p>
+                </div>
+
+                <!-- 5 Tombol Fase Interaktif -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 mb-8 items-stretch">
+                    <button onclick="selectMacroStage(0)" id="m-btn-0" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start">
+                        <div id="m-sub-0" class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">AKUMULASI 40 BULAN</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">1. 2023 – Awal 2026</div>
+                        <div id="m-desc-0" class="text-xs font-semibold text-slate-400 mt-1">Emas Cetak Rekor $5.500/oz</div>
+                    </button>
+                    <button onclick="selectMacroStage(1)" id="m-btn-1" class="p-4 rounded-2xl border-2 border-blue-500 bg-blue-600 text-white text-left transition shadow-lg shadow-blue-600/25 flex flex-col justify-start">
+                        <div id="m-sub-1" class="text-[11px] font-extrabold uppercase tracking-wider text-blue-100">FASE EKSPANSI (SEKARANG)</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">2. Okt 2026 (Bar 7/14)</div>
+                        <div id="m-desc-1" class="text-xs font-semibold text-blue-100 mt-1">M2 Naik • Credit Spread 39.41</div>
+                    </button>
+                    <button onclick="selectMacroStage(2)" id="m-btn-2" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start">
+                        <div id="m-sub-2" class="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">PUNCAK EUFORIA PASAR</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">3. Pertengahan 2027</div>
+                        <div id="m-desc-2" class="text-xs font-semibold text-slate-400 mt-1">M2 Jenuh &gt;80 • Exit 100%</div>
+                    </button>
+                    <button onclick="selectMacroStage(3)" id="m-btn-3" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-rose-500/60 text-left transition flex flex-col justify-start">
+                        <div id="m-sub-3" class="text-[11px] font-extrabold uppercase tracking-wider text-rose-400">MACRO BOTTOM TERMINAL</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">4. Sepanjang 2028</div>
+                        <div id="m-desc-3" class="text-xs font-semibold text-slate-400 mt-1">Credit Spread Meledak Puncak</div>
+                    </button>
+                    <button onclick="selectMacroStage(4)" id="m-btn-4" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-emerald-500/60 text-left transition flex flex-col justify-start">
+                        <div id="m-sub-4" class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">GREAT RESET &amp; CBDC</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">5. 2029 – 2030+</div>
+                        <div id="m-desc-4" class="text-xs font-semibold text-slate-400 mt-1">Revaluasi 10x BTC &amp; Emas</div>
+                    </button>
+                </div>
+
+                <!-- Grafik 3 Panel Sinkronisasi (1:1 Linear Inverse Mirror antara M2 dan Credit Spread) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div class="lg:col-span-8 visual-card rounded-3xl p-5 sm:p-7 flex flex-col justify-between min-w-0">
+                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="font-extrabold text-white text-base sm:text-lg">Chart Makro 1M: Simetri Terbalik 1:1 (M2 &amp; Harga Aset vs. Credit Spread)</span>
+                            </div>
+                            <span id="macro-status-pill" class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 font-extrabold text-xs tracking-wide">OKT 2026: BAR KE-7 DARI 14 BULAN BULLRUN</span>
+                        </div>
+
+                        <div class="my-4 w-full overflow-x-auto">
+                            <svg viewBox="0 0 800 660" class="w-full h-auto min-w-[620px] select-none">
+                                <defs>
+                                    <linearGradient id="btcAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.32"/>
+                                        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                    <linearGradient id="m2AreaGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.28"/>
+                                        <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                    <linearGradient id="creditAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.28"/>
+                                        <stop offset="100%" stop-color="#F43F5E" stop-opacity="0.02"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- Garis Vertikal Referensi Siklus di Belakang (Membuktikan Selaras 1:1) -->
+                                <line x1="95" y1="45" x2="95" y2="630" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+                                <line x1="265" y1="45" x2="265" y2="630" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+                                <line x1="495" y1="45" x2="495" y2="630" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+                                <line x1="610" y1="45" x2="610" y2="630" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+                                <line x1="730" y1="45" x2="730" y2="630" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+
+                                <!-- ========================================================= -->
+                                <!-- PANEL 1: HARGA ASET RISIKO (SEARAH 1:1 DENGAN M2)         -->
+                                <!-- Titik Simpul X: 95(Bawah), 175(Naik), 265(Turun), 385(Naik), 495(Puncak), 610(Dasar), 730(Puncak 10x) -->
+                                <!-- ========================================================= -->
+                                <rect x="12" y="8" width="776" height="196" rx="14" fill="#0B1120" stroke="#1E293B" stroke-width="1.5"/>
+                                <text x="28" y="31" fill="#F8FAFC" font-weight="800" font-size="12.5">PANEL 1: Harga Aset Risiko — Bitcoin (Kurva Biru) &amp; S&amp;P 500 (Putus-Putus) [Searah M2]</text>
+                                <line x1="24" y1="42" x2="776" y2="42" stroke="#1E293B" stroke-width="1"/>
+
+                                <!-- Grid Horizontal Panel 1 -->
+                                <line x1="28" y1="80" x2="742" y2="80" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="778" y="84" text-anchor="end" fill="#64748B" font-weight="700" font-size="10">$500K</text>
+
+                                <line x1="28" y1="128" x2="742" y2="128" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="778" y="132" text-anchor="end" fill="#64748B" font-weight="700" font-size="10">$100K</text>
+
+                                <line x1="28" y1="176" x2="742" y2="176" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="778" y="180" text-anchor="end" fill="#64748B" font-weight="700" font-size="10">$25K</text>
+
+                                <!-- Zona Konsolidasi 40 Bars -->
+                                <rect x="95" y="52" width="170" height="138" rx="8" fill="#1E293B" fill-opacity="0.35" stroke="#475569" stroke-width="1.2" stroke-dasharray="4,4"/>
+                                <text x="180" y="70" text-anchor="middle" fill="#E2E8F0" font-weight="800" font-size="10.5">Konsolidasi 40 Bars</text>
+                                <text x="180" y="84" text-anchor="middle" fill="#94A3B8" font-weight="600" font-size="9">(2023–2026: Tariff &amp; War)</text>
+                                <text x="180" y="97" text-anchor="middle" fill="#FBBF24" font-weight="700" font-size="9">Gold Top Cycle $5.500</text>
+
+                                <!-- Zona Bullrun 14 Bars -->
+                                <rect x="265" y="52" width="230" height="138" rx="8" fill="#1E3A8A" fill-opacity="0.22" stroke="#3B82F6" stroke-width="1.2"/>
+                                <text x="360" y="70" text-anchor="middle" fill="#93C5FD" font-weight="800" font-size="10.5">Ekspansi 14 Bars</text>
+                                <text x="360" y="84" text-anchor="middle" fill="#60A5FA" font-weight="600" font-size="9">(Apr 2026 – Mid 2027)</text>
+
+                                <!-- Badge Puncak 2027 & Revaluasi 10x -->
+                                <rect x="422" y="48" width="146" height="22" rx="6" fill="#451A03" stroke="#F59E0B" stroke-width="1.2"/>
+                                <text x="495" y="63" text-anchor="middle" fill="#FDE68A" font-weight="800" font-size="10">Puncak BTC $400K–$500K</text>
+
+                                <rect x="625" y="48" width="142" height="22" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+                                <text x="696" y="63" text-anchor="middle" fill="#A7F3D0" font-weight="800" font-size="10">Revaluasi 10x CBDC</text>
+
+                                <!-- Area Fill & Kurva BTC (Selaras 1:1 dengan M2: Turun di 95, Naik di 175, Koreksi di 265, Naik di 385, Puncak di 495, Dasar di 610, Puncak di 730) -->
+                                <path d="M 45 148 C 65 148, 75 180, 95 180 C 125 180, 145 142, 175 142 C 205 142, 235 164, 265 164 C 305 164, 345 142, 385 124 C 425 106, 460 80, 495 80 C 540 80, 565 174, 610 174 C 655 174, 685 76, 730 76 C 745 76, 755 76, 765 76 L 765 194 L 45 194 Z" fill="url(#btcAreaGrad)"/>
+
+                                <!-- Kurva S&P 500 -->
+                                <path d="M 45 156 C 65 156, 75 184, 95 184 C 125 184, 145 152, 175 152 C 205 152, 235 170, 265 170 C 305 170, 345 150, 385 134 C 425 118, 460 94, 495 94 C 540 94, 565 178, 610 178 C 655 178, 685 90, 730 90 C 745 90, 755 90, 765 90" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,4"/>
+
+                                <!-- Kurva Utama BTC -->
+                                <path d="M 45 148 C 65 148, 75 180, 95 180 C 125 180, 145 142, 175 142 C 205 142, 235 164, 265 164 C 305 164, 345 142, 385 124 C 425 106, 460 80, 495 80 C 540 80, 565 174, 610 174 C 655 174, 685 76, 730 76 C 745 76, 755 76, 765 76" fill="none" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+
+                                <!-- ========================================================= -->
+                                <!-- PANEL 2: GLOBAL M2 STOCHASTIC RSI                         -->
+                                <!-- Y-Atas (>80) = 276 | Y-Tengah (50) = 330 | Y-Bawah (<20) = 384 -->
+                                <!-- ========================================================= -->
+                                <rect x="12" y="216" width="776" height="196" rx="14" fill="#0B1120" stroke="#1E293B" stroke-width="1.5"/>
+                                <text x="28" y="239" fill="#F8FAFC" font-weight="800" font-size="12.5">PANEL 2: Siklus Likuiditas — Global M2 Stochastic RSI (Memompa Harga Aset)</text>
+                                <line x1="24" y1="250" x2="776" y2="250" stroke="#1E293B" stroke-width="1"/>
+
+                                <rect x="28" y="276" width="714" height="108" fill="#1E293B" fill-opacity="0.22"/>
+                                <line x1="28" y1="276" x2="742" y2="276" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
+                                <text x="778" y="280" text-anchor="end" fill="#60A5FA" font-weight="800" font-size="10">&gt;80</text>
+
+                                <line x1="28" y1="330" x2="742" y2="330" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+                                <text x="778" y="334" text-anchor="end" fill="#475569" font-weight="700" font-size="9.5">50</text>
+
+                                <line x1="28" y1="384" x2="742" y2="384" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
+                                <text x="778" y="388" text-anchor="end" fill="#34D399" font-weight="800" font-size="10">&lt;20</text>
+
+                                <!-- Area Fill & Kurva M2: 95(384 Bawah), 175(304 Naik), 265(376 Bawah), 385(318 Naik), 495(276 Puncak), 610(384 Dasar), 730(276 Puncak) -->
+                                <path d="M 45 330 C 65 330, 75 384, 95 384 C 125 384, 145 304, 175 304 C 205 304, 235 376, 265 376 C 305 376, 345 342, 385 318 C 425 294, 460 276, 495 276 C 540 276, 565 384, 610 384 C 655 384, 685 276, 730 276 C 745 276, 755 276, 765 276 L 765 402 L 45 402 Z" fill="url(#m2AreaGrad)"/>
+
+                                <!-- Signal %D -->
+                                <path d="M 45 336 C 68 336, 78 386, 100 386 C 130 386, 150 310, 180 310 C 210 310, 240 378, 270 378 C 310 378, 350 348, 390 324 C 430 300, 465 282, 500 282 C 545 282, 570 386, 615 386 C 660 386, 690 282, 735 282 C 748 282, 756 282, 765 282" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.85"/>
+
+                                <!-- Garis Utama %K M2 -->
+                                <path d="M 45 330 C 65 330, 75 384, 95 384 C 125 384, 145 304, 175 304 C 205 304, 235 376, 265 376 C 305 376, 345 342, 385 318 C 425 294, 460 276, 495 276 C 540 276, 565 384, 610 384 C 655 384, 685 276, 730 276 C 745 276, 755 276, 765 276" fill="none" stroke="#38BDF8" stroke-width="3.2" stroke-linecap="round"/>
+
+                                <!-- Label Titik Pantul M2 -->
+                                <rect x="206" y="255" width="118" height="20" rx="5" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+                                <text x="265" y="268" text-anchor="middle" fill="#7DD3FC" font-weight="700" font-size="9.5">Apr 2026: M2 Pantul &lt;20</text>
+
+                                <rect x="546" y="255" width="128" height="20" rx="5" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+                                <text x="610" y="268" text-anchor="middle" fill="#A7F3D0" font-weight="700" font-size="9.5">2028: Cetak CBDC Baru</text>
+
+                                <!-- ========================================================= -->
+                                <!-- PANEL 3: CREDIT SPREAD HY OAS (CERMIN TERBALIK 1:1 DARI M2) -->
+                                <!-- Rumus Cermin Presisi: Saat M2 di Bawah (384), Credit Spread di Puncak Atas (496)! -->
+                                <!-- Saat M2 di Puncak Atas (276), Credit Spread di Dasar Bawah (604)! -->
+                                <!-- Titik Simpul X: 95(496 Puncak), 175(576 Turun), 265(504 Naik), 385(562 Turun), 495(604 Dasar), 610(496 Puncak), 730(604 Dasar) -->
+                                <!-- ========================================================= -->
+                                <rect x="12" y="424" width="776" height="222" rx="14" fill="#0B1120" stroke="#1E293B" stroke-width="1.5"/>
+                                <text x="28" y="447" fill="#F8FAFC" font-weight="800" font-size="12.5">PANEL 3: Indikator Krisis Kredit — Credit Spread HY OAS (CERMIN TERBALIK 1:1 terhadap M2)</text>
+                                <line x1="24" y1="458" x2="776" y2="458" stroke="#1E293B" stroke-width="1"/>
+
+                                <!-- Grid Horizontal Panel 3 -->
+                                <line x1="28" y1="496" x2="742" y2="496" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="778" y="500" text-anchor="end" fill="#F43F5E" font-weight="700" font-size="9.5">80.0</text>
+
+                                <line x1="28" y1="550" x2="742" y2="550" stroke="#1E293B" stroke-width="1" stroke-dasharray="2,4"/>
+                                <text x="778" y="554" text-anchor="end" fill="#64748B" font-weight="700" font-size="9.5">55.0</text>
+
+                                <line x1="28" y1="604" x2="742" y2="604" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="778" y="608" text-anchor="end" fill="#34D399" font-weight="700" font-size="9.5">39.4</text>
+
+                                <!-- Kotak Hijau Bottom 2023 (x=95, Puncak Credit Spread = Dasar M2) -->
+                                <rect x="56" y="464" width="78" height="62" rx="8" fill="#064E3B" fill-opacity="0.45" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,3"/>
+                                <text x="95" y="479" text-anchor="middle" fill="#A7F3D0" font-weight="800" font-size="9">BOTTOM 2023</text>
+                                <text x="95" y="491" text-anchor="middle" fill="#6EE7B7" font-weight="600" font-size="8">(SVB &amp; FTX)</text>
+
+                                <!-- Label Lonjakan Stres Tarif/Perang Awal 2026 (x=265: Saat M2 Turun ke <20, Credit Spread Naik!) -->
+                                <rect x="206" y="466" width="118" height="26" rx="6" fill="#1E293B" stroke="#FB7185" stroke-width="1"/>
+                                <text x="265" y="483" text-anchor="middle" fill="#FDA4AF" font-weight="700" font-size="9">Stres Tarif (M2 Dasar)</text>
+
+                                <!-- Kotak Merah Macro Bullrun (Area Tenang menuju Puncak 2027 di x=495) -->
+                                <rect x="335" y="542" width="195" height="82" rx="10" fill="#4C0519" fill-opacity="0.6" stroke="#F43F5E" stroke-width="1.8"/>
+                                <text x="432" y="620" text-anchor="middle" fill="#FDA4AF" font-weight="800" font-size="10">KOTAK MERAH BULLRUN (39.41)</text>
+
+                                <!-- Kotak Hijau Macro Bottom 2028 (x=610: Saat M2 di Dasar 384, Credit Spread di Puncak 496!) -->
+                                <rect x="542" y="462" width="136" height="76" rx="10" fill="#064E3B" fill-opacity="0.75" stroke="#10B981" stroke-width="2"/>
+                                <text x="610" y="478" text-anchor="middle" fill="#A7F3D0" font-weight="800" font-size="10.5">KOTAK HIJAU 2028</text>
+                                <text x="610" y="491" text-anchor="middle" fill="#6EE7B7" font-weight="700" font-size="9">Puncak Gagal Bayar (50:50)</text>
+
+                                <!-- Area Fill & Kurva Credit Spread (100% Cermin Terbalik 1:1 dari Kurva M2 di Panel 2!) -->
+                                <path d="M 45 550 C 65 550, 75 496, 95 496 C 125 496, 145 576, 175 576 C 205 576, 235 504, 265 504 C 305 504, 345 538, 385 562 C 425 586, 460 604, 495 604 C 540 604, 565 496, 610 496 C 655 496, 685 604, 730 604 C 745 604, 755 604, 765 604 L 765 636 L 45 636 Z" fill="url(#creditAreaGrad)"/>
+
+                                <path d="M 45 550 C 65 550, 75 496, 95 496 C 125 496, 145 576, 175 576 C 205 576, 235 504, 265 504 C 305 504, 345 538, 385 562 C 425 586, 460 604, 495 604 C 540 604, 565 496, 610 496 C 655 496, 685 604, 730 604 C 745 604, 755 604, 765 604" fill="none" stroke="#FB7185" stroke-width="3.5" stroke-linecap="round"/>
+
+                                <!-- GARIS KURSOR VERTIKAL SINKRON 3 PANEL -->
+                                <line id="sync-cursor" x1="385" y1="44" x2="385" y2="636" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6,4"/>
+                                <circle id="sync-dot-1" cx="385" cy="124" r="7.5" fill="#F59E0B" stroke="#090D16" stroke-width="2.5"/>
+                                <circle id="sync-dot-2" cx="385" cy="318" r="7.5" fill="#F59E0B" stroke="#090D16" stroke-width="2.5"/>
+                                <circle id="sync-dot-3" cx="385" cy="562" r="7.5" fill="#F59E0B" stroke="#090D16" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm bg-slate-950/90 p-4 rounded-2xl border border-slate-800">
+                            <div class="flex items-start gap-2.5">
+                                <span class="w-4 h-4 rounded bg-sky-500/30 border border-sky-400 shrink-0 mt-0.5"></span>
+                                <span class="text-slate-300 leading-snug"><strong class="text-sky-300">Saat M2 di Dasar (&lt;20):</strong> Credit Spread pasti berada di Puncak Atas (Krisis), dan harga BTC berada di titik terendah.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="w-4 h-4 rounded bg-rose-500/30 border border-rose-500 shrink-0 mt-0.5"></span>
+                                <span class="text-slate-300 leading-snug"><strong class="text-rose-300">Saat M2 di Puncak (&gt;80):</strong> Credit Spread pasti berada di Dasar Bawah (Kotak Merah 39.4), dan harga BTC di Puncak.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Penjelasan Sinkronisasi -->
+                    <div class="lg:col-span-4 visual-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div id="m-tag" class="inline-block px-3.5 py-1.5 rounded-lg bg-blue-500/15 text-blue-300 border border-blue-500/30 font-extrabold text-xs mb-3.5">
+                                FASE 2 • OKTOBER 2026 (BAR KE-7 DARI 14)
+                            </div>
+                            <h3 id="m-heading" class="text-2xl font-extrabold text-white leading-snug">
+                                Rotasi Likuiditas Emas Memompa Reli Terakhir Menuju 2027
+                            </h3>
+                            <p id="m-body" class="mt-3 text-base text-slate-300 leading-relaxed">
+                                Setelah Emas mencetak puncak siklus (<em>Gold Top Cycle</em>) di $5.500/oz pada Februari 2026 dan rasio XAU/XAG turun -53,51%, likuiditas berotasi deras ke Aset Risiko (Bitcoin &amp; Saham). Saat ini kita berada di bulan ke-7 dari jendela ekspansi 14 bulan menuju puncak 2027.
+                            </p>
+
+                            <div class="mt-6 space-y-3">
+                                <div class="p-3.5 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                    <div class="text-[11px] font-extrabold uppercase tracking-wider text-blue-400">1. HARGA ASET RISIKO (BTC &amp; SAHAM)</div>
+                                    <div id="m-val-asset" class="text-sm sm:text-base font-bold text-white mt-1">BTC ~$83.700 • Reli ekspansi menuju target puncak $400K–$500K di 2027</div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                    <div class="text-[11px] font-extrabold uppercase tracking-wider text-sky-400">2. GLOBAL M2 STOCHASTIC RSI</div>
+                                    <div id="m-val-m2" class="text-sm sm:text-base font-bold text-white mt-1">Menanjak Kuat (Zona ~65) • Likuiditas sedang mengalir deras ke pasar</div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                    <div class="text-[11px] font-extrabold uppercase tracking-wider text-rose-400">3. CREDIT SPREAD (KORELASI TERBALIK)</div>
+                                    <div id="m-val-credit" class="text-sm sm:text-base font-bold text-white mt-1">Tidur Tenang di Kotak Merah (39.41) • Belum ada kepanikan gagal bayar bank</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-5 rounded-2xl bg-blue-950/50 border-2 border-blue-500/40">
+                            <div class="text-xs font-extrabold uppercase tracking-wider text-blue-300">KESIMPULAN INDIKATOR:</div>
+                            <p id="m-action" class="text-sm sm:text-base font-bold text-white mt-1.5 leading-relaxed">
+                                Selama Credit Spread masih tertahan di dasar Kotak Merah dan M2 belum patah dari zona &gt;80, pesta kenaikan aset risiko masih berlanjut menuju pertengahan 2027.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bab-3" class="py-16 sm:py-20 border-b border-slate-800/80 bg-[#090D16] scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="step-badge bg-amber-500/15 text-amber-300 border border-amber-500/30">BAB 3 • HISTORI 5 MACRO BOTTOM (2011 – 2028) &amp; HUKUM DOSIS MONETER</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
+                        Mengapa Setiap Siklus Baru Selalu Menuntut Cetak Uang Lebih Besar &amp; Menghancurkan Daya Beli Fiat?
+                    </h2>
+                    <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
+                        Klik salah satu dari 5 titik <em>Macro Bottom</em> di bawah ini untuk melihat bukti historis mengapa sistem Fiat bisa diulang pada 2012, 2016, 2020, dan 2023—tetapi kehabisan seluruh bahan bakarnya (0%) tepat di tahun 2028:
+                    </p>
+                </div>
+
+                <!-- 5 Tombol Histori Macro Bottom -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 mb-8 items-stretch">
+                    <button onclick="selectHistoryBottom(0)" id="h-btn-0" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start">
+                        <div id="h-sub-0" class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">BAHAN BAKAR: 75%</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">1. Bottom 2011–2012</div>
+                        <div id="h-desc-0" class="text-xs font-semibold text-slate-400 mt-1">Cetak +$19T • Daya Beli -26%</div>
+                    </button>
+                    <button onclick="selectHistoryBottom(1)" id="h-btn-1" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start">
+                        <div id="h-sub-1" class="text-[11px] font-extrabold uppercase tracking-wider text-blue-400">BAHAN BAKAR: 50%</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">2. Bottom 2015–2016</div>
+                        <div id="h-desc-1" class="text-xs font-semibold text-slate-400 mt-1">Cetak +$20T • Daya Beli -24%</div>
+                    </button>
+                    <button onclick="selectHistoryBottom(2)" id="h-btn-2" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start">
+                        <div id="h-sub-2" class="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">BAHAN BAKAR: 20%</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">3. Bottom 2019–2020</div>
+                        <div id="h-desc-2" class="text-xs font-semibold text-slate-400 mt-1">Cetak +$25T • Daya Beli -34%</div>
+                    </button>
+                    <button onclick="selectHistoryBottom(3)" id="h-btn-3" class="p-4 rounded-2xl border-2 border-blue-500 bg-blue-600 text-white text-left transition shadow-lg shadow-blue-600/25 flex flex-col justify-start">
+                        <div id="h-sub-3" class="text-[11px] font-extrabold uppercase tracking-wider text-blue-100">3 TABUNG TERAKHIR</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">4. Bottom 2022–2023</div>
+                        <div id="h-desc-3" class="text-xs font-semibold text-blue-100 mt-1">Cetak +$30T • Bahan Bakar 0%</div>
+                    </button>
+                    <button onclick="selectHistoryBottom(4)" id="h-btn-4" class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-rose-500/60 text-left transition flex flex-col justify-start">
+                        <div id="h-sub-4" class="text-[11px] font-extrabold uppercase tracking-wider text-rose-400">TITIK TERMINAL FIAT</div>
+                        <div class="text-base font-extrabold mt-1.5 leading-tight">5. Bottom 2028</div>
+                        <div id="h-desc-4" class="text-xs font-semibold text-slate-400 mt-1">Reset CBDC • Devaluasi -90%</div>
+                    </button>
+                </div>
+
+                <!-- Grafik 2 Panel Proporsional (Panel Atas: Lonjakan M2 Dicetak vs Panel Bawah: Sisa Bahan Bakar & Daya Beli Fiat) + Detail Siklus -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
+                    <div class="lg:col-span-7 visual-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between min-w-0">
+                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                            <span class="font-extrabold text-white text-base sm:text-lg">Peta Eksponensial Uang Dicetak (M2) vs. Kehancuran Daya Beli Fiat</span>
+                            <span id="h-chart-pill" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-extrabold text-xs">SIKLUS 2023: MENGURAS 3 TABUNG TERAKHIR</span>
+                        </div>
+
+                        <div class="my-4 w-full overflow-x-auto">
+                            <svg viewBox="0 0 760 470" class="w-full h-auto min-w-[580px] select-none">
+                                <defs>
+                                    <linearGradient id="m2SupplyGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.35"/>
+                                        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                    <linearGradient id="fiatPowerGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.30"/>
+                                        <stop offset="100%" stop-color="#F43F5E" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- Garis Referensi Vertikal 5 Siklus -->
+                                <line x1="95" y1="48" x2="95" y2="442" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <line x1="235" y1="48" x2="235" y2="442" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <line x1="375" y1="48" x2="375" y2="442" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <line x1="515" y1="48" x2="515" y2="442" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+                                <line x1="655" y1="48" x2="655" y2="442" stroke="#1E293B" stroke-width="1" stroke-dasharray="3,3"/>
+
+                                <!-- PANEL ATAS: Total Uang Beredar Dunia (Global M2) yang Terus Membengkak -->
+                                <rect x="14" y="10" width="732" height="206" rx="14" fill="#0B1120" stroke="#1E293B" stroke-width="1.5"/>
+                                <text x="32" y="35" fill="#F8FAFC" font-weight="800" font-size="13">PANEL ATAS: Total Uang Beredar Dunia (Global M2) yang Wajib Dicetak di Tiap Krisis</text>
+                                <line x1="28" y1="46" x2="732" y2="46" stroke="#1E293B" stroke-width="1"/>
+
+                                <!-- Area & Kurva Melengkung Eksponensial M2 -->
+                                <path d="M 95 184 C 145 180, 185 170, 235 162 C 285 152, 325 144, 375 134 C 425 122, 465 112, 515 102 C 565 92, 605 82, 655 72 L 655 204 L 95 204 Z" fill="url(#m2SupplyGrad)"/>
+                                <path d="M 95 184 C 145 180, 185 170, 235 162 C 285 152, 325 144, 375 134 C 425 122, 465 112, 515 102 C 565 92, 605 82, 655 72" fill="none" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+
+                                <!-- Titik & Label Panel Atas -->
+                                <circle cx="95" cy="184" r="5" fill="#60A5FA"/>
+                                <text x="95" y="152" text-anchor="middle" fill="#60A5FA" font-weight="800" font-size="11.5">+$19T (+36%)</text>
+                                <text x="95" y="167" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10.5">2012 ($71T)</text>
+
+                                <circle cx="235" cy="162" r="5" fill="#60A5FA"/>
+                                <text x="235" y="130" text-anchor="middle" fill="#60A5FA" font-weight="800" font-size="11.5">+$20T (+29%)</text>
+                                <text x="235" y="145" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10.5">2016 ($87T)</text>
+
+                                <circle cx="375" cy="134" r="5" fill="#60A5FA"/>
+                                <text x="375" y="102" text-anchor="middle" fill="#60A5FA" font-weight="800" font-size="11.5">+$25T (+31%)</text>
+                                <text x="375" y="117" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10.5">2020 ($107T)</text>
+
+                                <circle cx="515" cy="102" r="5" fill="#FBBF24"/>
+                                <text x="515" y="70" text-anchor="middle" fill="#FBBF24" font-weight="800" font-size="11.5">+$30T (+30%)</text>
+                                <text x="515" y="85" text-anchor="middle" fill="#FDE68A" font-weight="700" font-size="10.5">2023&rarr;27 ($136T)</text>
+
+                                <rect x="576" y="86" width="154" height="44" rx="8" fill="#4C0519" stroke="#F43F5E" stroke-width="1.5"/>
+                                <text x="653" y="104" text-anchor="middle" fill="#FDA4AF" font-weight="800" font-size="11">2028: +$35T s.d. $50T</text>
+                                <text x="653" y="120" text-anchor="middle" fill="#FECDD3" font-weight="700" font-size="9.5">(Wajib Kunci di CBDC)</text>
+
+                                <!-- PANEL BAWAH: Sisa Bahan Bakar Sistem Fiat & Daya Beli Uang Kertas ($100) -->
+                                <rect x="14" y="232" width="732" height="224" rx="14" fill="#0B1120" stroke="#1E293B" stroke-width="1.5"/>
+                                <text x="32" y="257" fill="#F8FAFC" font-weight="800" font-size="13">PANEL BAWAH: Sisa Bahan Bakar Sistem Fiat &amp; Penyusutan Daya Beli Uang Kertas ($100)</text>
+                                <line x1="28" y1="268" x2="732" y2="268" stroke="#1E293B" stroke-width="1"/>
+
+                                <!-- Area & Kurva Melengkung Turun Bahan Bakar & Daya Beli -->
+                                <path d="M 95 304 C 145 314, 185 326, 235 338 C 285 352, 325 366, 375 378 C 425 392, 465 404, 515 414 C 565 420, 605 424, 655 428 L 655 444 L 95 444 Z" fill="url(#fiatPowerGrad)"/>
+                                <path d="M 95 304 C 145 314, 185 326, 235 338 C 285 352, 325 366, 375 378 C 425 392, 465 404, 515 414 C 565 420, 605 424, 655 428" fill="none" stroke="#F43F5E" stroke-width="4" stroke-linecap="round"/>
+
+                                <!-- Titik & Label Panel Bawah -->
+                                <circle cx="95" cy="304" r="5" fill="#34D399"/>
+                                <text x="95" y="284" text-anchor="middle" fill="#34D399" font-weight="800" font-size="11">75% Kuat</text>
+                                <text x="95" y="325" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10">($100 &rarr; $73)</text>
+
+                                <circle cx="235" cy="338" r="5" fill="#60A5FA"/>
+                                <text x="235" y="318" text-anchor="middle" fill="#60A5FA" font-weight="800" font-size="11">50% Menipis</text>
+                                <text x="235" y="359" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10">($100 &rarr; $55)</text>
+
+                                <circle cx="375" cy="378" r="5" fill="#FBBF24"/>
+                                <text x="375" y="358" text-anchor="middle" fill="#FBBF24" font-weight="800" font-size="11">20% Kritis</text>
+                                <text x="375" y="399" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10">($100 &rarr; $37)</text>
+
+                                <circle cx="515" cy="414" r="5" fill="#FB7185"/>
+                                <text x="515" y="394" text-anchor="middle" fill="#FB7185" font-weight="800" font-size="11">0% Habis!</text>
+                                <text x="515" y="435" text-anchor="middle" fill="#FDA4AF" font-weight="700" font-size="10">($100 &rarr; $18)</text>
+
+                                <rect x="576" y="356" width="154" height="54" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+                                <text x="653" y="376" text-anchor="middle" fill="#A7F3D0" font-weight="800" font-size="11">TERMINAL 2028 (-90%)</text>
+                                <text x="653" y="392" text-anchor="middle" fill="#6EE7B7" font-weight="700" font-size="9.5">Sisa &lt;$2 • BTC &amp; Emas 10x!</text>
+
+                                <!-- Kursor Interaktif Bab 3 -->
+                                <line id="h-cursor" x1="515" y1="48" x2="515" y2="444" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6,4"/>
+                                <circle id="h-dot-top" cx="515" cy="102" r="8" fill="#F59E0B" stroke="#090D16" stroke-width="2.5"/>
+                                <circle id="h-dot-low" cx="515" cy="414" r="8" fill="#F59E0B" stroke="#090D16" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm bg-slate-950/90 p-4 rounded-2xl border border-slate-800">
+                            <div class="flex items-start gap-2.5">
+                                <span class="w-4 h-4 rounded bg-blue-500/30 border border-blue-500 shrink-0 mt-0.5"></span>
+                                <span class="text-slate-300 leading-snug"><strong class="text-blue-300">Kurva Biru (Atas):</strong> Dosis uang baru yang wajib dicetak naik dari +$19T (2012) menjadi +$35T–$50T (2028).</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="w-4 h-4 rounded bg-rose-500/30 border border-rose-500 shrink-0 mt-0.5"></span>
+                                <span class="text-slate-300 leading-snug"><strong class="text-rose-300">Kurva Merah (Bawah):</strong> Daya beli $100 menyusut hingga &lt;$2 dan bahan bakar Fiat habis (0%) di 2028.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kotak Detail Interaktif Siklus yang Dipilih -->
+                    <div class="lg:col-span-5 visual-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-amber-500 flex flex-col justify-between">
+                        <div>
+                            <span id="h-tag" class="inline-block px-3.5 py-1.5 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 font-extrabold text-xs mb-3.5">
+                                MACRO BOTTOM 4 • TAHUN 2022–2023 (SIKLUS TERAKHIR SAAT INI)
+                            </span>
+                            <h3 id="h-heading" class="text-2xl font-extrabold text-white leading-snug">
+                                Krisis FTX &amp; Bank SVB: Diselamatkan oleh Kurasan 3 Tabung Darurat Sisa COVID
+                            </h3>
+                            <p id="h-body" class="mt-3 text-base text-slate-300 leading-relaxed">
+                                Saat inflasi meledak dan bunga dinaikkan ke 5,5%, bursa FTX serta Bank SVB dan Credit Suisse kolaps. The Fed tidak bisa menurunkan bunga ke 0%, namun berhasil menyelamatkan pasar untuk terakhir kalinya dengan menguras brankas Reverse Repo ($2,55 Triliun), membuka pinjaman bank BTFP, dan menerbitkan surat utang pendek T-Bills.
+                            </p>
+
+                            <div class="mt-6 space-y-3.5">
+                                <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                    <div class="text-xs font-extrabold uppercase text-blue-400">JUMLAH UANG BARU DICETAK (GLOBAL M2)</div>
+                                    <div id="h-m2" class="text-base font-extrabold text-white mt-1">Naik +30% (+$30 Triliun+ dari ~$104T menuju ~$136T di 2027)</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                    <div class="text-xs font-extrabold uppercase text-rose-400">PENURUNAN DAYA BELI FIAT &amp; SISA BAHAN BAKAR</div>
+                                    <div id="h-power" class="text-base font-extrabold text-rose-300 mt-1">Daya Beli Turun -35% s.d. -50%+ • Sisa Bahan Bakar Fiat: 0% (Habis!)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-5 rounded-2xl bg-amber-950/40 border-2 border-amber-500/40">
+                            <div class="text-xs font-extrabold uppercase tracking-wider text-amber-300">KONDISI SISA BAHAN BAKAR FIAT:</div>
+                            <p id="h-fuel" class="text-sm sm:text-base font-bold text-white mt-1.5 leading-relaxed">
+                                HABIS (0%). Seluruh tabungan darurat sisa tahun 2020 sudah dipakai habis untuk memompa reli 2026–2027. Tidak ada sisa amunisi lagi untuk krisis 2028!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 Grafik Bar: Dosis Cetak Uang vs Penyusutan Daya Beli $100 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
+                    <div class="visual-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-xs font-extrabold uppercase">GRAFIK 1 • PEMBENGKAKAN LIKUIDITAS M2</span>
+                            <h3 class="text-2xl font-extrabold text-white mt-3">Dosis Uang Baru yang Wajib Dicetak di Tiap Krisis</h3>
+                            <p class="text-sm sm:text-base text-slate-300 mt-1.5 mb-6">
+                                Jumlah uang tambahan yang harus disuntikkan Bank Sentral Dunia agar sistem perbankan tidak runtuh di setiap <em>Macro Bottom</em>:
+                            </p>
+
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-slate-200">1. Siklus 2011–2012 (Global M2: $52T &rarr; $71T)</span>
+                                        <span class="text-blue-400">+$19 Triliun (+36%)</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-slate-800">
+                                        <div class="bg-blue-500 h-full rounded-md" style="width: 38%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-slate-200">2. Siklus 2015–2016 (Global M2: $67T &rarr; $87T)</span>
+                                        <span class="text-blue-400">+$20 Triliun (+29%)</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-slate-800">
+                                        <div class="bg-blue-500 h-full rounded-md" style="width: 42%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-slate-200">3. Siklus 2019–2020 (Global M2: $82T &rarr; $107T)</span>
+                                        <span class="text-blue-400">+$25 Triliun (+31%)</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-slate-800">
+                                        <div class="bg-blue-500 h-full rounded-md" style="width: 55%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-amber-950/30 border border-amber-500/40">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-amber-200">4. Siklus 2023 &rarr; 2027 (Global M2: $104T &rarr; $136T+)</span>
+                                        <span class="text-amber-400">+$30 Triliun+ (+30%)</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-amber-700/50">
+                                        <div class="bg-amber-500 h-full rounded-md" style="width: 68%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-rose-950/40 border-2 border-rose-500/50">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-white">5. Titik Terminal 2028 (Kebutuhan Talangan Sistem)</span>
+                                        <span class="text-rose-400">+$35T s.d. +$50 Triliun!</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-rose-700/50">
+                                        <div class="bg-gradient-to-r from-rose-500 to-emerald-500 h-full rounded-md" style="width: 100%"></div>
+                                    </div>
+                                    <div class="text-xs text-rose-200 mt-2 font-semibold">
+                                        ⚠️ Mencetak +$40 Triliun tanpa dikunci kode CBDC akan langsung memicu hiperinflasi jalanan dalam hitungan minggu.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visual-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-xs font-extrabold uppercase">GRAFIK 2 • KEHANCURAN DAYA BELI FIAT</span>
+                            <h3 class="text-2xl font-extrabold text-white mt-3">Penyusutan Nilai $100 Uang Kertas Sejak 2011 – 2029</h3>
+                            <p class="text-sm sm:text-base text-slate-300 mt-1.5 mb-6">
+                                Berapa sisa daya beli uang kertas <strong class="text-white">$100 (atau Rp100 Juta)</strong> terhadap aset keras (Emas Fisik &amp; Bitcoin) akibat pencetakan uang di setiap siklus:
+                            </p>
+
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-slate-200">Pasca-Siklus 2011–2013 (Daya beli turun -27%)</span>
+                                        <span class="text-emerald-400">Sisa Nilai Riil: ~$73</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-slate-800">
+                                        <div class="bg-emerald-500 h-full rounded-md" style="width: 73%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-slate-200">Pasca-Siklus 2015–2017 (Turun lagi -24%)</span>
+                                        <span class="text-blue-400">Sisa Nilai Riil: ~$55</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-slate-800">
+                                        <div class="bg-blue-500 h-full rounded-md" style="width: 55%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-slate-200">Pasca-Siklus COVID 2020–2021 (Turun lagi -33%)</span>
+                                        <span class="text-amber-400">Sisa Nilai Riil: ~$37</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-slate-800">
+                                        <div class="bg-amber-500 h-full rounded-md" style="width: 37%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-amber-950/30 border border-amber-500/40">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-amber-200">Pasca-Siklus 2023–2027 (Emas tembus $5.500/oz)</span>
+                                        <span class="text-orange-400">Sisa Nilai Riil: ~$18</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-amber-700/50">
+                                        <div class="bg-orange-500 h-full rounded-md" style="width: 18%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-rose-950/40 border-2 border-rose-500/50">
+                                    <div class="flex justify-between text-sm font-extrabold mb-2">
+                                        <span class="text-white">Great Reset CBDC 2028–2029 (Devaluasi -90%)</span>
+                                        <span class="text-rose-400">Sisa Nilai: &lt;$2 (BTC &amp; Emas 10x!)</span>
+                                    </div>
+                                    <div class="w-full h-3.5 bg-slate-900 rounded-lg overflow-hidden p-0.5 border border-rose-700/50">
+                                        <div class="bg-rose-500 h-full rounded-md" style="width: 3%"></div>
+                                    </div>
+                                    <div class="text-xs text-emerald-300 mt-2 font-semibold">
+                                        💎 Pemangkasan 90% nilai mata uang untuk menghapus utang dunia otomatis menerbangkan 50% BTC &amp; 50% Emas Fisik Anda 10x lipat!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabel Matriks Lengkap 5 Macro Bottom -->
+                <div class="visual-card rounded-3xl p-6 sm:p-8 border border-slate-800">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-white">Tabel Matriks Lengkap: 5 Macro Bottom (2011 – 2028)</h3>
+                            <p class="text-sm sm:text-base text-slate-400 mt-1">Perbandingan komprehensif mengapa 4 siklus sebelumnya bisa melahirkan siklus Fiat baru, sedangkan 2028 adalah Titik Terminal:</p>
+                        </div>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-rose-500/15 text-rose-300 border border-rose-500/30 text-xs font-extrabold uppercase whitespace-nowrap self-start sm:self-center">
+                            Data Riset UZ Institute
+                        </span>
+                    </div>
+
+                    <div class="mt-6 overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[920px]">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-xs font-extrabold uppercase tracking-wider text-slate-400 bg-slate-950/90">
+                                    <th class="py-4 px-4 rounded-tl-xl">Siklus Macro Bottom</th>
+                                    <th class="py-4 px-4">Alat Penyelamat (Mengapa Siklus Fiat Bisa Lanjut?)</th>
+                                    <th class="py-4 px-4">Tambahan Uang (M2)</th>
+                                    <th class="py-4 px-4">Hilangnya Daya Beli Fiat</th>
+                                    <th class="py-4 px-4 rounded-tr-xl w-52">Sisa Bahan Bakar Fiat</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/80 text-sm sm:text-base">
+                                <tr class="hover:bg-slate-900/40 transition">
+                                    <td class="py-4 px-4 font-extrabold text-white whitespace-nowrap align-top">
+                                        1. Bottom 2011–2012
+                                        <div class="text-xs font-semibold text-slate-400 mt-0.5">Krisis Utang Eropa</div>
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-300 leading-relaxed align-top">
+                                        Utang AS baru <strong class="text-white">$15 Triliun</strong> dan barang murah Tiongkok meredam inflasi. The Fed bebas memangkas bunga ke <strong class="text-white">0%</strong> dan mencetak uang (<strong class="text-white">QE3</strong>).
+                                    </td>
+                                    <td class="py-4 px-4 font-extrabold text-blue-400 whitespace-nowrap align-top">
+                                        +36% M2
+                                        <div class="text-xs font-bold text-slate-400 mt-0.5">(+$19 Triliun Baru)</div>
+                                    </td>
+                                    <td class="py-4 px-4 font-bold text-amber-400 align-top">
+                                        Turun -25% s.d. -28%
+                                        <div class="text-xs font-normal text-slate-400 mt-0.5">($100 tinggal bernilai ~$73)</div>
+                                    </td>
+                                    <td class="py-4 px-4 align-top">
+                                        <div class="flex justify-between text-xs font-extrabold text-emerald-400 mb-1.5">
+                                            <span>MASIH KUAT</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="bg-emerald-500 h-full rounded-full" style="width: 75%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-900/40 transition">
+                                    <td class="py-4 px-4 font-extrabold text-white whitespace-nowrap align-top">
+                                        2. Bottom 2015–2016
+                                        <div class="text-xs font-semibold text-slate-400 mt-0.5">Devaluasi Yuan &amp; Minyak</div>
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-300 leading-relaxed align-top">
+                                        Saat AS menahan cetak uang, giliran <strong class="text-white">Bank Sentral Tiongkok (PBOC), Eropa (ECB), dan Jepang (BoJ)</strong> mencetak uang masif dan menerapkan suku bunga negatif.
+                                    </td>
+                                    <td class="py-4 px-4 font-extrabold text-blue-400 whitespace-nowrap align-top">
+                                        +29% M2
+                                        <div class="text-xs font-bold text-slate-400 mt-0.5">(+$20 Triliun Baru)</div>
+                                    </td>
+                                    <td class="py-4 px-4 font-bold text-amber-400 align-top">
+                                        Turun -22% s.d. -25%
+                                        <div class="text-xs font-normal text-slate-400 mt-0.5">(Kumulatif hilang ~45%)</div>
+                                    </td>
+                                    <td class="py-4 px-4 align-top">
+                                        <div class="flex justify-between text-xs font-extrabold text-blue-400 mb-1.5">
+                                            <span>MENIPIS</span>
+                                            <span>50%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="bg-blue-500 h-full rounded-full" style="width: 50%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-900/40 transition">
+                                    <td class="py-4 px-4 font-extrabold text-white whitespace-nowrap align-top">
+                                        3. Bottom 2018–2020
+                                        <div class="text-xs font-semibold text-slate-400 mt-0.5">Krisis Repo &rarr; COVID 2020</div>
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-300 leading-relaxed align-top">
+                                        Bunga baru naik ke 2,5% tapi pasar Repo bank langsung macet (Sept 2019). Diselamatkan oleh <strong class="text-white">Cetak Uang Tanpa Batas (Unlimited QE)</strong> &amp; bunga 0% saat pandemi 2020.
+                                    </td>
+                                    <td class="py-4 px-4 font-extrabold text-blue-400 whitespace-nowrap align-top">
+                                        +31% M2
+                                        <div class="text-xs font-bold text-slate-400 mt-0.5">(+$25 Triliun Baru)</div>
+                                    </td>
+                                    <td class="py-4 px-4 font-bold text-amber-400 align-top">
+                                        Turun -32% s.d. -35%
+                                        <div class="text-xs font-normal text-slate-400 mt-0.5">(Kumulatif hilang ~63%)</div>
+                                    </td>
+                                    <td class="py-4 px-4 align-top">
+                                        <div class="flex justify-between text-xs font-extrabold text-amber-400 mb-1.5">
+                                            <span>KRITIS</span>
+                                            <span>20%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="bg-amber-500 h-full rounded-full" style="width: 20%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-amber-950/20 border-l-4 border-l-amber-500">
+                                    <td class="py-4 px-4 font-extrabold text-amber-300 whitespace-nowrap align-top">
+                                        4. Bottom 2022–2023
+                                        <div class="text-xs font-bold text-amber-400/90 mt-0.5">FTX, Bank SVB &amp; Credit Suisse</div>
+                                    </td>
+                                    <td class="py-4 px-4 text-slate-200 leading-relaxed align-top">
+                                        Bunga tidak bisa lagi 0% karena inflasi tinggi. Sistem diselamatkan untuk terakhir kalinya dengan <strong class="text-amber-300">menguras habis 3 Tabung Cadangan Sisa COVID</strong> (Celengan RRP $2,55T, BTFP Bank, &amp; Utang Pendek T-Bills).
+                                    </td>
+                                    <td class="py-4 px-4 font-extrabold text-amber-300 whitespace-nowrap align-top">
+                                        +30% M2
+                                        <div class="text-xs font-bold text-amber-200/80 mt-0.5">(+$30 Triliun+ s.d. 2027)</div>
+                                    </td>
+                                    <td class="py-4 px-4 font-extrabold text-rose-400 align-top">
+                                        Turun -35% s.d. -50%+
+                                        <div class="text-xs font-semibold text-slate-300 mt-0.5">(Emas terbang ke $5.500/oz)</div>
+                                    </td>
+                                    <td class="py-4 px-4 align-top">
+                                        <div class="flex justify-between text-xs font-extrabold text-rose-400 mb-1.5">
+                                            <span>TERKURAS HABIS</span>
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="bg-rose-500 h-full rounded-full" style="width: 4%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-rose-950/35 border-l-4 border-l-rose-500">
+                                    <td class="py-5 px-4 font-extrabold text-rose-300 whitespace-nowrap align-top">
+                                        5. Bottom 2028
+                                        <div class="inline-block px-2 py-0.5 rounded bg-rose-600 text-white text-[11px] font-extrabold mt-1">TITIK TERMINAL</div>
+                                    </td>
+                                    <td class="py-5 px-4 text-white leading-relaxed align-top">
+                                        <strong class="text-rose-300">SIKLUS FIAT MUSTAHIL DILANJUTKAN:</strong> Utang AS tembus &gt;$40 Triliun, bunga utang menelan &gt;$1,5T/tahun, dan 3 tabung cadangan 2023 sudah bersaldo $0. Satu-satunya jalan adalah <strong class="text-emerald-300">cetak CBDC terkunci &amp; revaluasi aset 10x</strong>.
+                                    </td>
+                                    <td class="py-5 px-4 font-extrabold text-emerald-400 whitespace-nowrap align-top">
+                                        +$35T s.d. +$50T
+                                        <div class="text-xs font-bold text-emerald-200 mt-0.5">(Wujud CBDC Terprogram)</div>
+                                    </td>
+                                    <td class="py-5 px-4 font-extrabold text-rose-400 align-top">
+                                        Devaluasi -90%
+                                        <div class="text-xs font-bold text-emerald-300 mt-0.5">(BTC &amp; Emas Naik 10x!)</div>
+                                    </td>
+                                    <td class="py-5 px-4 align-top">
+                                        <div class="p-2.5 rounded-xl bg-emerald-500/20 border border-emerald-500/50 text-center">
+                                            <div class="text-xs font-extrabold text-emerald-300 uppercase">SISTEM DIGANTI</div>
+                                            <div class="text-sm font-extrabold text-white mt-0.5">RESET KE CBDC</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bab-4" class="py-16 sm:py-20 border-b border-slate-800/80 bg-slate-950/60 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="step-badge bg-rose-500/15 text-rose-300 border border-rose-500/30">BAB 4 • PERBEDAAN MACRO BOTTOM 2023 VS 2028 &amp; SKAKMAT ALTERNATIF</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
+                        Mengapa <em>Macro Bottom</em> 2023 Punya "3 Tabung Darurat Terakhir", Sedangkan <span class="text-rose-400">2028 Tidak Punya Tabung Darurat Sama Sekali?</span>
+                    </h2>
+                    <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
+                        Pada tahun 2023, Bank Sentral berhasil menciptakan satu siklus *bull run* terakhir (2026–2027) tanpa menurunkan suku bunga ke 0% karena mereka menguras <strong class="text-white">3 Tabung Sisa Cetakan Uang COVID 2020</strong>. Di tahun 2028, ketiganya sudah kosong melompong:
+                    </p>
+                </div>
+
+                <!-- 3 Kartu Visual Tangki 2023 vs 2028 -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mb-14">
+                    <!-- Tabung 1: ON RRP -->
+                    <div class="visual-card rounded-3xl p-6 sm:p-7 border-t-8 border-t-amber-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 font-extrabold text-xs">TABUNG DARURAT 1</span>
+                                <span class="px-2.5 py-1 rounded-md bg-rose-600 text-white font-extrabold text-xs">DI 2028: SALDO $0</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white leading-snug">1. Celengan "Reverse Repo" (ON RRP) $2,55 Triliun</h3>
+                            <p class="mt-2.5 text-sm text-slate-300 leading-relaxed">
+                                Brankas tempat parkir kelebihan uang tunai sisa pencetakan pandemi COVID 2020–2021 di Bank Sentral AS.
+                            </p>
+
+                            <div class="my-6 p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                <svg viewBox="0 0 320 130" class="w-full h-auto">
+                                    <text x="80" y="18" text-anchor="middle" fill="#FDE68A" font-weight="800" font-size="11">KONDISI MARET 2023</text>
+                                    <rect x="35" y="26" width="90" height="76" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="2"/>
+                                    <rect x="39" y="32" width="82" height="66" rx="5" fill="#D97706"/>
+                                    <text x="80" y="64" text-anchor="middle" fill="#FFFFFF" font-weight="800" font-size="13">$2,55 Triliun</text>
+                                    <text x="80" y="80" text-anchor="middle" fill="#FEF3C7" font-weight="700" font-size="10">PENUH (100%)</text>
+                                    <text x="80" y="120" text-anchor="middle" fill="#34D399" font-weight="700" font-size="10.5">Dikuras Suntik Pasar</text>
+
+                                    <text x="160" y="68" text-anchor="middle" fill="#94A3B8" font-weight="800" font-size="18">&rarr;</text>
+
+                                    <text x="240" y="18" text-anchor="middle" fill="#FDA4AF" font-weight="800" font-size="11">KONDISI DI 2028</text>
+                                    <rect x="195" y="26" width="90" height="76" rx="8" fill="#0F172A" stroke="#F43F5E" stroke-width="2" stroke-dasharray="4,3"/>
+                                    <rect x="199" y="94" width="82" height="4" rx="2" fill="#F43F5E"/>
+                                    <text x="240" y="64" text-anchor="middle" fill="#F43F5E" font-weight="800" font-size="14">SALDO ~$0</text>
+                                    <text x="240" y="80" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="10">HABIS (0%)</text>
+                                    <text x="240" y="120" text-anchor="middle" fill="#FB7185" font-weight="700" font-size="10.5">Tidak Bisa Dikuras Lagi!</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-xl bg-amber-950/30 border border-amber-700/40 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                                <strong class="text-amber-300">✅ Di 2023:</strong> Menguras $2,55 Triliun dari celengan ini untuk memompa harga saham, emas, dan kripto menuju puncak 2027.
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-rose-950/40 border border-rose-500/40 text-xs sm:text-sm text-rose-100 leading-relaxed">
+                                <strong class="text-rose-300">❌ Di 2028:</strong> Tangki sudah kering (0%). Tidak ada lagi uang parkir untuk menyelamatkan pasar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabung 2: BTFP -->
+                    <div class="visual-card rounded-3xl p-6 sm:p-7 border-t-8 border-t-blue-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 font-extrabold text-xs">TABUNG DARURAT 2</span>
+                                <span class="px-2.5 py-1 rounded-md bg-rose-600 text-white font-extrabold text-xs">DI 2028: MATI TOTAL</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white leading-snug">2. Pinjaman Talangan Bank "BTFP" (Nilai Penuh 100%)</h3>
+                            <p class="mt-2.5 text-sm text-slate-300 leading-relaxed">
+                                Fasilitas darurat Maret 2023 yang mengizinkan bank menukar obligasi negara yang turun harga dengan kas 100%.
+                            </p>
+
+                            <div class="my-6 p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                <svg viewBox="0 0 320 130" class="w-full h-auto">
+                                    <text x="80" y="18" text-anchor="middle" fill="#93C5FD" font-weight="800" font-size="11">MASALAH BANK 2023</text>
+                                    <rect x="25" y="26" width="110" height="76" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="2"/>
+                                    <text x="80" y="54" text-anchor="middle" fill="#FFFFFF" font-weight="800" font-size="11.5">Obligasi Negara AS</text>
+                                    <text x="80" y="72" text-anchor="middle" fill="#93C5FD" font-weight="700" font-size="10.5">(Rugi Kertas -20%)</text>
+                                    <text x="80" y="90" text-anchor="middle" fill="#34D399" font-weight="800" font-size="10">Dijamin 100% via BTFP</text>
+                                    <text x="80" y="120" text-anchor="middle" fill="#34D399" font-weight="700" font-size="10.5">Masalah Ditunda</text>
+
+                                    <text x="160" y="68" text-anchor="middle" fill="#94A3B8" font-weight="800" font-size="18">&rarr;</text>
+
+                                    <text x="240" y="18" text-anchor="middle" fill="#FDA4AF" font-weight="800" font-size="11">MASALAH BANK 2028</text>
+                                    <rect x="185" y="26" width="110" height="76" rx="8" fill="#4C0519" stroke="#F43F5E" stroke-width="2"/>
+                                    <text x="240" y="54" text-anchor="middle" fill="#FFFFFF" font-weight="800" font-size="11.5">Kredit Korporasi</text>
+                                    <text x="240" y="72" text-anchor="middle" fill="#FDA4AF" font-weight="700" font-size="10.5">(Bangkrut Nyata / NPL)</text>
+                                    <text x="240" y="90" text-anchor="middle" fill="#FB7185" font-weight="800" font-size="10">BTFP Sudah Ditutup!</text>
+                                    <text x="240" y="120" text-anchor="middle" fill="#FB7185" font-weight="700" font-size="10.5">Wajib Cetak Uang Baru</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-xl bg-blue-950/30 border border-blue-700/40 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                                <strong class="text-blue-300">✅ Di 2023:</strong> Bank hanya rugi di atas kertas pada Surat Utang Negara AS, sehingga The Fed bisa menjaminnya 100% lewat BTFP.
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-rose-950/40 border border-rose-500/40 text-xs sm:text-sm text-rose-100 leading-relaxed">
+                                <strong class="text-rose-300">❌ Di 2028:</strong> Yang meledak di Kotak Hijau 2028 adalah kredit korporasi &amp; properti yang bangkrut nyata. Tidak bisa ditalangi tanpa mencetak uang baru!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabung 3: T-Bills -->
+                    <div class="visual-card rounded-3xl p-6 sm:p-7 border-t-8 border-t-rose-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 font-extrabold text-xs">TABUNG DARURAT 3</span>
+                                <span class="px-2.5 py-1 rounded-md bg-rose-600 text-white font-extrabold text-xs">MELEDAK DI 2028</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white leading-snug">3. Ganti Utang Panjang Jadi Surat Utang Pendek (T-Bills)</h3>
+                            <p class="mt-2.5 text-sm text-slate-300 leading-relaxed">
+                                Trik membiayai defisit $2 Triliun/tahun dengan surat utang jangka sangat pendek (3–12 bulan) sejak 2023.
+                            </p>
+
+                            <div class="my-6 p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
+                                <svg viewBox="0 0 320 130" class="w-full h-auto">
+                                    <text x="80" y="18" text-anchor="middle" fill="#FDE68A" font-weight="800" font-size="11">TRIK 2023 – 2026</text>
+                                    <rect x="25" y="26" width="110" height="76" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="2"/>
+                                    <text x="80" y="54" text-anchor="middle" fill="#FFFFFF" font-weight="800" font-size="11.5">T-Bills 3–12 Bulan</text>
+                                    <text x="80" y="72" text-anchor="middle" fill="#FCD34D" font-weight="700" font-size="10.5">(Dibeli Uang RRP)</text>
+                                    <text x="80" y="90" text-anchor="middle" fill="#34D399" font-weight="800" font-size="10">Bunga Panjang Ditekan</text>
+                                    <text x="80" y="120" text-anchor="middle" fill="#FBBF24" font-weight="700" font-size="10.5">Menumpuk Jatuh Tempo</text>
+
+                                    <text x="160" y="68" text-anchor="middle" fill="#94A3B8" font-weight="800" font-size="18">&rarr;</text>
+
+                                    <text x="240" y="18" text-anchor="middle" fill="#FDA4AF" font-weight="800" font-size="11">PUNCAK 2028</text>
+                                    <rect x="185" y="26" width="110" height="76" rx="8" fill="#4C0519" stroke="#F43F5E" stroke-width="2"/>
+                                    <text x="240" y="54" text-anchor="middle" fill="#FFFFFF" font-weight="800" font-size="11.5">&gt;$15T Jatuh Tempo</text>
+                                    <text x="240" y="72" text-anchor="middle" fill="#FDA4AF" font-weight="700" font-size="10.5">(Pembeli RRP = $0)</text>
+                                    <text x="240" y="90" text-anchor="middle" fill="#FB7185" font-weight="800" font-size="10">Gagal Rollover Utang!</text>
+                                    <text x="240" y="120" text-anchor="middle" fill="#FB7185" font-weight="700" font-size="10.5">Pemicu Utama Krisis 2028</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="p-3.5 rounded-xl bg-amber-950/30 border border-amber-700/40 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                                <strong class="text-amber-300">✅ Di 2023:</strong> Menerbitkan utang pendek 6–12 bulan yang dibeli oleh uang kurasan celengan Reverse Repo (Tabung 1).
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-rose-950/40 border border-rose-500/40 text-xs sm:text-sm text-rose-100 leading-relaxed">
+                                <strong class="text-rose-300">❌ Di 2028:</strong> Lebih dari $15 Triliun utang pendek jatuh tempo bersamaan sementara celengan pembelinya sudah $0!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uji Skakmat 4 Alternatif Lain di 2028 -->
+                <div class="visual-card rounded-3xl p-6 sm:p-8 border-2 border-rose-500/30">
+                    <div class="max-w-3xl mb-8">
+                        <span class="px-3.5 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 font-extrabold text-xs uppercase">
+                            UJI SKAKMAT 4 ALTERNATIF BARU DI 2028
+                        </span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 leading-snug">
+                            Mengapa Semua Alternatif Tabung Darurat Lain Sudah Tertutup di 2028 dan Wajib Bermuara ke CBDC?
+                        </h3>
+                        <p class="mt-2 text-base text-slate-300 leading-relaxed">
+                            Bagaimana jika di tahun 2028 Bank Sentral mencoba mencari akal baru selain 3 tabung di atas? Secara matematis, keempat opsi yang tersisa semuanya mengunci uang ritel dan memaksa revaluasi <strong class="text-amber-300">50% BTC : 50% Emas Fisik</strong>:
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                        <div class="p-6 rounded-2xl bg-slate-950/90 border-l-4 border-l-rose-500 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-2">
+                                    <span class="text-xs font-extrabold text-rose-400 uppercase">ALTERNATIF 1 • CETAK FIAT BEBAS (YCC)</span>
+                                    <span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 text-xs font-bold">HIPERINFLASI INSTAN</span>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-white">Bagaimana Jika Nekat Cetak +$40T Fiat Bebas Seperti 2020?</h4>
+                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                                    Di era perang tarif dan de-globalisasi 2028, tidak ada lagi peredam barang murah. Begitu Bank Sentral mencetak +$40T tanpa pengunci, masyarakat langsung memindahkan saldo bank lewat ponsel dalam hitungan detik untuk memborong barang riil dan emas—memicu <em>bank run</em> digital dan hiperinflasi jalanan.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-bold text-rose-300">
+                                🔒 Muara Akhir: Agar bisa mencetak +$40T tanpa pelarian bank, aliran uang ritel wajib dikunci dengan kuota algoritma (itulah CBDC!).
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-950/90 border-l-4 border-l-amber-500 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-2">
+                                    <span class="text-xs font-extrabold text-amber-400 uppercase">ALTERNATIF 2 • STABLECOIN TEREGULASI</span>
+                                    <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 text-xs font-bold">SKALA HANYA ~2%</span>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-white">Bagaimana Jika Memakai Stablecoin sebagai Pembeli Utang AS?</h4>
+                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                                    Total seluruh Stablecoin di dunia hanya ~$250–$300 Miliar, sedangkan utang jatuh tempo di 2028 mencapai &gt;$15.000 Miliar ($15 Triliun). Lebih penting lagi, saat Stablecoin diresmikan ke sistem perbankan, syarat mutlaknya adalah integrasi Digital ID, pelaporan otomatis, dan tombol <em>Blacklist/Freeze</em>.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-bold text-amber-300">
+                                🔒 Muara Akhir: Stablecoin resmi pasca-2028 bukanlah uang bebas, melainkan CBDC yang dikelola lewat perbankan swasta.
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-950/90 border-l-4 border-l-blue-500 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-2">
+                                    <span class="text-xs font-extrabold text-blue-400 uppercase">ALTERNATIF 3 • BANK BAIL-IN &amp; REPRESI</span>
+                                    <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-xs font-bold">MEMATIKAN KASINO RITEL</span>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-white">Bagaimana Jika Membekukan Deposito &amp; Dana Pensiun?</h4>
+                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                                    Jika pemerintah menerapkan aturan <em>Bail-In</em> (mengunci deposito besar menjadi obligasi negara), maka likuiditas masyarakat justru disedot masuk, bukan dibagikan. Tidak ada lagi uang ritel yang tumpah untuk memompa siklus spekulasi baru.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-bold text-blue-300">
+                                🔒 Muara Akhir: Hanya pemilik aset di luar neraca perbankan (50% Native BTC Cold Wallet &amp; 50% Emas Fisik) yang kedaulatannya utuh.
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-emerald-950/30 border-l-4 border-l-emerald-500 border border-emerald-500/40 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-2">
+                                    <span class="text-xs font-extrabold text-emerald-300 uppercase">ALTERNATIF 4 • REVALUASI KOLATERAL 10X</span>
+                                    <span class="px-2 py-0.5 rounded bg-emerald-600 text-white text-xs font-bold">SOLUSI INTI 2028</span>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-white">Revaluasi Neraca Emas ($42,22/oz) &amp; Cadangan Bitcoin 10x Lipat!</h4>
+                                <p class="text-sm text-slate-200 mt-2 leading-relaxed">
+                                    Di neraca resmi The Fed, 8.133 ton emas AS masih dicatat dengan harga tahun 1973 ($42,22/oz). Untuk menghapus utang puluhan triliun Dolar tanpa meminjam lagi, Bank Sentral cukup menaikkan nilai akuntansi kolateral inti (Emas Fisik &amp; BTC) sebesar <strong class="text-white">10x lipat</strong> di atas Buku Besar CBDC baru!
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-emerald-500/30 text-xs font-bold text-emerald-300">
+                                🚀 Muara Akhir: Devaluasi 90% mata uang lama terhadap kolateral otomatis menerbangkan 50% BTC &amp; 50% Emas Fisik Anda 10x lipat!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bab-5" class="py-16 sm:py-20 border-b border-slate-800/80 bg-[#090D16] scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="step-badge bg-blue-500/15 text-blue-300 border border-blue-500/30">BAB 5 • PETA JALAN KRONOLOGIS: EUFORIA 2027 &rarr; GREAT RESET 2028 &rarr; AFTER GREAT RESET</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
+                        Peta Jalan Kronologis dari Puncak Euforia Terakhir (2027) Menuju Era Baru Pasca-<em>Great Reset</em> (2030+)
+                    </h2>
+                    <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
+                        Ikuti jalur pipa waktu yang saling terhubung di bawah ini untuk menavigasi setiap pergeseran siklus menuju kedaulatan penuh <strong class="text-amber-300">50% Bitcoin : 50% Emas Fisik</strong>:
+                    </p>
+                </div>
+
+                <!-- Pita Progres Peta Jalan Horizontal (Visual Roadmap Track) -->
+                <div class="visual-card rounded-3xl p-6 sm:p-8 mb-12 border border-slate-800 relative overflow-hidden">
+                    <div class="hidden lg:block absolute top-[4.25rem] left-24 right-24 h-1.5 bg-gradient-to-r from-amber-500 via-orange-500 via-rose-500 to-emerald-500 rounded-full opacity-80"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                        <div class="flex flex-col items-start lg:items-center lg:text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500 text-slate-950 font-extrabold text-lg flex items-center justify-center shadow-lg shadow-amber-500/30 border-4 border-[#090D16]">
+                                01
+                            </div>
+                            <span class="mt-3 px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[11px] font-extrabold uppercase">MID – AKHIR 2027</span>
+                            <div class="text-base font-extrabold text-white mt-1.5">Puncak Euforia &amp; Exit</div>
+                            <p class="text-xs text-slate-400 mt-1">BTC $400K–$500K &amp; Mega-IPO &rarr; Cairkan 100% ke Kas Tunggu</p>
+                        </div>
+
+                        <div class="flex flex-col items-start lg:items-center lg:text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-orange-500 text-slate-950 font-extrabold text-lg flex items-center justify-center shadow-lg shadow-orange-500/30 border-4 border-[#090D16]">
+                                02
+                            </div>
+                            <span class="mt-3 px-2.5 py-0.5 rounded-full bg-orange-500/15 text-orange-300 border border-orange-500/30 text-[11px] font-extrabold uppercase">AKHIR 2027 – AWAL 2028</span>
+                            <div class="text-base font-extrabold text-white mt-1.5">Dash for Cash (Raja USD)</div>
+                            <p class="text-xs text-slate-400 mt-1">Credit Spread Meledak Naik &rarr; Semua Aset Jatuh Bersama</p>
+                        </div>
+
+                        <div class="flex flex-col items-start lg:items-center lg:text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-rose-600 text-white font-extrabold text-lg flex items-center justify-center shadow-lg shadow-rose-600/30 border-4 border-[#090D16]">
+                                03
+                            </div>
+                            <span class="mt-3 px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-[11px] font-extrabold uppercase">SEPANJANG 2028 (6–10 BLN)</span>
+                            <div class="text-base font-extrabold text-white mt-1.5">Macro Bottom Terminal</div>
+                            <p class="text-xs text-slate-400 mt-1">Konversi Total 100% USD &rarr; 50% Native BTC &amp; 50% Emas Fisik</p>
+                        </div>
+
+                        <div class="flex flex-col items-start lg:items-center lg:text-center">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-slate-950 font-extrabold text-lg flex items-center justify-center shadow-lg shadow-emerald-500/30 border-4 border-[#090D16]">
+                                04
+                            </div>
+                            <span class="mt-3 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[11px] font-extrabold uppercase">2029 – 2030+ (PASCA-RESET)</span>
+                            <div class="text-base font-extrabold text-white mt-1.5">CBDC &amp; Revaluasi 10x</div>
+                            <p class="text-xs text-slate-400 mt-1">Devaluasi Fiat -90% &rarr; Jaminkan 50:50 (Pinjaman Pajak 0%)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Vertikal Bersambung (Connected Spine Roadmap) -->
+                <div class="relative max-w-5xl mx-auto mb-16">
+                    <!-- Garis Pipa Vertikal Utama -->
+                    <div class="absolute left-6 lg:left-1/2 top-4 bottom-4 w-1.5 lg:-translate-x-1/2 bg-gradient-to-b from-amber-500 via-orange-500 via-rose-500 to-emerald-500 rounded-full"></div>
+
+                    <div class="space-y-10">
+                        <!-- Milestone 1 (Kiri pada Desktop) -->
+                        <div class="relative flex flex-col lg:flex-row items-start lg:items-center">
+                            <div class="lg:w-1/2 lg:pr-12 pl-16 lg:pl-0 w-full">
+                                <div class="visual-card rounded-3xl p-6 sm:p-7 border-l-4 lg:border-l-0 lg:border-r-4 border-amber-500 relative">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                        <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 font-extrabold text-xs">TONGGAK 1 • PERTENGAHAN – AKHIR 2027</span>
+                                        <span class="text-xs font-extrabold text-amber-400">Ujung 14 Bars Bullrun</span>
+                                    </div>
+                                    <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
+                                        Puncak Euforia Terbesar (<em>Crack-Up Boom</em>) &amp; Lonceng Mega-IPO
+                                    </h3>
+                                    <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
+                                        Rotasi likuiditas dari puncak Emas ($5.500/oz) mendorong Bitcoin menuju kisaran <strong class="text-white">$400.000–$500.000 USD</strong> (~25% kapitalisasi emas). Institusi menjadwalkan Mega-IPO (seperti <strong class="text-amber-300">OpenAI di 2027</strong>, serupa <strong class="text-white">IPO Rivian 10 Nov 2021</strong>) tepat di minggu terakhir untuk menyedot sisa likuiditas publik.
+                                    </p>
+                                    <div class="mt-4 p-3.5 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-xs sm:text-sm text-amber-100 leading-relaxed">
+                                        <strong class="text-white">⚡ Eksekusi Presisi:</strong> Saat <em>Global M2 Stoch RSI</em> patah dari zona &gt;80 dan <em>Credit Spread</em> di ujung Kotak Merah, <strong class="text-amber-300">cairkan 100% aset risiko</strong> ke <strong class="text-white">50% USDT/USDC Cold Wallet &amp; 50% USD Fisik / SBN Negara Pendek</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Titik Simpul Tengah -->
+                            <div class="absolute left-6 lg:left-1/2 -translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-11 h-11 rounded-full bg-amber-500 text-slate-950 font-extrabold text-sm flex items-center justify-center border-4 border-[#090D16] shadow-lg shadow-amber-500/40 z-10">
+                                2027
+                            </div>
+                            <div class="hidden lg:block lg:w-1/2 lg:pl-12">
+                                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 inline-block">
+                                    <div class="text-xs font-extrabold text-amber-400 uppercase">INDIKATOR KUNCI TONGGAK 1</div>
+                                    <div class="text-sm font-bold text-slate-200 mt-1">• M2 Stoch RSI: Jenuh &gt;80 (Mulai Patah)</div>
+                                    <div class="text-sm font-bold text-slate-200">• Credit Spread: Dasar Kotak Merah (39.41)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 2 (Kanan pada Desktop) -->
+                        <div class="relative flex flex-col lg:flex-row items-start lg:items-center">
+                            <div class="hidden lg:flex lg:w-1/2 lg:pr-12 justify-end">
+                                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 inline-block text-right">
+                                    <div class="text-xs font-extrabold text-orange-400 uppercase">INDIKATOR KUNCI TONGGAK 2</div>
+                                    <div class="text-sm font-bold text-slate-200 mt-1">• Credit Spread: Melonjak Keluar Kotak Merah</div>
+                                    <div class="text-sm font-bold text-slate-200">• M2 Stoch RSI: Terjun Menuju &lt;20</div>
+                                </div>
+                            </div>
+                            <!-- Titik Simpul Tengah -->
+                            <div class="absolute left-6 lg:left-1/2 -translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-11 h-11 rounded-full bg-orange-500 text-slate-950 font-extrabold text-xs flex items-center justify-center border-4 border-[#090D16] shadow-lg shadow-orange-500/40 z-10">
+                                Q1'28
+                            </div>
+                            <div class="lg:w-1/2 lg:pl-12 pl-16 w-full">
+                                <div class="visual-card rounded-3xl p-6 sm:p-7 border-l-4 border-orange-500 relative">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-300 border border-orange-500/30 font-extrabold text-xs">TONGGAK 2 • AKHIR 2027 – AWAL 2028</span>
+                                        <span class="text-xs font-extrabold text-orange-400">Fase "Dash for Cash"</span>
+                                    </div>
+                                    <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
+                                        Meledaknya <em>Credit Spread</em> &amp; Kekuasaan "Raja USD" Sementara
+                                    </h3>
+                                    <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
+                                        Saat &gt;$15 Triliun utang pendek jatuh tempo tanpa celengan Reverse Repo ($0), garis <em>Credit Spread</em> meroket tajam menuju Kotak Hijau. Institusi panik menjual paksa saham, kripto, dan kontrak emas kertas demi mencari likuiditas Dolar untuk membayar utang.
+                                    </p>
+                                    <div class="mt-4 p-3.5 rounded-2xl bg-orange-950/40 border border-orange-500/40 text-xs sm:text-sm text-orange-100 leading-relaxed">
+                                        <strong class="text-white">⚡ Protokol Pertahanan:</strong> Tahan penuh posisi kas Dolar Anda. Selama garis <em>Credit Spread</em> masih menanjak tajam, daya beli Dolar Anda sedang berlipat ganda sementara seluruh aset menuju harga diskon terdalam.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 3 (Kiri pada Desktop) -->
+                        <div class="relative flex flex-col lg:flex-row items-start lg:items-center">
+                            <div class="lg:w-1/2 lg:pr-12 pl-16 lg:pl-0 w-full">
+                                <div class="visual-card rounded-3xl p-6 sm:p-7 border-l-4 lg:border-l-0 lg:border-r-4 border-rose-500 relative">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                        <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 font-extrabold text-xs">TONGGAK 3 • SEPANJANG 2028 (6–10 BULAN)</span>
+                                        <span class="text-xs font-extrabold text-rose-400">Di Dalam Kotak Hijau 2028</span>
+                                    </div>
+                                    <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
+                                        Puncak <em>Macro Bottom</em> 2028 &amp; Akumulasi Total 50% BTC : 50% Emas Fisik
+                                    </h3>
+                                    <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
+                                        Krisis perbankan dan kebangkrutan bursa terpusat berlangsung selama 6–10 bulan (waktu yang dibutuhkan <em>The Entity</em> untuk menyita aset dunia). Di titik dasar inilah Anda menukarkan seluruh Dolar menjadi <strong class="text-white">50% Native Bitcoin (via DEX Cold Wallet) &amp; 50% Emas Fisik Murni (999.9)</strong>.
+                                    </p>
+                                    <div class="mt-4 p-3.5 rounded-2xl bg-rose-950/40 border border-rose-500/40 text-xs sm:text-sm text-rose-100 leading-relaxed">
+                                        <strong class="text-white">⚡ Batas Akhir Konversi:</strong> Sebelum garis <em>Credit Spread</em> melengkung turun keluar dari Kotak Hijau 2028, <strong class="text-rose-300">uang Dolar Anda harus sudah 0%</strong> (100% sudah berubah menjadi 50% BTC Cold Wallet &amp; 50% Emas Fisik di brankas).
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Titik Simpul Tengah -->
+                            <div class="absolute left-6 lg:left-1/2 -translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-11 h-11 rounded-full bg-rose-600 text-white font-extrabold text-sm flex items-center justify-center border-4 border-[#090D16] shadow-lg shadow-rose-600/40 z-10">
+                                2028
+                            </div>
+                            <div class="hidden lg:block lg:w-1/2 lg:pl-12">
+                                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 inline-block">
+                                    <div class="text-xs font-extrabold text-rose-400 uppercase">INDIKATOR KUNCI TONGGAK 3</div>
+                                    <div class="text-sm font-bold text-slate-200 mt-1">• Credit Spread: Puncak Kotak Hijau (80+)</div>
+                                    <div class="text-sm font-bold text-slate-200">• M2 Stoch RSI: Menyentuh Dasar (&lt;20)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 4 (Kanan pada Desktop) -->
+                        <div class="relative flex flex-col lg:flex-row items-start lg:items-center">
+                            <div class="hidden lg:flex lg:w-1/2 lg:pr-12 justify-end">
+                                <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 inline-block text-right">
+                                    <div class="text-xs font-extrabold text-emerald-400 uppercase">INDIKATOR KUNCI TONGGAK 4</div>
+                                    <div class="text-sm font-bold text-slate-200 mt-1">• Credit Spread: Melengkung Turun (Reset)</div>
+                                    <div class="text-sm font-bold text-slate-200">• Kolateral 50:50: Revaluasi Naik 10x Lipat</div>
+                                </div>
+                            </div>
+                            <!-- Titik Simpul Tengah -->
+                            <div class="absolute left-6 lg:left-1/2 -translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-11 h-11 rounded-full bg-emerald-500 text-slate-950 font-extrabold text-xs flex items-center justify-center border-4 border-[#090D16] shadow-lg shadow-emerald-500/40 z-10">
+                                2030+
+                            </div>
+                            <div class="lg:w-1/2 lg:pl-12 pl-16 w-full">
+                                <div class="visual-card rounded-3xl p-6 sm:p-7 border-l-4 border-emerald-500 relative">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                        <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-extrabold text-xs">TONGGAK 4 • 2029 – 2030+ (AFTER GREAT RESET)</span>
+                                        <span class="text-xs font-extrabold text-emerald-400">Rezim Stabilitas Algoritmik</span>
+                                    </div>
+                                    <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
+                                        Peluncuran CBDC, Devaluasi Fiat (-90%), &amp; Revaluasi 10x Aset Keras
+                                    </h3>
+                                    <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
+                                        Bank Sentral mencetak puluhan triliun likuiditas CBDC untuk menghapus utang macet dan merevaluasi kolateral neraca. Nilai mata uang lama terdevaluasi 90%, menerbangkan nilai <strong class="text-emerald-300">50% Bitcoin &amp; 50% Emas Fisik Anda naik 10x lipat</strong> lalu bergerak stabil secara algoritmik.
+                                    </p>
+                                    <div class="mt-4 p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-xs sm:text-sm text-emerald-100 leading-relaxed">
+                                        <strong class="text-white">⚡ Strategi Pasca-Reset:</strong> Jangan pernah menjual BTC &amp; Emas Fisik Anda ke CBDC. Jadikan keduanya <strong class="text-emerald-300">Kolateral (Agunan Tier-1)</strong> untuk menarik likuiditas bebas pajak (0% PPh)!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 Kartu Protokol Teknis Saat Krisis 2028: DEX Tanpa Bursa & Larangan Emas Digital -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="visual-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3.5 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 font-extrabold text-xs uppercase">PROTOKOL AKUMULASI 50% BITCOIN DI 2028</span>
+                            <h3 class="text-2xl font-extrabold text-white mt-3 leading-snug">Cara Membeli Native Bitcoin Saat Bursa (Exchange) Kolaps</h3>
+                            <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                                Saat puncak krisis 2028, bursa terpusat (CEX) berisiko membekukan penarikan. Tukarkan USDT menjadi <strong class="text-white">Bitcoin Asli (Native BTC)</strong> langsung dari dalam <em>Cold Wallet</em> melewati brankas TSS 100 komputer (<strong class="text-blue-400">THORChain / Chainflip</strong>):
+                            </p>
+
+                            <div class="my-6 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-center items-stretch">
+                                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-700 flex flex-col justify-center">
+                                        <div class="text-2xl mb-1.5">🔐</div>
+                                        <div class="font-extrabold text-sm text-white">1. Cold Wallet Pribadi</div>
+                                        <div class="text-xs text-slate-400 mt-1 leading-snug">Kirim kloter kecil ($5rb–$15rb USDT ERC-20)</div>
+                                    </div>
+                                    <div class="p-4 bg-blue-950/60 rounded-xl border border-blue-500/50 flex flex-col justify-center">
+                                        <div class="text-2xl mb-1.5">⚡</div>
+                                        <div class="font-extrabold text-sm text-blue-200">2. Brankas TSS 100 Node</div>
+                                        <div class="text-xs text-blue-300 mt-1 leading-snug">Dijaga jaminan &gt;100% (Otomatis 15 Menit)</div>
+                                    </div>
+                                    <div class="p-4 bg-emerald-950/60 rounded-xl border border-emerald-500/50 flex flex-col justify-center">
+                                        <div class="text-2xl mb-1.5">₿</div>
+                                        <div class="font-extrabold text-sm text-emerald-200">3. Native BTC Mendarat</div>
+                                        <div class="text-xs text-emerald-300 mt-1 leading-snug">Langsung masuk ke alamat bc1q... Cold Wallet</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-amber-200 bg-amber-950/40 p-4 rounded-2xl border border-amber-500/40 leading-relaxed">
+                            💡 <strong class="text-white">Aturan Anti-Hack (Micro-Batching):</strong> Jangan pernah memarkir dana di dalam kolam likuiditas DEX atau jembatan derivatif. Gunakan hanya untuk lewat selama 15 menit dan pecah pembelian dalam kloter-kloter kecil.
+                        </div>
+                    </div>
+
+                    <div class="visual-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 font-extrabold text-xs uppercase">PROTOKOL AKUMULASI 50% EMAS FISIK DI 2028</span>
+                            <h3 class="text-2xl font-extrabold text-white mt-3 leading-snug">Mengapa Emas Digital Dicoret &amp; Wajib 100% Emas Fisik Batangan?</h3>
+                            <p class="mt-2.5 text-base text-slate-300 leading-relaxed">
+                                Emas digital (saldo aplikasi, ETF, maupun token PAXG/XAUT) hanyalah <strong class="text-white">surat klaim pihak ketiga (IOU)</strong> yang akan gagal bayar saat emas fisik terbang 10x lipat:
+                            </p>
+
+                            <div class="my-6 grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+                                <div class="p-5 rounded-2xl bg-rose-950/40 border border-rose-500/40 flex flex-col">
+                                    <div class="text-base font-extrabold text-rose-300">❌ Emas Digital / Kertas</div>
+                                    <ul class="mt-3 text-sm text-rose-200/90 space-y-2 leading-snug">
+                                        <li>• Terkena <em>Forced Cash Settlement</em> (ditutup sepihak &amp; diganti uang fiat yang sedang hancur).</li>
+                                        <li>• Token emas punya fungsi kode <em>freezeAddress</em>.</li>
+                                        <li>• Brankas kustodian di luar negeri berisiko disita negara.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 flex flex-col">
+                                    <div class="text-base font-extrabold text-emerald-300">✅ Emas Fisik Murni (999.9)</div>
+                                    <ul class="mt-3 text-sm text-emerald-200/90 space-y-2 leading-snug">
+                                        <li>• 0% risiko pihak ketiga; disimpan langsung di brankas pribadi.</li>
+                                        <li>• Kebal pemadaman listrik, siber, dan blokir algoritma.</li>
+                                        <li>• Berstatus <strong>Agunan Kas Tier-1 (Basel III)</strong> di seluruh perbankan dunia.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-emerald-200 bg-emerald-950/40 p-4 rounded-2xl border border-emerald-500/40 leading-relaxed">
+                            ⚖️ <strong class="text-white">Simetri Sempurna 50:50:</strong> Menyamakan porsi <strong>50% Emas Fisik (Off-Grid Collateral)</strong> dan <strong>50% Native BTC (On-Grid Digital Collateral)</strong> memberi Anda kedaulatan penuh di dunia fisik sekaligus kecepatan finansial di jaringan digital CBDC.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bab-6" class="py-16 sm:py-20 bg-slate-950/70 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="step-badge bg-amber-500/15 text-amber-300 border border-amber-500/30">BAB 6 • SIMULATOR KEDAULATAN ASET 50:50 &amp; REVALUASI 10X</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
+                        Kalkulator Formasi <span class="text-blue-400">50% Bitcoin</span> : <span class="text-amber-400">50% Emas Fisik</span> &amp; Mesin Kolateral CBDC
+                    </h2>
+                    <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
+                        Geser tombol di bawah ini sesuai target modal hasil <em>exit liquidity</em> Anda di tahun 2027 untuk menyimulasikan alokasi <strong class="text-white">50:50 di Macro Bottom 2028</strong> serta lonjakan nilai <strong class="text-emerald-400">10x lipat</strong> saat devaluasi mata uang 90% terjadi:
+                    </p>
+                </div>
+
+                <!-- Panel Kontrol Simulator 50:50 -->
+                <div class="visual-card rounded-3xl p-6 sm:p-8 border-2 border-slate-800 mb-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <div>
+                                <div class="text-xs sm:text-sm font-extrabold text-amber-400 uppercase tracking-wider">TOTAL MODAL HASIL EXIT LIQUIDITY (PUNCAK 2027):</div>
+                                <div class="flex flex-wrap items-baseline gap-3 mt-1.5">
+                                    <span id="sim50-total-idr" class="text-4xl sm:text-5xl font-extrabold text-white">Rp 20,0 Miliar</span>
+                                    <span id="sim50-total-usd" class="text-base font-bold text-slate-400">(~ $1.250.000 USD)</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <input id="sim50-slider" type="range" min="2" max="100" step="1" value="20" oninput="updateSim50(this.value)" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-xs font-extrabold text-slate-400 mt-2.5">
+                                    <span>Rp 2 Miliar</span>
+                                    <span>Rp 20 Miliar</span>
+                                    <span>Rp 50 Miliar</span>
+                                    <span>Rp 75 Miliar</span>
+                                    <span>Rp 100 Miliar</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+                                <button onclick="setPreset50(5)" id="p50-btn-5" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
+                                    Rp 5 Miliar
+                                </button>
+                                <button onclick="setPreset50(20)" id="p50-btn-20" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 border border-amber-400 text-slate-950 font-extrabold transition shadow-md shadow-amber-500/20 text-center">
+                                    Rp 20 Miliar
+                                </button>
+                                <button onclick="setPreset50(50)" id="p50-btn-50" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
+                                    Rp 50 Miliar
+                                </button>
+                                <button onclick="setPreset50(100)" id="p50-btn-100" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
+                                    Rp 100 Miliar
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4 border-t border-slate-800">
+                                <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
+                                    <span class="text-sm font-bold text-slate-300">₿ Alokasi 50% Native BTC:</span>
+                                    <span id="sim50-half-btc" class="text-base font-extrabold text-blue-400 whitespace-nowrap">Rp 10,00 M</span>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
+                                    <span class="text-sm font-bold text-slate-300">🥇 Alokasi 50% Emas Fisik:</span>
+                                    <span id="sim50-half-gold" class="text-base font-extrabold text-amber-400 whitespace-nowrap">Rp 10,00 M</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grafik Donat Simetris 50:50 -->
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center bg-slate-950/80 p-6 sm:p-8 rounded-3xl border border-slate-800">
+                            <div class="text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-4">ARSITEKTUR KEDAULATAN MONETER (50:50)</div>
+                            <svg viewBox="0 0 240 240" class="w-52 h-52">
+                                <!-- 50% Emas Fisik (Kuning Emas) -->
+                                <circle cx="120" cy="120" r="78" fill="transparent" stroke="#F59E0B" stroke-width="26" stroke-dasharray="245 490" stroke-dashoffset="0" transform="rotate(-90 120 120)"/>
+                                <!-- 50% Native BTC (Biru) -->
+                                <circle cx="120" cy="120" r="78" fill="transparent" stroke="#3B82F6" stroke-width="26" stroke-dasharray="245 490" stroke-dashoffset="-245" transform="rotate(-90 120 120)"/>
+                                <text x="120" y="114" text-anchor="middle" fill="#F8FAFC" font-weight="800" font-size="24">50 : 50</text>
+                                <text x="120" y="136" text-anchor="middle" fill="#94A3B8" font-weight="700" font-size="11.5">Zero Counterparty Risk</text>
+                            </svg>
+                            <div class="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-extrabold">
+                                <span class="flex items-center gap-1.5 text-blue-400"><span class="w-3 h-3 rounded-full bg-blue-500"></span> 50% Native Bitcoin (Cold Wallet)</span>
+                                <span class="flex items-center gap-1.5 text-amber-400"><span class="w-3 h-3 rounded-full bg-amber-500"></span> 50% Emas Fisik Batangan (999.9)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 Kartu Pilar Utama: 50% Bitcoin vs 50% Emas Fisik -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-stretch">
+                    <!-- Pilar 1: 50% Native Bitcoin -->
+                    <div class="visual-card rounded-3xl p-6 sm:p-8 border-t-8 border-t-blue-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3.5 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 font-extrabold text-xs">PILAR 1 • 50% TOTAL MODAL</span>
+                                <span class="text-xs font-extrabold text-blue-400">Kolateral Digital &amp; Lintas Negara</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Native Bitcoin (Cold Wallet)</h3>
+                            <div id="pilar50-btc-total" class="text-3xl font-extrabold text-blue-400 mt-1">Rp 10,00 Miliar</div>
+                            <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
+                                Dibeli di titik dasar <em>Macro Bottom</em> 2028 dan dibagi ke dalam dua brankas <em>Cold Wallet</em> terpisah untuk memaksimalkan akses perbankan CBDC sekaligus menjaga kedaulatan penuh:
+                            </p>
+                        </div>
+
+                        <div class="mt-6 grid grid-rows-3 gap-3.5">
+                            <div class="p-4 rounded-2xl bg-blue-950/40 border border-blue-500/40 flex flex-col justify-between">
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-blue-200 whitespace-nowrap">📑 Compliant Vault (35% Modal):</span>
+                                    <span id="pilar50-btc-legal" class="font-extrabold text-base text-blue-300 whitespace-nowrap">Rp 7,00 M</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-blue-200/80 mt-1.5 leading-relaxed">
+                                    Bitcoin dengan rekam jejak pajak resmi yang siap diintegrasikan langsung ke <em>smart-contract</em> perbankan CBDC sebagai agunan kredit Tier-1.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-white whitespace-nowrap">🕵️ Ghost Vault / DEX (15% Modal):</span>
+                                    <span id="pilar50-btc-ghost" class="font-extrabold text-base text-slate-200 whitespace-nowrap">Rp 3,00 M</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                    Diakumulasi via THORChain/Chainflip tanpa perantara bursa terpusat. Cadangan kedaulatan mutlak lintas yurisdiksi.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/40 flex flex-col justify-between">
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-emerald-200 whitespace-nowrap">🚀 Nilai Pasca-Revaluasi 10x:</span>
+                                    <span id="pilar50-btc-10x" class="font-extrabold text-base text-emerald-300 whitespace-nowrap">Rp 100,0 Miliar</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-emerald-200/80 mt-1.5 leading-relaxed">
+                                    Bergerak stabil di era CBDC sebagai fondasi kolateral digital dengan rasio pinjaman (LTV) tinggi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2: 50% Emas Fisik Murni -->
+                    <div class="visual-card rounded-3xl p-6 sm:p-8 border-t-8 border-t-amber-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 font-extrabold text-xs">PILAR 2 • 50% TOTAL MODAL</span>
+                                <span class="text-xs font-extrabold text-amber-400">Agunan Fisik Tier-1 (Basel III)</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Emas Fisik Batangan (999.9)</h3>
+                            <div id="pilar50-gold-total" class="text-3xl font-extrabold text-amber-400 mt-1">Rp 10,00 Miliar</div>
+                            <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
+                                Diakumulasi secara fisik murni (Antam/UBS/LBMA) dan disimpan di brankas pribadi tanpa risiko gagal bayar pihak ketiga:
+                            </p>
+                        </div>
+
+                        <div class="mt-6 grid grid-rows-3 gap-3.5">
+                            <div class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex flex-col justify-between">
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-amber-200 whitespace-nowrap">⚖️ Estimasi Berat Emas Fisik:</span>
+                                    <span id="pilar50-gold-kg" class="font-extrabold text-base text-amber-300 whitespace-nowrap">~ 5,56 Kg Emas</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-amber-200/80 mt-1.5 leading-relaxed">
+                                    100% berada dalam penguasaan fisik Anda; kebal terhadap pemadaman internet maupun pembekuan rekening.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-white whitespace-nowrap">🏦 Batangan Kolateral (40%) &amp; Likuid (10%):</span>
+                                    <span id="pilar50-gold-split" class="font-extrabold text-base text-slate-200 whitespace-nowrap">Rp 8,0M / Rp 2,0M</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                                    80% porsi emas dalam batangan besar (100g–1kg) untuk agunan bank Tier-1, dan 20% dalam kepingan kecil (5g–25g).
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/40 flex flex-col justify-between">
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-emerald-200 whitespace-nowrap">🚀 Nilai Pasca-Revaluasi 10x:</span>
+                                    <span id="pilar50-gold-10x" class="font-extrabold text-base text-emerald-300 whitespace-nowrap">Rp 100,0 Miliar</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-emerald-200/80 mt-1.5 leading-relaxed">
+                                    Mengikuti revaluasi emas neraca Bank Sentral saat devaluasi 90% mata uang diberlakukan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel Strategi Buy, Borrow, Die di Era CBDC -->
+                <div class="visual-card rounded-3xl p-6 sm:p-10 bg-gradient-to-br from-slate-900 via-blue-950/50 to-slate-900 border-2 border-amber-500/40 text-white">
+                    <div class="max-w-3xl mb-8">
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-amber-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider">STRATEGI ELIT PASCA-GREAT RESET (2029–2030+)</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold mt-3 leading-snug">
+                            Saat 50% BTC &amp; 50% Emas Fisik Naik 10x Lipat: Jangan Dijual ke CBDC, Jadikan Kolateral Pinjaman!
+                        </h3>
+                        <p class="mt-2.5 text-base sm:text-lg text-slate-300 leading-relaxed">
+                            Di rezim CBDC nanti, volatilitas ekstrem masa lalu diredam secara algoritmik karena Emas dan Bitcoin menjadi fondasi agunan perbankan. Gunakan mekanisme <strong class="text-white">"Buy, Borrow, Die"</strong> agar aset inti Anda tidak pernah berkurang:
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                        <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-extrabold text-amber-300 uppercase tracking-wider">1. TOTAL KEKAYAAN REVALUASI 10X</div>
+                                <div id="loop50-reval" class="text-3xl font-extrabold text-white mt-2">Rp 200,0 Miliar</div>
+                                <p class="text-sm sm:text-base text-slate-300 mt-2.5 leading-relaxed">
+                                    Nilai gabungan <strong class="text-white">50% Native BTC + 50% Emas Fisik</strong> Anda setelah mata uang lama terdevaluasi 90% terhadap kolateral dasar.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-extrabold text-sky-300 uppercase tracking-wider">2. PLAFON LIKUIDITAS CBDC (PAJAK 0%)</div>
+                                <div id="loop50-loan" class="text-3xl font-extrabold text-sky-300 mt-2">Rp 119,0 Miliar</div>
+                                <p class="text-sm sm:text-base text-slate-300 mt-2.5 leading-relaxed">
+                                    Jaminkan Emas Fisik (50%) &amp; BTC Compliant (35%) pada rasio LTV aman (70%) untuk menarik kredit CBDC berstatus <em>Whitelisted</em>. <strong class="text-white">Karena berwujud pinjaman, Pajak Penghasilan (PPh) = 0%!</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-extrabold text-emerald-300 uppercase tracking-wider">3. KEDAULATAN ABADI (INFINITE LOOP)</div>
+                                <div class="text-3xl font-extrabold text-emerald-300 mt-2">100% Aset Utuh</div>
+                                <p class="text-sm sm:text-base text-slate-300 mt-2.5 leading-relaxed">
+                                    Sementara pinjaman CBDC menyusut nilainya oleh inflasi terprogram tahunan, <strong class="text-white">100% gram Emas Fisik dan 100% koin Bitcoin Anda tetap utuh milik Anda selamanya</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-black border border-slate-700 flex items-center justify-center">
+                <svg viewBox="0 0 100 100" class="w-8 h-8">
+                    <rect width="100" height="100" fill="#000000"/>
+                    <path d="M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z" fill="#FFFFFF"/>
+                    <polygon points="62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33" fill="#FFFFFF"/>
+                </svg>
+            </div>
+            <div class="font-extrabold text-white text-base tracking-tight">UZ RESEARCH INSTITUTE</div>
+            <p class="text-slate-400 max-w-xl">
+                Master Cetak Biru Siklus Likuiditas Makro, Bukti Matematis Titik Terminal Sistem Fiat 2028, Transisi CBDC &amp; Strategi Kedaulatan Aset Keras 50:50.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /* Data untuk Bab 2: Grafik 3 Panel Sinkronisasi (Simetri Terbalik 1:1 antara M2 dan Credit Spread) */
+        const macroStagesData = [
+            {
+                pill: "2023–AWAL 2026: AKUMULASI 40 BARS & REKOR EMAS $5.500",
+                tag: "FASE 1 • 2023 – AWAL 2026 (AKUMULASI 40 BULAN)",
+                heading: "M2 Menyentuh Dasar (<20) Sementara Credit Spread Melonjak karena Tarif",
+                body: "Perhatikan simetri terbalik 1:1 di titik x=265 (Awal 2026): saat Global M2 Stochastic RSI turun menyentuh lantai dasar (<20), garis Credit Spread di bawahnya otomatis melonjak naik akibat ketegangan Tarif & Perang, sementara harga BTC terkoreksi sebelum memulai reli 14 bars.",
+                asset: "BTC & Saham menyelesaikan koreksi akhir Konsolidasi 40 Bars • Emas mencetak puncak $5.500/oz",
+                m2: "Berada di Lantai Dasar (<20) • Siap memantul naik memulai pompa likuiditas baru",
+                credit: "Melonjak Naik Berlawanan Arah dengan M2 • Mencerminkan ketegangan kredit pra-reli",
+                action: "Ketika M2 berada di titik bawah dan Credit Spread di atas, itulah titik akumulasi terbaik sebelum ekspansi 14 bulan dimulai.",
+                x: 265, y1: 164, y2: 376, y3: 504
+            },
+            {
+                pill: "OKT 2026: BAR KE-7 DARI 14 BULAN BULLRUN",
+                tag: "FASE 2 • OKTOBER 2026 (POSISI SEKARANG — BAR 7/14)",
+                heading: "M2 Menanjak Naik & Credit Spread Melandai Turun Secara Simetris",
+                body: "Setelah Emas mencetak puncak siklus (Gold Top Cycle) di $5.500/oz pada Februari 2026 dan rasio XAU/XAG turun -53,51%, likuiditas berotasi deras ke Aset Risiko. Saat M2 menanjak naik di tengah gelombang, Credit Spread bergerak turun secara simetris menuju dasar Kotak Merah.",
+                asset: "BTC ~$83.700 • Sedang menanjak di bulan ke-7 dari 14 bulan ekspansi menuju 2027",
+                m2: "Menanjak Kuat di Tengah Gelombang (~62) • Memompa harga aset risiko naik",
+                credit: "Bergerak Turun Melandai Menuju Dasar Kotak Merah • Berlawanan 180° dengan kenaikan M2",
+                action: "Selama M2 masih menanjak menuju zona >80 dan Credit Spread terus menekan ke dasar Kotak Merah, tren naik masih berlanjut menuju pertengahan 2027.",
+                x: 385, y1: 124, y2: 318, y3: 562
+            },
+            {
+                pill: "MID 2027: PUNCAK EUFORIA & LONCENG MEGA-IPO",
+                tag: "FASE 3 • PERTENGAHAN – AKHIR 2027 (PUNCAK BAR KE-14)",
+                heading: "M2 Mencapai Puncak Atas (>80) = Credit Spread Mencapai Dasar Terendah (39.4)",
+                body: "Simetri terbalik 1:1 mencapai puncaknya di pertengahan 2027: saat Global M2 Stochastic RSI dan Harga BTC menyentuh titik tertinggi, indikator Credit Spread justru berada di titik paling dasar di ujung Kotak Merah (39.41) sementara bensin 3 Tabung Darurat 2023 tepat habis.",
+                asset: "PUNCAK SIKLUS (BTC $400K–$500K & S&P 500 Rekor Tertinggi bertepatan Mega-IPO)",
+                m2: "PUNCAK ATAS (>80) • Likuiditas mencapai titik jenuh maksimal dan siap patah turun",
+                credit: "DASAR TERENDAH (39.41) • Pasar kredit tampak sangat tenang tepat sebelum meledak naik",
+                action: "CAIRKAN 100% ASET RISIKO! Parkir di 50% USDT Cold Wallet & 50% USD Fisik/SBN Pendek sebelum M2 patah turun dan Credit Spread meroket.",
+                x: 495, y1: 80, y2: 276, y3: 604
+            },
+            {
+                pill: "TAHUN 2028: MACRO BOTTOM TERMINAL & KRISIS KREDIT",
+                tag: "FASE 4 • SEPANJANG TAHUN 2028 (KOTAK HIJAU 6–10 BULAN)",
+                heading: "M2 Jatuh ke Dasar (<20) = Credit Spread Meledak ke Puncak Kotak Hijau (80.0)",
+                body: "Lihat cermin terbalik 180° yang sempurna di tahun 2028: ketika M2 dan harga BTC jatuh ke lantai dasar akibat gagal bayar utang >$15 Triliun dan habisnya 3 tabung darurat, kurva Credit Spread meledak ke puncak tertinggi di dalam Kotak Hijau 2028.",
+                asset: "DASAR KRISIS (Macro Bottom) • Harga aset jatuh ke titik diskon terdalam",
+                m2: "DASAR TERENDAH (<20) • Likuiditas sistem Fiat mengering total (Tabung = $0)",
+                credit: "PUNCAK TERTINGGI (Kotak Hijau 80.0) • Puncak kepanikan gagal bayar korporasi & bank",
+                action: "WAKTU BELANJA UTAMA (6–10 BULAN): Tukarkan seluruh Dolar Anda menjadi 50% Native BTC (via DEX Cold Wallet) & 50% Emas Fisik Murni (999.9)!",
+                x: 610, y1: 174, y2: 384, y3: 496
+            },
+            {
+                pill: "2029–2030+: GREAT RESET CBDC & REVALUASI 10X",
+                tag: "FASE 5 • 2029 – 2030+ (AFTER GREAT RESET)",
+                heading: "Cetak CBDC Memompa M2 ke Atas & Menurunkan Credit Spread: Aset 50:50 Naik 10x!",
+                body: "Untuk memaksa Credit Spread turun dari puncak Kotak Hijau 2028, Bank Sentral mencetak puluhan triliun CBDC terkunci dan merevaluasi kolateral neraca. M2 kembali melonjak ke atas, Credit Spread turun ke dasar, dan nilai 50% BTC & 50% Emas Fisik Anda terbang 10x lipat!",
+                asset: "REVALUASI 10X LIPAT • 50% BTC & 50% Emas Fisik naik 10x lalu bergerak stabil",
+                m2: "PUNCAK ATAS (>80) • Suntikan likuiditas terprogram melalui Unified CBDC Ledger",
+                credit: "DASAR BAWAH (39.4) • Utang lama selesai di-reset melalui devaluasi mata uang 90%",
+                action: "JANGAN JUAL BTC & EMAS ANDA KE CBDC! Jadikan keduanya kolateral (agunan) Tier-1 untuk menarik fasilitas likuiditas bebas pajak (0% PPh).",
+                x: 730, y1: 76, y2: 276, y3: 604
+            }
+        ];
+
+        function selectMacroStage(idx) {
+            const d = macroStagesData[idx];
+            const subColors = ["text-slate-400", "text-blue-400", "text-amber-400", "text-rose-400", "text-emerald-400"];
+
+            for (let i = 0; i < 5; i++) {
+                const btn = document.getElementById(`m-btn-${i}`);
+                const sub = document.getElementById(`m-sub-${i}`);
+                const desc = document.getElementById(`m-desc-${i}`);
+                if (i === idx) {
+                    btn.className = "p-4 rounded-2xl border-2 border-blue-500 bg-blue-600 text-white text-left transition shadow-lg shadow-blue-600/25 flex flex-col justify-start";
+                    sub.className = "text-[11px] font-extrabold uppercase tracking-wider text-blue-100";
+                    desc.className = "text-xs font-semibold text-blue-100 mt-1";
+                } else {
+                    btn.className = "p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start";
+                    sub.className = `text-[11px] font-extrabold uppercase tracking-wider ${subColors[i]}`;
+                    desc.className = "text-xs font-semibold text-slate-400 mt-1";
+                }
+            }
+
+            document.getElementById('macro-status-pill').textContent = d.pill;
+            document.getElementById('m-tag').textContent = d.tag;
+            document.getElementById('m-heading').textContent = d.heading;
+            document.getElementById('m-body').textContent = d.body;
+            document.getElementById('m-val-asset').textContent = d.asset;
+            document.getElementById('m-val-m2').textContent = d.m2;
+            document.getElementById('m-val-credit').textContent = d.credit;
+            document.getElementById('m-action').textContent = d.action;
+
+            const cursor = document.getElementById('sync-cursor');
+            const dot1 = document.getElementById('sync-dot-1');
+            const dot2 = document.getElementById('sync-dot-2');
+            const dot3 = document.getElementById('sync-dot-3');
+
+            cursor.setAttribute('x1', d.x);
+            cursor.setAttribute('x2', d.x);
+            dot1.setAttribute('cx', d.x);
+            dot1.setAttribute('cy', d.y1);
+            dot2.setAttribute('cx', d.x);
+            dot2.setAttribute('cy', d.y2);
+            dot3.setAttribute('cx', d.x);
+            dot3.setAttribute('cy', d.y3);
+        }
+
+        /* Data untuk Bab 3: Pemilih 5 Histori Macro Bottom + Kursor Grafik 2 Panel (M2 vs Daya Beli Fiat) */
+        const historyBottoms = [
+            {
+                pill: "SIKLUS 2011–2012: AWAL CETAK UANG MODERN (QE3)",
+                tag: "MACRO BOTTOM 1 • TAHUN 2011–2012 (KRISIS UTANG EROPA)",
+                heading: "Utang AS Baru $15 Triliun & Barang Murah Tiongkok Meredam Inflasi",
+                body: "Saat krisis utang Eropa terjadi pada 2011–2012, beban utang pemerintah masih rendah dan globalisasi barang murah Tiongkok menjaga inflasi tetap jinak. The Fed dengan mudah memangkas suku bunga ke 0% dan mencetak uang bebas (QE3) untuk memulai siklus baru.",
+                m2: "Naik +36% (+$19 Triliun uang baru, dari ~$52T ke ~$71T)",
+                power: "Daya Beli Turun -25% s.d. -28% ($100 menyusut jadi ~$73)",
+                fuel: "MASIH SANGAT KUAT (75%). Kapasitas utang pemerintah masih longgar dan negara asing masih rajin membeli obligasi AS.",
+                x: 95, topY: 184, lowY: 304
+            },
+            {
+                pill: "SIKLUS 2015–2016: SUNTIKAN BANK SENTRAL TIONGKOK & EROPA",
+                tag: "MACRO BOTTOM 2 • TAHUN 2015–2016 (DEVALUASI YUAN & MINYAK)",
+                heading: "Bank Sentral Tiongkok (PBOC), Eropa (ECB), & Jepang Mengambil Alih Mesin Cetak",
+                body: "Ketika harga komoditas jatuh dan Yuan didevaluasi pada 2015–2016, siklus Fiat berhasil diperpanjang karena Bank Sentral Tiongkok, Eropa, dan Jepang menyuntikkan likuiditas masif serta menerapkan kebijakan suku bunga negatif.",
+                m2: "Naik +29% (+$20 Triliun uang baru, dari ~$67T ke ~$87T)",
+                power: "Daya Beli Turun -22% s.d. -25% ($100 menyusut jadi ~$55)",
+                fuel: "MULAI MENIPIS (50%). Utang AS menembus $20 Triliun dan suku bunga di Eropa serta Jepang sudah mentok di bawah 0% (negatif).",
+                x: 235, topY: 162, lowY: 338
+            },
+            {
+                pill: "SIKLUS 2019–2020: KRISIS REPO & COVID UNLIMITED QE",
+                tag: "MACRO BOTTOM 3 • TAHUN 2018–2020 (REPO CRISIS & COVID UNLIMITED QE)",
+                heading: "Pasar Repo Bank Macet di Bunga 2,5%, Diselamatkan Unlimited QE 2020",
+                body: "Pada September 2019, bunga The Fed baru menyentuh 2,5% tetapi pasar pinjaman antar-bank langsung membeku. Saat pandemi 2020 meledak, Bank Sentral melakukan pencetakan uang paling agresif dalam sejarah yang akhirnya membangunkan inflasi tinggi di 2022.",
+                m2: "Naik +31% (+$25 Triliun uang baru, dari ~$82T ke ~$107T)",
+                power: "Daya Beli Turun -32% s.d. -35% ($100 menyusut jadi ~$37)",
+                fuel: "KRITIS (20%). Pencetakan uang 2020 membangunkan monster inflasi jalanan sehingga Bank Sentral kehilangan kemampuan memangkas bunga ke 0%.",
+                x: 375, topY: 134, lowY: 378
+            },
+            {
+                pill: "SIKLUS 2023: MENGURAS 3 TABUNG TERAKHIR",
+                tag: "MACRO BOTTOM 4 • TAHUN 2022–2023 (SIKLUS TERAKHIR SAAT INI)",
+                heading: "Krisis FTX & Bank SVB: Diselamatkan oleh Kurasan 3 Tabung Darurat Sisa COVID",
+                body: "Saat inflasi meledak dan bunga dinaikkan ke 5,5%, bursa FTX serta Bank SVB dan Credit Suisse kolaps. The Fed tidak bisa menurunkan bunga ke 0%, namun berhasil menyelamatkan pasar untuk terakhir kalinya dengan menguras brankas Reverse Repo ($2,55 Triliun), membuka pinjaman bank BTFP, dan menerbitkan surat utang pendek T-Bills.",
+                m2: "Naik +30% (+$30 Triliun+ dari ~$104T menuju ~$136T di 2027)",
+                power: "Daya Beli Turun -35% s.d. -50%+ ($100 menyusut jadi ~$18)",
+                fuel: "HABIS (0%). Seluruh tabungan darurat sisa tahun 2020 sudah dipakai habis untuk memompa reli 2026–2027. Tidak ada sisa amunisi lagi untuk krisis 2028!",
+                x: 515, topY: 102, lowY: 414
+            },
+            {
+                pill: "TITIK TERMINAL 2028: RESET KE CBDC & REVALUASI 10X",
+                tag: "MACRO BOTTOM 5 • TAHUN 2028 (TITIK TERMINAL SISTEM FIAT)",
+                heading: "Semua Tabung Darurat Kosong ($0): Transisi Mutlak ke CBDC & Revaluasi 10x",
+                body: "Di tahun 2028, utang AS menembus >$40 Triliun, beban bunga menelan >$1,5 Triliun/tahun, >$15 Triliun utang pendek jatuh tempo serentak, dan celengan Reverse Repo sudah $0. Mencetak +$40T uang Fiat bebas akan memicu hiperinflasi jalanan instan, sehingga likuiditas baru wajib dikunci dalam kode CBDC.",
+                m2: "Butuh +$35T s.d. +$50 Triliun (Wajib dikunci dalam sistem CBDC / Unified Ledger)",
+                power: "Devaluasi -90% terhadap kolateral ($100 tinggal <$2 • BTC & Emas Naik 10x!)",
+                fuel: "SISTEM BERGANTI KE CBDC. Kasino spekulasi ritel ditutup permanen; kekayaan berpindah penuh ke pemilik formasi 50% BTC : 50% Emas Fisik.",
+                x: 655, topY: 72, lowY: 428
+            }
+        ];
+
+        function selectHistoryBottom(idx) {
+            const d = historyBottoms[idx];
+            const subColors = ["text-emerald-400", "text-blue-400", "text-amber-400", "text-amber-300", "text-rose-400"];
+
+            for (let i = 0; i < 5; i++) {
+                const btn = document.getElementById(`h-btn-${i}`);
+                const sub = document.getElementById(`h-sub-${i}`);
+                const desc = document.getElementById(`h-desc-${i}`);
+                if (i === idx) {
+                    btn.className = "p-4 rounded-2xl border-2 border-blue-500 bg-blue-600 text-white text-left transition shadow-lg shadow-blue-600/25 flex flex-col justify-start";
+                    sub.className = "text-[11px] font-extrabold uppercase tracking-wider text-blue-100";
+                    desc.className = "text-xs font-semibold text-blue-100 mt-1";
+                } else {
+                    btn.className = "p-4 rounded-2xl border-2 border-slate-800 bg-slate-900 text-slate-100 hover:border-blue-500/60 text-left transition flex flex-col justify-start";
+                    sub.className = `text-[11px] font-extrabold uppercase tracking-wider ${subColors[i]}`;
+                    desc.className = "text-xs font-semibold text-slate-400 mt-1";
+                }
+            }
+
+            document.getElementById('h-chart-pill').textContent = d.pill;
+            document.getElementById('h-tag').textContent = d.tag;
+            document.getElementById('h-heading').textContent = d.heading;
+            document.getElementById('h-body').textContent = d.body;
+            document.getElementById('h-m2').textContent = d.m2;
+            document.getElementById('h-power').textContent = d.power;
+            document.getElementById('h-fuel').textContent = d.fuel;
+
+            const hCursor = document.getElementById('h-cursor');
+            const hDotTop = document.getElementById('h-dot-top');
+            const hDotLow = document.getElementById('h-dot-low');
+
+            if (hCursor) {
+                hCursor.setAttribute('x1', d.x);
+                hCursor.setAttribute('x2', d.x);
+            }
+            if (hDotTop) {
+                hDotTop.setAttribute('cx', d.x);
+                hDotTop.setAttribute('cy', d.topY);
+            }
+            if (hDotLow) {
+                hDotLow.setAttribute('cx', d.x);
+                hDotLow.setAttribute('cy', d.lowY);
+            }
+        }
+
+        /* Kalkulator Bab 6: Simulator 50% BTC : 50% Emas Fisik */
+        function fmtIDR50(num) {
+            if (num >= 1) {
+                return num.toFixed(2).replace('.', ',') + " M";
+            }
+            return (num * 1000).toFixed(0) + " Jt";
+        }
+
+        function updateSim50(val) {
+            const totalMiliar = parseFloat(val);
+            const totalIDRStr = "Rp " + totalMiliar.toFixed(1).replace('.', ',') + " Miliar";
+            const totalUSDNum = (totalMiliar * 1000000000) / 16000;
+            const totalUSDStr = "(~ $" + Math.round(totalUSDNum).toLocaleString('en-US') + " USD)";
+
+            document.getElementById('sim50-total-idr').textContent = totalIDRStr;
+            document.getElementById('sim50-total-usd').textContent = totalUSDStr;
+
+            const half = totalMiliar * 0.50;
+            document.getElementById('sim50-half-btc').textContent = "Rp " + fmtIDR50(half);
+            document.getElementById('sim50-half-gold').textContent = "Rp " + fmtIDR50(half);
+
+            document.getElementById('pilar50-btc-total').textContent = "Rp " + half.toFixed(2).replace('.', ',') + " Miliar";
+            document.getElementById('pilar50-gold-total').textContent = "Rp " + half.toFixed(2).replace('.', ',') + " Miliar";
+
+            /* Pembagian internal BTC: 35% Compliant Vault (70% dari porsi BTC) & 15% Ghost Vault (30% dari porsi BTC) */
+            const btcLegal = totalMiliar * 0.35;
+            const btcGhost = totalMiliar * 0.15;
+            const btc10x = half * 10;
+
+            document.getElementById('pilar50-btc-legal').textContent = "Rp " + fmtIDR50(btcLegal);
+            document.getElementById('pilar50-btc-ghost').textContent = "Rp " + fmtIDR50(btcGhost);
+            document.getElementById('pilar50-btc-10x').textContent = "Rp " + btc10x.toFixed(1).replace('.', ',') + " Miliar";
+
+            /* Pembagian internal Emas Fisik: Estimasi Kg (@ Rp1,8 Miliar/kg di dasar 2028), 80% batangan besar & 20% kepingan kecil */
+            const goldKg = (half * 1000000000) / 1800000000;
+            const goldBig = half * 0.80;
+            const goldSmall = half * 0.20;
+            const gold10x = half * 10;
+
+            document.getElementById('pilar50-gold-kg').textContent = "~ " + goldKg.toFixed(2).replace('.', ',') + " Kg Emas";
+            document.getElementById('pilar50-gold-split').textContent = "Rp " + goldBig.toFixed(1).replace('.', ',') + "M / Rp " + goldSmall.toFixed(1).replace('.', ',') + "M";
+            document.getElementById('pilar50-gold-10x').textContent = "Rp " + gold10x.toFixed(1).replace('.', ',') + " Miliar";
+
+            /* Revaluasi 10x Total & Plafon Kolateral LTV 70% dari (50% Emas + 35% BTC Compliant = 85% Modal) */
+            const totalReval10x = totalMiliar * 10;
+            const pledgeableReval10x = (half + btcLegal) * 10;
+            const safeLoan70 = pledgeableReval10x * 0.70;
+
+            document.getElementById('loop50-reval').textContent = "Rp " + totalReval10x.toFixed(1).replace('.', ',') + " Miliar";
+            document.getElementById('loop50-loan').textContent = "Rp " + safeLoan70.toFixed(1).replace('.', ',') + " Miliar";
+        }
+
+        function setPreset50(val) {
+            document.getElementById('sim50-slider').value = val;
+            updateSim50(val);
+
+            [5, 20, 50, 100].forEach(preset => {
+                const btn = document.getElementById(`p50-btn-${preset}`);
+                if (preset === val) {
+                    btn.className = "px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 border border-amber-400 text-slate-950 font-extrabold transition shadow-md shadow-amber-500/20 text-center";
+                } else {
+                    btn.className = "px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
