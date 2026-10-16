@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UZ Research Institute — Cetak Biru Siklus Likuiditas, Titik Terminal Fiat 2028 & Strategi 50:50</title>
+    <link id="uz-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23000000'/%3E%3Cpath d='M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z' fill='%23FFFFFF'/%3E%3Cpolygon points='62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33' fill='%23FFFFFF'/%3E%3C/svg%3E">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,28 +68,232 @@
 </head>
 <body class="font-sans antialiased selection:bg-blue-500 selection:text-white">
 
+    <!-- ===================================================================== -->
+    <!-- GERBANG LOGIN GOOGLE & VERIFIKASI WHITELIST (UZ RESEARCH INSTITUTE)   -->
+    <!-- ===================================================================== -->
+    <div id="uz-auth-gate" class="fixed inset-0 z-[100] bg-[#060911] flex flex-col justify-between overflow-y-auto px-4 py-8 sm:py-12">
+        <!-- Latar Belakang Cahaya Halus -->
+        <div class="pointer-events-none fixed inset-0 overflow-hidden">
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[680px] h-[360px] bg-blue-600/15 blur-[130px] rounded-full"></div>
+            <div class="absolute bottom-0 right-1/4 w-[450px] h-[280px] bg-amber-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="relative z-10 max-w-md w-full mx-auto my-auto">
+            <!-- Kartu Utama Login -->
+            <div class="visual-card rounded-3xl p-7 sm:p-9 border border-slate-800/90 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-500 via-amber-400 to-emerald-500"></div>
+
+                <!-- Logo UZ & Header Portal -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-2xl bg-black border-2 border-slate-700/90 flex items-center justify-center shadow-xl mb-4">
+                        <svg viewBox="0 0 100 100" class="w-11 h-11" aria-label="UZ Research Institute Logo">
+                            <rect width="100" height="100" fill="#000000"/>
+                            <path d="M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z" fill="#FFFFFF"/>
+                            <polygon points="62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+
+                    <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[11px] font-extrabold uppercase tracking-wider">
+                        🔒 PORTAL RISET EKSKLUSIF • WHITELIST ONLY
+                    </span>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 tracking-tight">
+                        UZ Research Institute
+                    </h1>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
+                        Cetak Biru Makro, Titik Terminal Fiat 2028 &amp; Strategi Kedaulatan Aset Keras (50:50)
+                    </p>
+                </div>
+
+                <!-- Notifikasi Error: BELUM TERDAFTAR -->
+                <div id="auth-error-box" class="hidden mt-6 p-4 rounded-2xl bg-rose-950/70 border-2 border-rose-500/70 text-left animate-pulse">
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0 mt-0.5">🚫</span>
+                        <div>
+                            <div class="text-xs font-extrabold uppercase tracking-wider text-rose-300">
+                                AKSES DITOLAK — ANDA BELUM TERDAFTAR
+                            </div>
+                            <p class="text-xs sm:text-sm font-semibold text-white mt-1 leading-relaxed">
+                                Maaf, akun Google <span id="rejected-email-text" class="underline text-rose-300 font-extrabold"></span> tidak terdaftar di dalam <em>Whitelist</em> anggota UZ Research Institute.
+                            </p>
+                            <p class="text-[11px] text-rose-200/80 mt-1.5">
+                                Silakan gunakan akun Gmail yang sudah didaftarkan atau hubungi Administrator UZ Research Institute.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Area Tombol Login Google -->
+                <div class="mt-6 space-y-4">
+                    <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/90 text-xs text-slate-300 leading-relaxed text-center">
+                        Dokumen ini bersifat rahasia. Silakan masuk menggunakan <strong class="text-white">Akun Google (Gmail)</strong> Anda yang telah terdaftar di sistem.
+                    </div>
+
+                    <!-- Tombol Resmi Sign in with Google (Membuka Modal Pemilih Akun Google / OAuth) -->
+                    <button type="button" onclick="openGoogleChooser()" class="w-full py-3.5 px-5 rounded-2xl bg-white hover:bg-slate-100 active:scale-[0.99] text-slate-900 font-extrabold text-sm sm:text-base flex items-center justify-center gap-3.5 shadow-lg transition cursor-pointer">
+                        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                            <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+                            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+                            <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z" transform="translate(0 -1.2)"/>
+                            <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5L1.6 16c1.9 3.9 5.8 7 10.4 7z"/>
+                        </svg>
+                        <span>Lanjutkan dengan Google</span>
+                    </button>
+
+                    <!-- Tempat Render Otomatis Google Identity Services (Jika Client ID Diaktifkan di Hosting) -->
+                    <div id="g_id_onload_container" class="flex justify-center"></div>
+                </div>
+
+                <!-- Panel Pengelola Whitelist & Demo Cepat (Agar Anda Mudah Menguji / Menambah Email) -->
+                <div class="mt-6 pt-5 border-t border-slate-800/90">
+                    <button type="button" onclick="toggleWhitelistManager()" class="w-full flex items-center justify-between text-xs font-bold text-slate-400 hover:text-slate-200 transition">
+                        <span>⚙️ Lihat / Kelola Daftar Gmail Terdaftar (Whitelist)</span>
+                        <span id="wl-arrow" class="text-slate-500">▼</span>
+                    </button>
+
+                    <div id="whitelist-manager-panel" class="hidden mt-3.5 p-4 rounded-2xl bg-slate-950/95 border border-slate-800 space-y-3 text-xs">
+                        <div class="flex items-center justify-between">
+                            <span class="font-extrabold text-amber-400 uppercase">DAFTAR GMAIL YANG DIIZINKAN LOGIN:</span>
+                            <span class="text-[11px] text-slate-400">Klik email untuk uji cepat</span>
+                        </div>
+                        <div id="whitelist-badges" class="flex flex-wrap gap-1.5"></div>
+
+                        <div class="pt-2 border-t border-slate-800/80">
+                            <label class="block text-[11px] font-bold text-slate-300 mb-1.5">Tambahkan Gmail Baru ke Whitelist:</label>
+                            <div class="flex gap-2">
+                                <input id="new-whitelist-input" type="email" placeholder="nama@gmail.com" class="flex-1 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-blue-500">
+                                <button type="button" onclick="addEmailToWhitelist()" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs shrink-0 transition">
+                                    + Tambah
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-slate-500 mt-5">
+                © 2026 UZ Research Institute • Sistem Verifikasi Akses Terenkripsi
+            </p>
+        </div>
+
+        <!-- MODAL POPUP AUTENTIKASI AKUN GOOGLE (OAUTH SIMULATOR & VERIFIER) -->
+        <div id="google-oauth-modal" class="hidden fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white text-slate-900 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 animate-fadeIn">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                    <div class="flex items-center gap-2.5">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+                            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+                            <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z" transform="translate(0 -1.2)"/>
+                            <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5L1.6 16c1.9 3.9 5.8 7 10.4 7z"/>
+                        </svg>
+                        <span class="text-sm font-bold text-slate-600">Masuk dengan Google</span>
+                    </div>
+                    <button type="button" onclick="closeGoogleChooser()" class="text-slate-400 hover:text-slate-700 text-lg font-extrabold px-2">✕</button>
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="text-xl font-extrabold text-slate-900">Pilih atau Masukkan Akun Google</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                        Untuk melanjutkan ke <strong class="text-slate-900">UZ Research Institute</strong>
+                    </p>
+
+                    <!-- Daftar Cepat Akun Terdaftar vs Tidak Terdaftar untuk Simulasi -->
+                    <div class="mt-4 space-y-2">
+                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">PILIH AKUN GMAIL:</div>
+                        <button type="button" onclick="verifyGoogleEmail('uz.research@gmail.com')" class="w-full p-3 rounded-2xl border border-slate-200 hover:bg-blue-50/60 hover:border-blue-300 flex items-center justify-between transition text-left">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-blue-600 text-white font-extrabold text-sm flex items-center justify-center">UZ</div>
+                                <div>
+                                    <div class="text-sm font-extrabold text-slate-900">Founder UZ Research</div>
+                    <!-- Notifikasi Error: BELUM TERDAFTAR -->
+                    <div id="auth-error-box" class="hidden mt-6 p-4 rounded-2xl bg-rose-950/70 border-2 border-rose-500/70 text-left">
+                        <div class="flex items-start gap-3">
+                            <span class="text-xl shrink-0 mt-0.5">🚫</span>
+                            <div>
+                                <div class="text-xs font-extrabold uppercase tracking-wider text-rose-300">
+                                    AKSES DITOLAK — ANDA BELUM TERDAFTAR
+                                </div>
+                                <p class="text-xs sm:text-sm font-semibold text-white mt-1 leading-relaxed">
+                                    Akun Google <span id="rejected-email-text" class="underline text-rose-300 font-extrabold"></span> berhasil diverifikasi oleh Google, namun <strong>tidak terdaftar</strong> di dalam <em>Whitelist</em> resmi UZ Research Institute.
+                                </p>
+                                <p class="text-[11px] text-rose-200/80 mt-1.5">
+                                    Silakan masuk menggunakan akun Google yang telah didaftarkan oleh Administrator.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifikasi Status Sistem OAuth -->
+                    <div id="auth-system-msg" class="hidden mt-5 p-4 rounded-2xl bg-amber-950/60 border border-amber-500/50 text-left text-xs text-amber-200 leading-relaxed"></div>
+
+                    <!-- Area Tombol Login Google Asli -->
+                    <div class="mt-6 space-y-4">
+                        <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/90 text-xs text-slate-300 leading-relaxed text-center">
+                            Dokumen riset ini bersifat terbatas. Autentikasi dilakukan secara langsung melalui server <strong class="text-white">Google OAuth 2.0</strong> menggunakan akun Gmail asli Anda.
+                        </div>
+
+                        <!-- Container Tombol Resmi Google Identity Services (Dirender oleh Server Google) -->
+                        <div id="g_id_onload_container" class="flex justify-center min-h-[44px]"></div>
+
+                        <!-- Tombol Pemicu OAuth 2.0 Popup Resmi Google (accounts.google.com) -->
+                        <button type="button" id="uz-google-oauth-btn" onclick="triggerRealGoogleLogin()" class="w-full py-3.5 px-5 rounded-2xl bg-white hover:bg-slate-100 active:scale-[0.99] text-slate-900 font-extrabold text-sm sm:text-base flex items-center justify-center gap-3.5 shadow-lg transition cursor-pointer">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+                                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+                                <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z" transform="translate(0 -1.2)"/>
+                                <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5L1.6 16c1.9 3.9 5.8 7 10.4 7z"/>
+                            </svg>
+                            <span>Sign in with Google</span>
+                        </button>
+                    </div>
+                </div>
+
+                <p class="text-center text-xs text-slate-500 mt-5">
+                    © 2026 UZ Research Institute • Dilindungi oleh Google OAuth 2.0 Verification
+                </p>
+            </div>
+        </div>
+
     <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-            <a href="#" class="flex items-center gap-3.5 shrink-0 group">
-                <!-- Custom SVG Logo sesuai gambar upload UZ -->
-                <div class="w-11 h-11 rounded-xl bg-black border border-slate-700/80 flex items-center justify-center shadow-lg shrink-0 overflow-hidden group-hover:border-slate-500 transition">
-                    <svg viewBox="0 0 100 100" class="w-8 h-8" aria-label="UZ Research Institute Logo">
-                        <rect width="100" height="100" fill="#000000"/>
-                        <path d="M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z" fill="#FFFFFF"/>
-                        <polygon points="62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33" fill="#FFFFFF"/>
-                    </svg>
+            <div class="w-full lg:w-auto flex items-center justify-between gap-3">
+                <a href="#" class="flex items-center gap-3.5 shrink-0 group">
+                    <!-- Custom SVG Logo sesuai gambar upload UZ -->
+                    <div class="w-11 h-11 rounded-xl bg-black border border-slate-700/80 flex items-center justify-center shadow-lg shrink-0 overflow-hidden group-hover:border-slate-500 transition">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8" aria-label="UZ Research Institute Logo">
+                            <rect width="100" height="100" fill="#000000"/>
+                            <path d="M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z" fill="#FFFFFF"/>
+                            <polygon points="62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-extrabold text-white text-lg sm:text-xl leading-none tracking-tight">UZ Research Institute</div>
+                        <div class="text-xs font-semibold text-slate-400 mt-1.5">Cetak Biru Makro, Terminal Fiat 2028 &amp; Strategi 50:50</div>
+                    </div>
+                </a>
+
+                <!-- Status Login Mobile -->
+                <div class="flex lg:hidden items-center gap-2">
+                    <button onclick="logoutGoogleUser()" class="px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-[11px] font-bold text-rose-400 hover:bg-slate-800 transition">
+                        Keluar
+                    </button>
                 </div>
-                <div>
-                    <div class="font-extrabold text-white text-lg sm:text-xl leading-none tracking-tight">UZ Research Institute</div>
-                    <div class="text-xs font-semibold text-slate-400 mt-1.5">Cetak Biru Makro, Terminal Fiat 2028 &amp; Strategi 50:50</div>
-                </div>
-            </a>
+            </div>
 
             <nav class="w-full lg:w-auto flex flex-col items-start lg:items-end gap-1.5 text-xs sm:text-sm font-bold text-slate-200">
                 <div class="flex flex-wrap items-center lg:justify-end gap-x-5 sm:gap-x-7 gap-y-1">
                     <a href="#bab-1" class="py-1 hover:text-blue-400 transition whitespace-nowrap">1. Entity &amp; Fiat</a>
                     <a href="#bab-2" class="py-1 hover:text-blue-400 transition whitespace-nowrap">2. Grafik Siklus</a>
                     <a href="#bab-3" class="py-1 hover:text-blue-400 transition whitespace-nowrap">3. Histori Bottom</a>
+                    <!-- Indikator Akun Google Terverifikasi (Desktop) -->
+                    <div class="hidden lg:flex items-center gap-2 pl-3 border-l border-slate-800">
+                        <img id="active-user-avatar" src="" alt="" class="hidden w-5 h-5 rounded-full border border-slate-600">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span id="active-user-email" class="text-xs font-bold text-slate-300 max-w-[180px] truncate">Terverifikasi</span>
+                        <button onclick="logoutGoogleUser()" class="ml-1 px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-rose-950/60 border border-slate-700 hover:border-rose-500/50 text-[11px] font-extrabold text-slate-300 hover:text-rose-300 transition">
+                            Keluar
+                        </button>
+                    </div>
                 </div>
                 <div class="flex flex-wrap items-center lg:justify-end gap-x-4 sm:gap-x-6 gap-y-1.5">
                     <a href="#bab-4" class="py-1 hover:text-amber-400 transition whitespace-nowrap">4. Tabung Darurat 2023 vs 2028</a>
@@ -1556,56 +1762,56 @@
                         Kalkulator Formasi <span class="text-blue-400">50% Bitcoin</span> : <span class="text-amber-400">50% Emas Fisik</span> &amp; Mesin Kolateral CBDC
                     </h2>
                     <p class="mt-3.5 text-lg text-slate-300 leading-relaxed">
-                        Geser tombol di bawah ini sesuai target modal hasil <em>exit liquidity</em> Anda di tahun 2027 untuk menyimulasikan alokasi <strong class="text-white">50:50 di Macro Bottom 2028</strong> serta lonjakan nilai <strong class="text-emerald-400">10x lipat</strong> saat devaluasi mata uang 90% terjadi:
+                        Geser tombol di bawah ini (mulai dari <strong class="text-white">Rp 500 Juta hingga Rp 20 Miliar</strong>) sesuai target modal hasil <em>exit liquidity</em> Anda di tahun 2027 untuk menyimulasikan alokasi <strong class="text-white">50:50 di Macro Bottom 2028</strong> serta lonjakan nilai <strong class="text-emerald-400">10x lipat</strong> saat devaluasi mata uang 90% terjadi:
                     </p>
                 </div>
 
-                <!-- Panel Kontrol Simulator 50:50 -->
+                <!-- Panel Kontrol Simulator 50:50 (Min Rp 500 Juta - Max Rp 20 Miliar) -->
                 <div class="visual-card rounded-3xl p-6 sm:p-8 border-2 border-slate-800 mb-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         <div class="lg:col-span-7 space-y-6">
                             <div>
                                 <div class="text-xs sm:text-sm font-extrabold text-amber-400 uppercase tracking-wider">TOTAL MODAL HASIL EXIT LIQUIDITY (PUNCAK 2027):</div>
                                 <div class="flex flex-wrap items-baseline gap-3 mt-1.5">
-                                    <span id="sim50-total-idr" class="text-4xl sm:text-5xl font-extrabold text-white">Rp 20,0 Miliar</span>
-                                    <span id="sim50-total-usd" class="text-base font-bold text-slate-400">(~ $1.250.000 USD)</span>
+                                    <span id="sim50-total-idr" class="text-4xl sm:text-5xl font-extrabold text-white">Rp 5,0 Miliar</span>
+                                    <span id="sim50-total-usd" class="text-base font-bold text-slate-400">(~ $312,500 USD)</span>
                                 </div>
                             </div>
 
                             <div>
-                                <input id="sim50-slider" type="range" min="2" max="100" step="1" value="20" oninput="updateSim50(this.value)" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                                <input id="sim50-slider" type="range" min="0.5" max="20" step="0.5" value="5" oninput="updateSim50(this.value)" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer">
                                 <div class="flex justify-between text-xs font-extrabold text-slate-400 mt-2.5">
-                                    <span>Rp 2 Miliar</span>
+                                    <span>Rp 500 Juta</span>
+                                    <span>Rp 5 Miliar</span>
+                                    <span>Rp 10 Miliar</span>
+                                    <span>Rp 15 Miliar</span>
                                     <span>Rp 20 Miliar</span>
-                                    <span>Rp 50 Miliar</span>
-                                    <span>Rp 75 Miliar</span>
-                                    <span>Rp 100 Miliar</span>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
-                                <button onclick="setPreset50(5)" id="p50-btn-5" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
+                                <button onclick="setPreset50(0.5)" id="p50-btn-0.5" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
+                                    Rp 500 Juta
+                                </button>
+                                <button onclick="setPreset50(2)" id="p50-btn-2" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
+                                    Rp 2 Miliar
+                                </button>
+                                <button onclick="setPreset50(5)" id="p50-btn-5" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 border border-amber-400 text-slate-950 font-extrabold transition shadow-md shadow-amber-500/20 text-center">
                                     Rp 5 Miliar
                                 </button>
-                                <button onclick="setPreset50(20)" id="p50-btn-20" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 border border-amber-400 text-slate-950 font-extrabold transition shadow-md shadow-amber-500/20 text-center">
+                                <button onclick="setPreset50(20)" id="p50-btn-20" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
                                     Rp 20 Miliar
-                                </button>
-                                <button onclick="setPreset50(50)" id="p50-btn-50" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
-                                    Rp 50 Miliar
-                                </button>
-                                <button onclick="setPreset50(100)" id="p50-btn-100" class="px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center">
-                                    Rp 100 Miliar
                                 </button>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-4 border-t border-slate-800">
                                 <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
                                     <span class="text-sm font-bold text-slate-300">₿ Alokasi 50% Native BTC:</span>
-                                    <span id="sim50-half-btc" class="text-base font-extrabold text-blue-400 whitespace-nowrap">Rp 10,00 M</span>
+                                    <span id="sim50-half-btc" class="text-base font-extrabold text-blue-400 whitespace-nowrap">Rp 2,50 Miliar</span>
                                 </div>
                                 <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-2">
                                     <span class="text-sm font-bold text-slate-300">🥇 Alokasi 50% Emas Fisik:</span>
-                                    <span id="sim50-half-gold" class="text-base font-extrabold text-amber-400 whitespace-nowrap">Rp 10,00 M</span>
+                                    <span id="sim50-half-gold" class="text-base font-extrabold text-amber-400 whitespace-nowrap">Rp 2,50 Miliar</span>
                                 </div>
                             </div>
                         </div>
@@ -1639,7 +1845,7 @@
                                 <span class="text-xs font-extrabold text-blue-400">Kolateral Digital &amp; Lintas Negara</span>
                             </div>
                             <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Native Bitcoin (Cold Wallet)</h3>
-                            <div id="pilar50-btc-total" class="text-3xl font-extrabold text-blue-400 mt-1">Rp 10,00 Miliar</div>
+                            <div id="pilar50-btc-total" class="text-3xl font-extrabold text-blue-400 mt-1">Rp 2,50 Miliar</div>
                             <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
                                 Dibeli di titik dasar <em>Macro Bottom</em> 2028 dan dibagi ke dalam dua brankas <em>Cold Wallet</em> terpisah untuk memaksimalkan akses perbankan CBDC sekaligus menjaga kedaulatan penuh:
                             </p>
@@ -1649,7 +1855,7 @@
                             <div class="p-4 rounded-2xl bg-blue-950/40 border border-blue-500/40 flex flex-col justify-between">
                                 <div class="flex justify-between items-center gap-2">
                                     <span class="font-extrabold text-sm sm:text-base text-blue-200 whitespace-nowrap">📑 Compliant Vault (35% Modal):</span>
-                                    <span id="pilar50-btc-legal" class="font-extrabold text-base text-blue-300 whitespace-nowrap">Rp 7,00 M</span>
+                                    <span id="pilar50-btc-legal" class="font-extrabold text-base text-blue-300 whitespace-nowrap">Rp 1,75 Miliar</span>
                                 </div>
                                 <p class="text-xs sm:text-sm text-blue-200/80 mt-1.5 leading-relaxed">
                                     Bitcoin dengan rekam jejak pajak resmi yang siap diintegrasikan langsung ke <em>smart-contract</em> perbankan CBDC sebagai agunan kredit Tier-1.
@@ -1659,7 +1865,7 @@
                             <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
                                 <div class="flex justify-between items-center gap-2">
                                     <span class="font-extrabold text-sm sm:text-base text-white whitespace-nowrap">🕵️ Ghost Vault / DEX (15% Modal):</span>
-                                    <span id="pilar50-btc-ghost" class="font-extrabold text-base text-slate-200 whitespace-nowrap">Rp 3,00 M</span>
+                                    <span id="pilar50-btc-ghost" class="font-extrabold text-base text-slate-200 whitespace-nowrap">Rp 750 Juta</span>
                                 </div>
                                 <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
                                     Diakumulasi via THORChain/Chainflip tanpa perantara bursa terpusat. Cadangan kedaulatan mutlak lintas yurisdiksi.
@@ -1669,7 +1875,7 @@
                             <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/40 flex flex-col justify-between">
                                 <div class="flex justify-between items-center gap-2">
                                     <span class="font-extrabold text-sm sm:text-base text-emerald-200 whitespace-nowrap">🚀 Nilai Pasca-Revaluasi 10x:</span>
-                                    <span id="pilar50-btc-10x" class="font-extrabold text-base text-emerald-300 whitespace-nowrap">Rp 100,0 Miliar</span>
+                                    <span id="pilar50-btc-10x" class="font-extrabold text-base text-emerald-300 whitespace-nowrap">Rp 25,0 Miliar</span>
                                 </div>
                                 <p class="text-xs sm:text-sm text-emerald-200/80 mt-1.5 leading-relaxed">
                                     Bergerak stabil di era CBDC sebagai fondasi kolateral digital dengan rasio pinjaman (LTV) tinggi.
@@ -1686,7 +1892,7 @@
                                 <span class="text-xs font-extrabold text-amber-400">Agunan Fisik Tier-1 (Basel III)</span>
                             </div>
                             <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Emas Fisik Batangan (999.9)</h3>
-                            <div id="pilar50-gold-total" class="text-3xl font-extrabold text-amber-400 mt-1">Rp 10,00 Miliar</div>
+                            <div id="pilar50-gold-total" class="text-3xl font-extrabold text-amber-400 mt-1">Rp 2,50 Miliar</div>
                             <p class="mt-2.5 text-sm sm:text-base text-slate-300 leading-relaxed">
                                 Diakumulasi secara fisik murni (Antam/UBS/LBMA) dan disimpan di brankas pribadi tanpa risiko gagal bayar pihak ketiga:
                             </p>
@@ -1696,7 +1902,7 @@
                             <div class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex flex-col justify-between">
                                 <div class="flex justify-between items-center gap-2">
                                     <span class="font-extrabold text-sm sm:text-base text-amber-200 whitespace-nowrap">⚖️ Estimasi Berat Emas Fisik:</span>
-                                    <span id="pilar50-gold-kg" class="font-extrabold text-base text-amber-300 whitespace-nowrap">~ 5,56 Kg Emas</span>
+                                    <span id="pilar50-gold-kg" class="font-extrabold text-base text-amber-300 whitespace-nowrap">~ 1,39 Kg Emas</span>
                                 </div>
                                 <p class="text-xs sm:text-sm text-amber-200/80 mt-1.5 leading-relaxed">
                                     100% berada dalam penguasaan fisik Anda; kebal terhadap pemadaman internet maupun pembekuan rekening.
@@ -1706,7 +1912,7 @@
                             <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
                                 <div class="flex justify-between items-center gap-2">
                                     <span class="font-extrabold text-sm sm:text-base text-white whitespace-nowrap">🏦 Batangan Kolateral (40%) &amp; Likuid (10%):</span>
-                                    <span id="pilar50-gold-split" class="font-extrabold text-base text-slate-200 whitespace-nowrap">Rp 8,0M / Rp 2,0M</span>
+                                    <span id="pilar50-gold-split" class="font-extrabold text-base text-slate-200 whitespace-nowrap">Rp 2,00 M / Rp 500 Jt</span>
                                 </div>
                                 <p class="text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed">
                                     80% porsi emas dalam batangan besar (100g–1kg) untuk agunan bank Tier-1, dan 20% dalam kepingan kecil (5g–25g).
@@ -1716,7 +1922,7 @@
                             <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/40 flex flex-col justify-between">
                                 <div class="flex justify-between items-center gap-2">
                                     <span class="font-extrabold text-sm sm:text-base text-emerald-200 whitespace-nowrap">🚀 Nilai Pasca-Revaluasi 10x:</span>
-                                    <span id="pilar50-gold-10x" class="font-extrabold text-base text-emerald-300 whitespace-nowrap">Rp 100,0 Miliar</span>
+                                    <span id="pilar50-gold-10x" class="font-extrabold text-base text-emerald-300 whitespace-nowrap">Rp 25,0 Miliar</span>
                                 </div>
                                 <p class="text-xs sm:text-sm text-emerald-200/80 mt-1.5 leading-relaxed">
                                     Mengikuti revaluasi emas neraca Bank Sentral saat devaluasi 90% mata uang diberlakukan.
@@ -1742,7 +1948,7 @@
                         <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
                             <div>
                                 <div class="text-xs font-extrabold text-amber-300 uppercase tracking-wider">1. TOTAL KEKAYAAN REVALUASI 10X</div>
-                                <div id="loop50-reval" class="text-3xl font-extrabold text-white mt-2">Rp 200,0 Miliar</div>
+                                <div id="loop50-reval" class="text-3xl font-extrabold text-white mt-2">Rp 50,0 Miliar</div>
                                 <p class="text-sm sm:text-base text-slate-300 mt-2.5 leading-relaxed">
                                     Nilai gabungan <strong class="text-white">50% Native BTC + 50% Emas Fisik</strong> Anda setelah mata uang lama terdevaluasi 90% terhadap kolateral dasar.
                                 </p>
@@ -1752,7 +1958,7 @@
                         <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between">
                             <div>
                                 <div class="text-xs font-extrabold text-sky-300 uppercase tracking-wider">2. PLAFON LIKUIDITAS CBDC (PAJAK 0%)</div>
-                                <div id="loop50-loan" class="text-3xl font-extrabold text-sky-300 mt-2">Rp 119,0 Miliar</div>
+                                <div id="loop50-loan" class="text-3xl font-extrabold text-sky-300 mt-2">Rp 29,8 Miliar</div>
                                 <p class="text-sm sm:text-base text-slate-300 mt-2.5 leading-relaxed">
                                     Jaminkan Emas Fisik (50%) &amp; BTC Compliant (35%) pada rasio LTV aman (70%) untuk menarik kredit CBDC berstatus <em>Whitelisted</em>. <strong class="text-white">Karena berwujud pinjaman, Pajak Penghasilan (PPh) = 0%!</strong>
                                 </p>
@@ -1992,64 +2198,289 @@
             }
         }
 
-        /* Kalkulator Bab 6: Simulator 50% BTC : 50% Emas Fisik */
-        function fmtIDR50(num) {
-            if (num >= 1) {
-                return num.toFixed(2).replace('.', ',') + " M";
+        /* ===================================================================== */
+        /* AUTENTIKASI GOOGLE ASLI (GOOGLE IDENTITY SERVICES OAUTH 2.0)          */
+        /* ===================================================================== */
+        // 1. MASUKKAN GOOGLE OAUTH CLIENT ID RESMI ANDA DI SINI:
+        //    (Dapatkan gratis di: https://console.cloud.google.com/apis/credentials)
+        const GOOGLE_CLIENT_ID = "MASUKKAN_CLIENT_ID_GOOGLE_ANDA_DI_SINI.apps.googleusercontent.com";
+
+        // 2. DAFTAR ALAMAT GMAIL RESMI YANG DIIZINKAN MASUK (WHITELIST):
+        //    Hanya akun Google asli yang emailnya ada di daftar ini yang bisa membuka portal.
+        const WHITELISTED_EMAILS = [
+            "uz.research@gmail.com",
+            "member.vip@gmail.com",
+            "admin.uz@gmail.com"
+        ];
+
+        let googleTokenClient = null;
+        let currentVerifiedEmail = null;
+
+        function renderFaviconPNG() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 64;
+                canvas.height = 64;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#000000';
+                ctx.beginPath();
+                ctx.roundRect(0, 0, 64, 64, 12);
+                ctx.fill();
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '900 34px "Plus Jakarta Sans", sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('UZ', 32, 34);
+                const link = document.getElementById('uz-favicon');
+                if (link) link.href = canvas.toDataURL('image/png');
+            } catch (e) {}
+        }
+
+        function showAuthSystemMessage(htmlText) {
+            const msgBox = document.getElementById('auth-system-msg');
+            if (!msgBox) return;
+            msgBox.innerHTML = htmlText;
+            msgBox.classList.remove('hidden');
+        }
+
+        function isClientIdConfigured() {
+            return (
+                GOOGLE_CLIENT_ID &&
+                GOOGLE_CLIENT_ID.trim() !== "" &&
+                !GOOGLE_CLIENT_ID.includes("MASUKKAN_CLIENT_ID")
+            );
+        }
+
+        /* Verifikasi akhir terhadap email asli yang dikembalikan oleh Server Google */
+        function verifyAuthenticatedGoogleProfile(profile) {
+            const errBox = document.getElementById('auth-error-box');
+            const sysBox = document.getElementById('auth-system-msg');
+            const rejectedText = document.getElementById('rejected-email-text');
+            const gate = document.getElementById('uz-auth-gate');
+
+            if (sysBox) sysBox.classList.add('hidden');
+
+            if (!profile || !profile.email || profile.email_verified === false) {
+                showAuthSystemMessage("⚠️ <strong>Gagal Verifikasi Google:</strong> Akun Google tidak mengembalikan alamat email terverifikasi.");
+                return;
             }
-            return (num * 1000).toFixed(0) + " Jt";
+
+            const email = profile.email.trim().toLowerCase();
+            const isWhitelisted = WHITELISTED_EMAILS.some(w => w.trim().toLowerCase() === email);
+
+            if (isWhitelisted) {
+                currentVerifiedEmail = email;
+                errBox.classList.add('hidden');
+                document.getElementById('active-user-email').textContent = email;
+
+                const avatar = document.getElementById('active-user-avatar');
+                if (avatar && profile.picture) {
+                    avatar.src = profile.picture;
+                    avatar.classList.remove('hidden');
+                }
+
+                gate.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            } else {
+                currentVerifiedEmail = null;
+                rejectedText.textContent = email;
+                errBox.classList.remove('hidden');
+                // Cabut sesi Google untuk email yang ditolak agar bisa memilih akun lain
+                if (window.google && window.google.accounts && window.google.accounts.id) {
+                    window.google.accounts.id.disableAutoSelect();
+                }
+            }
+        }
+
+        /* Callback untuk Google One-Tap / Sign-In Button (JWT ID Token) */
+        function handleGoogleCredentialResponse(response) {
+            try {
+                const base64Url = response.credential.split('.')[1];
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(
+                    window.atob(base64).split('').map(function(c) {
+                        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                    }).join('')
+                );
+                const payload = JSON.parse(jsonPayload);
+                verifyAuthenticatedGoogleProfile({
+                    email: payload.email,
+                    email_verified: payload.email_verified,
+                    name: payload.name,
+                    picture: payload.picture
+                });
+            } catch (e) {
+                showAuthSystemMessage("⚠️ <strong>Gagal mendekode token keamanan Google.</strong> Silakan coba kembali.");
+            }
+        }
+
+        /* Pemicu Popup Resmi Google OAuth 2.0 (accounts.google.com) */
+        function triggerRealGoogleLogin() {
+            document.getElementById('auth-error-box').classList.add('hidden');
+
+            if (!isClientIdConfigured()) {
+                showAuthSystemMessage(
+                    "🔑 <strong>Google OAuth Client ID Belum Diisi:</strong><br>" +
+                    "Agar jendela login resmi <code>accounts.google.com</code> terbuka, silakan ganti variabel <code>GOOGLE_CLIENT_ID</code> di dalam kode dengan Client ID milik Anda dari <strong>Google Cloud Console</strong>."
+                );
+                return;
+            }
+
+            if (!window.google || !window.google.accounts || !window.google.accounts.oauth2) {
+                showAuthSystemMessage("⏳ <strong>Sedang memuat modul keamanan Google...</strong> Pastikan koneksi internet aktif lalu klik kembali.");
+                return;
+            }
+
+            if (!googleTokenClient) {
+                googleTokenClient = window.google.accounts.oauth2.initTokenClient({
+                    client_id: GOOGLE_CLIENT_ID,
+                    scope: 'openid email profile',
+                    prompt: 'select_account',
+                    callback: async (tokenResponse) => {
+                        if (tokenResponse && tokenResponse.access_token) {
+                            try {
+                                const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                                    headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
+                                });
+                                const userInfo = await res.json();
+                                verifyAuthenticatedGoogleProfile(userInfo);
+                            } catch (err) {
+                                showAuthSystemMessage("⚠️ Gagal mengambil profil terverifikasi dari server Google.");
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Membuka jendela popup autentikasi resmi Google
+            googleTokenClient.requestAccessToken({ prompt: 'select_account' });
+        }
+
+        function logoutGoogleUser() {
+            const gate = document.getElementById('uz-auth-gate');
+            document.getElementById('auth-error-box').classList.add('hidden');
+            if (window.google && window.google.accounts && window.google.accounts.id) {
+                window.google.accounts.id.disableAutoSelect();
+                if (currentVerifiedEmail) {
+                    try { window.google.accounts.id.revoke(currentVerifiedEmail, () => {}); } catch (e) {}
+                }
+            }
+            currentVerifiedEmail = null;
+            gate.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function initRealGoogleAuth() {
+            if (!isClientIdConfigured()) return;
+            if (window.google && window.google.accounts && window.google.accounts.id) {
+                window.google.accounts.id.initialize({
+                    client_id: GOOGLE_CLIENT_ID,
+                    callback: handleGoogleCredentialResponse,
+                    auto_select: false
+                });
+                const btnContainer = document.getElementById('g_id_onload_container');
+                if (btnContainer) {
+                    window.google.accounts.id.renderButton(btnContainer, {
+                        theme: 'outline',
+                        size: 'large',
+                        shape: 'pill',
+                        text: 'signin_with',
+                        width: 320
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderFaviconPNG();
+            updateSim50(5);
+            document.body.style.overflow = 'hidden';
+
+            // Inisialisasi Google Identity Services saat script selesai dimuat
+            if (window.google && window.google.accounts) {
+                initRealGoogleAuth();
+            } else {
+                window.addEventListener('load', initRealGoogleAuth);
+            }
+        });
+
+        /* ===================================================================== */
+        /* KALKULATOR BAB 6: RENTANG RP 500 JUTA (0.5M) S.D. RP 20 MILIAR        */
+        /* ===================================================================== */
+        function fmtIDRFull(miliarVal) {
+            if (miliarVal >= 1) {
+                const dec = (miliarVal % 1 === 0) ? 1 : 2;
+                return "Rp " + miliarVal.toFixed(dec).replace('.', ',') + " Miliar";
+            }
+            const jutaVal = Math.round(miliarVal * 1000);
+            return "Rp " + jutaVal.toLocaleString('id-ID') + " Juta";
+        }
+
+        function fmtIDRShort(miliarVal) {
+            if (miliarVal >= 1) {
+                return "Rp " + miliarVal.toFixed(2).replace('.', ',') + " M";
+            }
+            const jutaVal = Math.round(miliarVal * 1000);
+            return "Rp " + jutaVal.toLocaleString('id-ID') + " Jt";
         }
 
         function updateSim50(val) {
             const totalMiliar = parseFloat(val);
-            const totalIDRStr = "Rp " + totalMiliar.toFixed(1).replace('.', ',') + " Miliar";
             const totalUSDNum = (totalMiliar * 1000000000) / 16000;
             const totalUSDStr = "(~ $" + Math.round(totalUSDNum).toLocaleString('en-US') + " USD)";
 
-            document.getElementById('sim50-total-idr').textContent = totalIDRStr;
+            document.getElementById('sim50-total-idr').textContent = fmtIDRFull(totalMiliar);
             document.getElementById('sim50-total-usd').textContent = totalUSDStr;
 
             const half = totalMiliar * 0.50;
-            document.getElementById('sim50-half-btc').textContent = "Rp " + fmtIDR50(half);
-            document.getElementById('sim50-half-gold').textContent = "Rp " + fmtIDR50(half);
+            document.getElementById('sim50-half-btc').textContent = fmtIDRFull(half);
+            document.getElementById('sim50-half-gold').textContent = fmtIDRFull(half);
 
-            document.getElementById('pilar50-btc-total').textContent = "Rp " + half.toFixed(2).replace('.', ',') + " Miliar";
-            document.getElementById('pilar50-gold-total').textContent = "Rp " + half.toFixed(2).replace('.', ',') + " Miliar";
+            document.getElementById('pilar50-btc-total').textContent = fmtIDRFull(half);
+            document.getElementById('pilar50-gold-total').textContent = fmtIDRFull(half);
 
-            /* Pembagian internal BTC: 35% Compliant Vault (70% dari porsi BTC) & 15% Ghost Vault (30% dari porsi BTC) */
+            /* Pembagian internal BTC: 35% Compliant Vault & 15% Ghost Vault */
             const btcLegal = totalMiliar * 0.35;
             const btcGhost = totalMiliar * 0.15;
             const btc10x = half * 10;
 
-            document.getElementById('pilar50-btc-legal').textContent = "Rp " + fmtIDR50(btcLegal);
-            document.getElementById('pilar50-btc-ghost').textContent = "Rp " + fmtIDR50(btcGhost);
-            document.getElementById('pilar50-btc-10x').textContent = "Rp " + btc10x.toFixed(1).replace('.', ',') + " Miliar";
+            document.getElementById('pilar50-btc-legal').textContent = fmtIDRFull(btcLegal);
+            document.getElementById('pilar50-btc-ghost').textContent = fmtIDRFull(btcGhost);
+            document.getElementById('pilar50-btc-10x').textContent = fmtIDRFull(btc10x);
 
-            /* Pembagian internal Emas Fisik: Estimasi Kg (@ Rp1,8 Miliar/kg di dasar 2028), 80% batangan besar & 20% kepingan kecil */
+            /* Pembagian internal Emas Fisik (@ Rp1,8 Miliar/kg di dasar 2028) */
             const goldKg = (half * 1000000000) / 1800000000;
             const goldBig = half * 0.80;
             const goldSmall = half * 0.20;
             const gold10x = half * 10;
 
-            document.getElementById('pilar50-gold-kg').textContent = "~ " + goldKg.toFixed(2).replace('.', ',') + " Kg Emas";
-            document.getElementById('pilar50-gold-split').textContent = "Rp " + goldBig.toFixed(1).replace('.', ',') + "M / Rp " + goldSmall.toFixed(1).replace('.', ',') + "M";
-            document.getElementById('pilar50-gold-10x').textContent = "Rp " + gold10x.toFixed(1).replace('.', ',') + " Miliar";
+            if (goldKg < 1) {
+                const gramVal = Math.round(goldKg * 1000);
+                document.getElementById('pilar50-gold-kg').textContent = "~ " + gramVal.toLocaleString('id-ID') + " Gram (" + goldKg.toFixed(2).replace('.', ',') + " Kg)";
+            } else {
+                document.getElementById('pilar50-gold-kg').textContent = "~ " + goldKg.toFixed(2).replace('.', ',') + " Kg Emas";
+            }
+
+            document.getElementById('pilar50-gold-split').textContent = fmtIDRShort(goldBig) + " / " + fmtIDRShort(goldSmall);
+            document.getElementById('pilar50-gold-10x').textContent = fmtIDRFull(gold10x);
 
             /* Revaluasi 10x Total & Plafon Kolateral LTV 70% dari (50% Emas + 35% BTC Compliant = 85% Modal) */
             const totalReval10x = totalMiliar * 10;
             const pledgeableReval10x = (half + btcLegal) * 10;
             const safeLoan70 = pledgeableReval10x * 0.70;
 
-            document.getElementById('loop50-reval').textContent = "Rp " + totalReval10x.toFixed(1).replace('.', ',') + " Miliar";
-            document.getElementById('loop50-loan').textContent = "Rp " + safeLoan70.toFixed(1).replace('.', ',') + " Miliar";
+            document.getElementById('loop50-reval').textContent = fmtIDRFull(totalReval10x);
+            document.getElementById('loop50-loan').textContent = fmtIDRFull(safeLoan70);
         }
 
         function setPreset50(val) {
             document.getElementById('sim50-slider').value = val;
             updateSim50(val);
 
-            [5, 20, 50, 100].forEach(preset => {
+            [0.5, 2, 5, 20].forEach(preset => {
                 const btn = document.getElementById(`p50-btn-${preset}`);
+                if (!btn) return;
                 if (preset === val) {
                     btn.className = "px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 border border-amber-400 text-slate-950 font-extrabold transition shadow-md shadow-amber-500/20 text-center";
                 } else {
