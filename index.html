@@ -71,7 +71,7 @@
     <!-- ===================================================================== -->
     <!-- GERBANG LOGIN GOOGLE & VERIFIKASI WHITELIST (UZ RESEARCH INSTITUTE)   -->
     <!-- ===================================================================== -->
-    <div id="uz-auth-gate" class="fixed inset-0 z-[100] bg-[#060911] flex flex-col justify-between overflow-y-auto px-4 py-8 sm:py-12">
+    <div id="uz-auth-gate" class="fixed inset-0 z-[100] bg-[#060911] flex flex-col items-center justify-center overflow-y-auto px-4 py-8 sm:py-12">
         <!-- Latar Belakang Cahaya Halus -->
         <div class="pointer-events-none fixed inset-0 overflow-hidden">
             <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[680px] h-[360px] bg-blue-600/15 blur-[130px] rounded-full"></div>
@@ -105,7 +105,7 @@
                 </div>
 
                 <!-- Notifikasi Error: BELUM TERDAFTAR -->
-                <div id="auth-error-box" class="hidden mt-6 p-4 rounded-2xl bg-rose-950/70 border-2 border-rose-500/70 text-left animate-pulse">
+                <div id="auth-error-box" class="hidden mt-6 p-4 rounded-2xl bg-rose-950/70 border-2 border-rose-500/70 text-left">
                     <div class="flex items-start gap-3">
                         <span class="text-xl shrink-0 mt-0.5">🚫</span>
                         <div>
@@ -113,23 +113,26 @@
                                 AKSES DITOLAK — ANDA BELUM TERDAFTAR
                             </div>
                             <p class="text-xs sm:text-sm font-semibold text-white mt-1 leading-relaxed">
-                                Maaf, akun Google <span id="rejected-email-text" class="underline text-rose-300 font-extrabold"></span> tidak terdaftar di dalam <em>Whitelist</em> anggota UZ Research Institute.
+                                Akun Google <span id="rejected-email-text" class="underline text-rose-300 font-extrabold"></span> berhasil diverifikasi oleh Google, namun <strong>tidak terdaftar</strong> di dalam <em>Whitelist</em> resmi UZ Research Institute.
                             </p>
                             <p class="text-[11px] text-rose-200/80 mt-1.5">
-                                Silakan gunakan akun Gmail yang sudah didaftarkan atau hubungi Administrator UZ Research Institute.
+                                Silakan masuk menggunakan akun Google yang telah didaftarkan oleh Administrator.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Area Tombol Login Google -->
+                <!-- Notifikasi Status Sistem OAuth -->
+                <div id="auth-system-msg" class="hidden mt-5 p-4 rounded-2xl bg-amber-950/60 border border-amber-500/50 text-left text-xs text-amber-200 leading-relaxed"></div>
+
+                <!-- Area Tombol Tunggal Login Google Asli -->
                 <div class="mt-6 space-y-4">
                     <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/90 text-xs text-slate-300 leading-relaxed text-center">
                         Dokumen ini bersifat rahasia. Silakan masuk menggunakan <strong class="text-white">Akun Google (Gmail)</strong> Anda yang telah terdaftar di sistem.
                     </div>
 
-                    <!-- Tombol Resmi Sign in with Google (Membuka Modal Pemilih Akun Google / OAuth) -->
-                    <button type="button" onclick="openGoogleChooser()" class="w-full py-3.5 px-5 rounded-2xl bg-white hover:bg-slate-100 active:scale-[0.99] text-slate-900 font-extrabold text-sm sm:text-base flex items-center justify-center gap-3.5 shadow-lg transition cursor-pointer">
+                    <!-- Tombol Tunggal Pemicu OAuth 2.0 Popup Resmi Google (accounts.google.com) -->
+                    <button type="button" id="uz-google-oauth-btn" onclick="triggerRealGoogleLogin()" class="w-full py-3.5 px-5 rounded-2xl bg-white hover:bg-slate-100 active:scale-[0.99] text-slate-900 font-extrabold text-sm sm:text-base flex items-center justify-center gap-3.5 shadow-lg transition cursor-pointer">
                         <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
                             <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
                             <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
@@ -138,35 +141,6 @@
                         </svg>
                         <span>Lanjutkan dengan Google</span>
                     </button>
-
-                    <!-- Tempat Render Otomatis Google Identity Services (Jika Client ID Diaktifkan di Hosting) -->
-                    <div id="g_id_onload_container" class="flex justify-center"></div>
-                </div>
-
-                <!-- Panel Pengelola Whitelist & Demo Cepat (Agar Anda Mudah Menguji / Menambah Email) -->
-                <div class="mt-6 pt-5 border-t border-slate-800/90">
-                    <button type="button" onclick="toggleWhitelistManager()" class="w-full flex items-center justify-between text-xs font-bold text-slate-400 hover:text-slate-200 transition">
-                        <span>⚙️ Lihat / Kelola Daftar Gmail Terdaftar (Whitelist)</span>
-                        <span id="wl-arrow" class="text-slate-500">▼</span>
-                    </button>
-
-                    <div id="whitelist-manager-panel" class="hidden mt-3.5 p-4 rounded-2xl bg-slate-950/95 border border-slate-800 space-y-3 text-xs">
-                        <div class="flex items-center justify-between">
-                            <span class="font-extrabold text-amber-400 uppercase">DAFTAR GMAIL YANG DIIZINKAN LOGIN:</span>
-                            <span class="text-[11px] text-slate-400">Klik email untuk uji cepat</span>
-                        </div>
-                        <div id="whitelist-badges" class="flex flex-wrap gap-1.5"></div>
-
-                        <div class="pt-2 border-t border-slate-800/80">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1.5">Tambahkan Gmail Baru ke Whitelist:</label>
-                            <div class="flex gap-2">
-                                <input id="new-whitelist-input" type="email" placeholder="nama@gmail.com" class="flex-1 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-blue-500">
-                                <button type="button" onclick="addEmailToWhitelist()" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs shrink-0 transition">
-                                    + Tambah
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -174,86 +148,12 @@
                 © 2026 UZ Research Institute • Sistem Verifikasi Akses Terenkripsi
             </p>
         </div>
+    </div>
 
-        <!-- MODAL POPUP AUTENTIKASI AKUN GOOGLE (OAUTH SIMULATOR & VERIFIER) -->
-        <div id="google-oauth-modal" class="hidden fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-            <div class="bg-white text-slate-900 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 animate-fadeIn">
-                <div class="flex items-center justify-between pb-4 border-b border-slate-200">
-                    <div class="flex items-center gap-2.5">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24">
-                            <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
-                            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
-                            <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z" transform="translate(0 -1.2)"/>
-                            <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5L1.6 16c1.9 3.9 5.8 7 10.4 7z"/>
-                        </svg>
-                        <span class="text-sm font-bold text-slate-600">Masuk dengan Google</span>
-                    </div>
-                    <button type="button" onclick="closeGoogleChooser()" class="text-slate-400 hover:text-slate-700 text-lg font-extrabold px-2">✕</button>
-                </div>
-
-                <div class="mt-5">
-                    <h3 class="text-xl font-extrabold text-slate-900">Pilih atau Masukkan Akun Google</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
-                        Untuk melanjutkan ke <strong class="text-slate-900">UZ Research Institute</strong>
-                    </p>
-
-                    <!-- Daftar Cepat Akun Terdaftar vs Tidak Terdaftar untuk Simulasi -->
-                    <div class="mt-4 space-y-2">
-                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">PILIH AKUN GMAIL:</div>
-                        <button type="button" onclick="verifyGoogleEmail('uz.research@gmail.com')" class="w-full p-3 rounded-2xl border border-slate-200 hover:bg-blue-50/60 hover:border-blue-300 flex items-center justify-between transition text-left">
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-full bg-blue-600 text-white font-extrabold text-sm flex items-center justify-center">UZ</div>
-                                <div>
-                                    <div class="text-sm font-extrabold text-slate-900">Founder UZ Research</div>
-                    <!-- Notifikasi Error: BELUM TERDAFTAR -->
-                    <div id="auth-error-box" class="hidden mt-6 p-4 rounded-2xl bg-rose-950/70 border-2 border-rose-500/70 text-left">
-                        <div class="flex items-start gap-3">
-                            <span class="text-xl shrink-0 mt-0.5">🚫</span>
-                            <div>
-                                <div class="text-xs font-extrabold uppercase tracking-wider text-rose-300">
-                                    AKSES DITOLAK — ANDA BELUM TERDAFTAR
-                                </div>
-                                <p class="text-xs sm:text-sm font-semibold text-white mt-1 leading-relaxed">
-                                    Akun Google <span id="rejected-email-text" class="underline text-rose-300 font-extrabold"></span> berhasil diverifikasi oleh Google, namun <strong>tidak terdaftar</strong> di dalam <em>Whitelist</em> resmi UZ Research Institute.
-                                </p>
-                                <p class="text-[11px] text-rose-200/80 mt-1.5">
-                                    Silakan masuk menggunakan akun Google yang telah didaftarkan oleh Administrator.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Notifikasi Status Sistem OAuth -->
-                    <div id="auth-system-msg" class="hidden mt-5 p-4 rounded-2xl bg-amber-950/60 border border-amber-500/50 text-left text-xs text-amber-200 leading-relaxed"></div>
-
-                    <!-- Area Tombol Login Google Asli -->
-                    <div class="mt-6 space-y-4">
-                        <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/90 text-xs text-slate-300 leading-relaxed text-center">
-                            Dokumen riset ini bersifat terbatas. Autentikasi dilakukan secara langsung melalui server <strong class="text-white">Google OAuth 2.0</strong> menggunakan akun Gmail asli Anda.
-                        </div>
-
-                        <!-- Container Tombol Resmi Google Identity Services (Dirender oleh Server Google) -->
-                        <div id="g_id_onload_container" class="flex justify-center min-h-[44px]"></div>
-
-                        <!-- Tombol Pemicu OAuth 2.0 Popup Resmi Google (accounts.google.com) -->
-                        <button type="button" id="uz-google-oauth-btn" onclick="triggerRealGoogleLogin()" class="w-full py-3.5 px-5 rounded-2xl bg-white hover:bg-slate-100 active:scale-[0.99] text-slate-900 font-extrabold text-sm sm:text-base flex items-center justify-center gap-3.5 shadow-lg transition cursor-pointer">
-                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
-                                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
-                                <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z" transform="translate(0 -1.2)"/>
-                                <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5L1.6 16c1.9 3.9 5.8 7 10.4 7z"/>
-                            </svg>
-                            <span>Sign in with Google</span>
-                        </button>
-                    </div>
-                </div>
-
-                <p class="text-center text-xs text-slate-500 mt-5">
-                    © 2026 UZ Research Institute • Dilindungi oleh Google OAuth 2.0 Verification
-                </p>
-            </div>
-        </div>
-
+    <!-- ===================================================================== -->
+    <!-- KONTEN UTAMA LAPORAN RISET (TAMPIL PENUH SETELAH LOGIN BERHASIL)      -->
+    <!-- ===================================================================== -->
+    <div id="uz-app-content" class="hidden">
     <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             <div class="w-full lg:w-auto flex items-center justify-between gap-3">
@@ -1995,6 +1895,7 @@
             </p>
         </div>
     </footer>
+    </div>
 
     <script>
         /* Data untuk Bab 2: Grafik 3 Panel Sinkronisasi (Simetri Terbalik 1:1 antara M2 dan Credit Spread) */
@@ -2208,8 +2109,7 @@
         // 2. DAFTAR ALAMAT GMAIL RESMI YANG DIIZINKAN MASUK (WHITELIST):
         //    Hanya akun Google asli yang emailnya ada di daftar ini yang bisa membuka portal.
         const WHITELISTED_EMAILS = [
-            "uzancyber@gmail.com",
-            "uzancyberx@gmail.com"
+            "uzancyber@gmail.com"
         ];
 
         let googleTokenClient = null;
@@ -2256,6 +2156,7 @@
             const sysBox = document.getElementById('auth-system-msg');
             const rejectedText = document.getElementById('rejected-email-text');
             const gate = document.getElementById('uz-auth-gate');
+            const appContent = document.getElementById('uz-app-content');
 
             if (sysBox) sysBox.classList.add('hidden');
 
@@ -2279,12 +2180,13 @@
                 }
 
                 gate.classList.add('hidden');
+                if (appContent) appContent.classList.remove('hidden');
                 document.body.style.overflow = 'auto';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 currentVerifiedEmail = null;
                 rejectedText.textContent = email;
                 errBox.classList.remove('hidden');
-                // Cabut sesi Google untuk email yang ditolak agar bisa memilih akun lain
                 if (window.google && window.google.accounts && window.google.accounts.id) {
                     window.google.accounts.id.disableAutoSelect();
                 }
@@ -2357,6 +2259,7 @@
 
         function logoutGoogleUser() {
             const gate = document.getElementById('uz-auth-gate');
+            const appContent = document.getElementById('uz-app-content');
             document.getElementById('auth-error-box').classList.add('hidden');
             if (window.google && window.google.accounts && window.google.accounts.id) {
                 window.google.accounts.id.disableAutoSelect();
@@ -2365,6 +2268,7 @@
                 }
             }
             currentVerifiedEmail = null;
+            if (appContent) appContent.classList.add('hidden');
             gate.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2378,16 +2282,6 @@
                     callback: handleGoogleCredentialResponse,
                     auto_select: false
                 });
-                const btnContainer = document.getElementById('g_id_onload_container');
-                if (btnContainer) {
-                    window.google.accounts.id.renderButton(btnContainer, {
-                        theme: 'outline',
-                        size: 'large',
-                        shape: 'pill',
-                        text: 'signin_with',
-                        width: 320
-                    });
-                }
             }
         }
 
