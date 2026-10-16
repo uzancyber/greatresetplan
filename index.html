@@ -6,7 +6,6 @@
     <title>UZ Research Institute — Cetak Biru Siklus Likuiditas, Titik Terminal Fiat 2028 & Strategi 50:50</title>
     <link id="uz-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23000000'/%3E%3Cpath d='M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z' fill='%23FFFFFF'/%3E%3Cpolygon points='62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33' fill='%23FFFFFF'/%3E%3C/svg%3E">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,112 +63,6 @@
             cursor: pointer;
             border: 3px solid #090D16;
             box-shadow: 0 0 12px rgba(245, 158, 11, 0.75);
-        }
-        .md-prose h1 {
-            font-size: 1.875rem;
-            line-height: 2.25rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-top: 0.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .md-prose h2 {
-            font-size: 1.375rem;
-            line-height: 1.85rem;
-            font-weight: 800;
-            color: #F8FAFC;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #1E293B;
-        }
-        .md-prose h3 {
-            font-size: 1.125rem;
-            line-height: 1.6rem;
-            font-weight: 700;
-            color: #FBBF24;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .md-prose p {
-            font-size: 1rem;
-            line-height: 1.75rem;
-            color: #CBD5E1;
-            margin-bottom: 1.1rem;
-        }
-        .md-prose ul, .md-prose ol {
-            margin-bottom: 1.25rem;
-            padding-left: 1.4rem;
-            color: #CBD5E1;
-        }
-        .md-prose ul { list-style-type: disc; }
-        .md-prose ol { list-style-type: decimal; }
-        .md-prose li {
-            margin-bottom: 0.45rem;
-            line-height: 1.7rem;
-        }
-        .md-prose strong {
-            color: #FFFFFF;
-            font-weight: 800;
-        }
-        .md-prose blockquote {
-            border-left: 4px solid #F59E0B;
-            background: rgba(245, 158, 11, 0.08);
-            padding: 1rem 1.25rem;
-            border-radius: 0 0.75rem 0.75rem 0;
-            margin: 1.25rem 0;
-            color: #FDE68A;
-            font-style: italic;
-        }
-        .md-prose hr {
-            border-color: #1E293B;
-            margin: 2rem 0;
-        }
-        .md-prose code {
-            background: #0F172A;
-            border: 1px solid #1E293B;
-            color: #38BDF8;
-            padding: 0.15rem 0.4rem;
-            border-radius: 0.375rem;
-            font-size: 0.875em;
-        }
-        .md-prose pre {
-            background: #090D16;
-            border: 1px solid #1E293B;
-            padding: 1rem;
-            border-radius: 0.75rem;
-            overflow-x: auto;
-            margin-bottom: 1.25rem;
-        }
-        .md-prose pre code {
-            background: transparent;
-            border: none;
-            padding: 0;
-            color: #E2E8F0;
-        }
-        .md-prose table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        .md-prose th {
-            background: #090D16;
-            color: #94A3B8;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            padding: 0.75rem 1rem;
-            border: 1px solid #1E293B;
-            text-align: left;
-        }
-        .md-prose td {
-            padding: 0.85rem 1rem;
-            border: 1px solid #1E293B;
-            color: #E2E8F0;
-            vertical-align: top;
         }
     </style>
 </head>
@@ -288,30 +181,24 @@
             </div>
 
             <nav class="w-full lg:w-auto flex flex-col items-start lg:items-end gap-1.5 text-xs sm:text-sm font-bold text-slate-200">
-                <div class="flex flex-wrap items-center lg:justify-end gap-x-4 sm:gap-x-6 gap-y-1">
+                <div class="flex flex-wrap items-center lg:justify-end gap-x-5 sm:gap-x-7 gap-y-1">
                     <a href="#bab-1" class="py-1 hover:text-blue-400 transition whitespace-nowrap">1. Entity &amp; Fiat</a>
                     <a href="#bab-2" class="py-1 hover:text-blue-400 transition whitespace-nowrap">2. Grafik Siklus</a>
                     <a href="#bab-3" class="py-1 hover:text-blue-400 transition whitespace-nowrap">3. Histori Bottom</a>
-                    <a href="#bab-4" class="py-1 hover:text-amber-400 transition whitespace-nowrap">4. Tabung Darurat 2023 vs 2028</a>
                     <!-- Indikator Akun Google Terverifikasi (Desktop) -->
                     <div class="hidden lg:flex items-center gap-2 pl-3 border-l border-slate-800">
                         <img id="active-user-avatar" src="" alt="" class="hidden w-5 h-5 rounded-full border border-slate-600">
                         <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                        <span id="active-user-email" class="text-xs font-bold text-slate-300 max-w-[160px] truncate">Terverifikasi</span>
+                        <span id="active-user-email" class="text-xs font-bold text-slate-300 max-w-[180px] truncate">Terverifikasi</span>
                         <button onclick="logoutGoogleUser()" class="ml-1 px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-rose-950/60 border border-slate-700 hover:border-rose-500/50 text-[11px] font-extrabold text-slate-300 hover:text-rose-300 transition">
                             Keluar
                         </button>
                     </div>
                 </div>
-                <div class="flex flex-wrap items-center lg:justify-end gap-x-3 sm:gap-x-5 gap-y-1.5">
+                <div class="flex flex-wrap items-center lg:justify-end gap-x-4 sm:gap-x-6 gap-y-1.5">
+                    <a href="#bab-4" class="py-1 hover:text-amber-400 transition whitespace-nowrap">4. Tabung Darurat 2023 vs 2028</a>
                     <a href="#bab-5" class="py-1 hover:text-emerald-400 transition whitespace-nowrap">5. Peta Jalan Reset</a>
-                    <a href="#bab-6" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 hover:bg-amber-400 transition shadow-md shadow-amber-500/20 whitespace-nowrap font-extrabold">6. Strategi 50:50</a>
-                    <a href="#bab-7" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white hover:bg-blue-500 transition shadow-md shadow-blue-600/25 whitespace-nowrap font-extrabold flex items-center gap-1.5">
-                        <span>📄</span> <span>7. Postingan Riset (.MD)</span>
-                    </a>
-                    <button type="button" onclick="openVercelSetupModal()" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/40 transition whitespace-nowrap font-extrabold text-xs flex items-center gap-1.5">
-                        <span>⚡</span> <span>File Server (.JS &amp; .MD)</span>
-                    </button>
+                    <a href="#bab-6" class="px-4 py-1.5 rounded-xl bg-amber-500 text-slate-950 hover:bg-amber-400 transition shadow-md shadow-amber-500/20 whitespace-nowrap font-extrabold">6. Strategi 50:50</a>
                 </div>
             </nav>
         </div>
@@ -1991,248 +1878,17 @@
                 </div>
             </div>
         </section>
-
-        <!-- ===================================================================== -->
-        <!-- BAB 7: JURNAL & POSTINGAN RISET BERBASIS FILE MARKDOWN (.MD)          -->
-        <!-- ===================================================================== -->
-        <section id="bab-7" class="py-16 sm:py-20 border-t border-slate-800/80 bg-[#090D16] scroll-mt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-                    <div class="max-w-3xl">
-                        <span class="step-badge bg-blue-500/15 text-blue-300 border border-blue-500/30">
-                            📄 BAB 7 • PUBLIKASI &amp; JURNAL RISET MARKDOWN (.MD)
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-tight">
-                            Arsip Buletin &amp; Postingan Riset <span class="text-blue-400">UZ Research Institute</span>
-                        </h2>
-                        <p class="mt-3 text-base sm:text-lg text-slate-300 leading-relaxed">
-                            Setiap file berformat <code class="text-sky-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">.md</code> yang Anda unggah ke folder <code class="text-amber-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">/posts/</code> di GitHub akan otomatis dirender menjadi artikel riset di bawah ini. Anda juga bisa langsung menguji file <code class="text-sky-300">.md</code> dari komputer Anda.
-                        </p>
-                    </div>
-
-                    <div class="flex flex-wrap items-center gap-3 shrink-0">
-                        <label for="md-local-upload" class="px-4 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 hover:border-blue-500 font-extrabold text-xs sm:text-sm cursor-pointer transition flex items-center gap-2 shadow-lg">
-                            <span>📂</span>
-                            <span>Unggah / Uji File .MD Lokal</span>
-                            <input id="md-local-upload" type="file" accept=".md,.markdown,.txt" class="hidden" onchange="handleLocalMarkdownUpload(event)">
-                        </label>
-                        <button type="button" onclick="openVercelSetupModal()" class="px-4 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-500/20">
-                            <span>⚡</span>
-                            <span>Unduh File Backend (.JS) &amp; Template (.MD)</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Grid Utama: Sidebar Daftar Artikel .MD (Kiri) + Pembaca Artikel .MD (Kanan) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <!-- Kolom Kiri: Daftar Postingan .MD -->
-                    <div class="lg:col-span-4 space-y-4">
-                        <div class="visual-card rounded-3xl p-5 border border-slate-800">
-                            <div class="flex items-center justify-between gap-2 pb-3.5 mb-3.5 border-b border-slate-800">
-                                <div>
-                                    <div class="text-xs font-extrabold uppercase tracking-wider text-blue-400">DAFTAR POSTINGAN (.MD)</div>
-                                    <div class="text-sm font-bold text-slate-300 mt-0.5">Sumber: <code class="text-xs text-amber-300">/posts/index.json</code></div>
-                                </div>
-                                <span id="md-post-count" class="px-2.5 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-xs font-extrabold">
-                                    3 Artikel
-                                </span>
-                            </div>
-
-                            <!-- Daftar Tombol Postingan -->
-                            <div id="md-post-list" class="space-y-3"></div>
-
-                            <div class="mt-5 pt-4 border-t border-slate-800 text-xs text-slate-400 leading-relaxed">
-                                💡 <strong class="text-white">Cara Menambah Postingan di GitHub:</strong> Upload file <code class="text-sky-300">artikel-baru.md</code> ke folder <code class="text-amber-300">/posts/</code> di GitHub Anda, lalu tambahkan judul &amp; nama filenya di <code class="text-amber-300">/posts/index.json</code>.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kolom Kanan: Pembaca Artikel Markdown (.MD Reader) -->
-                    <div class="lg:col-span-8 visual-card rounded-3xl p-6 sm:p-10 border border-slate-800 min-w-0">
-                        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 mb-6 border-b border-slate-800">
-                            <div class="flex flex-wrap items-center gap-2.5">
-                                <span id="md-active-category" class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-xs font-extrabold uppercase">
-                                    RISET MAKRO UTAMA
-                                </span>
-                                <span id="md-active-date" class="text-xs font-bold text-slate-400">
-                                    • Oktober 2026
-                                </span>
-                                <span id="md-active-file" class="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-sky-400">
-                                    posts/konfirmasi-siklus-2028.md
-                                </span>
-                            </div>
-
-                            <button type="button" onclick="downloadCurrentMarkdownFile()" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-slate-200 transition flex items-center gap-1.5">
-                                <span>⬇️</span>
-                                <span>Unduh File .MD Ini</span>
-                            </button>
-                        </div>
-
-                        <!-- Kontainer Hasil Render Markdown -->
-                        <article id="md-reader-output" class="md-prose max-w-none overflow-x-auto"></article>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- ===================================================================== -->
-    <!-- MODAL GENERATOR & UNDUH FILE BACKEND VERCEL (.JS) + STRUKTUR GITHUB   -->
-    <!-- ===================================================================== -->
-    <div id="uz-vercel-modal" class="hidden fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="visual-card rounded-3xl max-w-4xl w-full p-6 sm:p-8 border border-slate-700 shadow-2xl my-auto max-h-[90vh] overflow-y-auto">
-            <div class="flex items-start justify-between gap-4 pb-5 border-b border-slate-800">
-                <div>
-                    <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-xs font-extrabold uppercase">
-                        ⚡ ARSITEKTUR GITHUB + VERCEL (SERVERLESS BACKEND &amp; MARKDOWN CMS)
-                    </span>
-                    <h3 class="text-2xl font-extrabold text-white mt-2">
-                        Paket File Backend <code class="text-amber-300">api/verify-auth.js</code> &amp; Folder <code class="text-sky-300">posts/*.md</code>
-                    </h3>
-                    <p class="text-xs sm:text-sm text-slate-300 mt-1">
-                        Unduh ketiga file pendukung di bawah ini dan masukkan ke repository GitHub Anda agar *Whitelist* berjalan 100% aman di sisi server Vercel dan postingan `.md` termuat otomatis.
-                    </p>
-                </div>
-                <button type="button" onclick="closeVercelSetupModal()" class="w-9 h-9 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-extrabold flex items-center justify-center shrink-0">
-                    ✕
-                </button>
+    <footer class="bg-slate-950 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-black border border-slate-700 flex items-center justify-center">
+                <svg viewBox="0 0 100 100" class="w-8 h-8">
+                    <rect width="100" height="100" fill="#000000"/>
+                    <path d="M 14 23 H 25.5 V 58 C 25.5 66.5 30 70.5 36.5 70.5 C 43 70.5 47.5 66.5 47.5 58 V 23 H 59 V 58.5 C 59 73 49.5 80.5 36.5 80.5 C 23.5 80.5 14 73 14 58.5 Z" fill="#FFFFFF"/>
+                    <polygon points="62,23 91,23 68,69.5 91,69.5 91,79.5 50.5,79.5 74,33 62,33" fill="#FFFFFF"/>
+                </svg>
             </div>
-
-            <!-- Diagram Struktur Folder GitHub -->
-            <div class="mt-6 p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
-                <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-2">
-                    📁 STRUKTUR FOLDER REPOSITORY GITHUB ANDA (UNTUK VERCEL):
-                </div>
-                <pre class="text-xs sm:text-sm font-mono text-slate-200 overflow-x-auto leading-relaxed">repo-uz-research/
-├── index.html                  <span class="text-slate-400">&lt;-- (File HTML utama ini, ubah namanya menjadi index.html)</span>
-├── api/
-│   └── verify-auth.js          <span class="text-emerald-400">&lt;-- (File Backend Server Vercel: menyembunyikan Whitelist Gmail 100% aman)</span>
-└── posts/
-    ├── index.json              <span class="text-sky-400">&lt;-- (Daftar judul &amp; nama file .md yang akan ditampilkan di Bab 7)</span>
-    ├── konfirmasi-siklus-2028.md
-    └── protokol-50-50-cbdc.md  <span class="text-amber-300">&lt;-- (File artikel .md yang Anda tulis &amp; upload ke GitHub)</span></pre>
-            </div>
-
-            <!-- File 1: api/verify-auth.js -->
-            <div class="mt-6 space-y-3">
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                    <div>
-                        <span class="text-xs font-extrabold uppercase text-emerald-400">FILE 1 • BACKEND KEAMANAN WHITELIST (WAJIB DI FOLDER /api)</span>
-                        <h4 class="text-base font-extrabold text-white"><code>api/verify-auth.js</code> (Node.js Serverless Function Vercel)</h4>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button type="button" onclick="copyCodeBlock('code-verify-auth', this)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-slate-200 transition">
-                            📋 Salin Kode
-                        </button>
-                        <button type="button" onclick="downloadTextFile('verify-auth.js', document.getElementById('code-verify-auth').textContent)" class="px-3.5 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold transition">
-                            ⬇️ Unduh verify-auth.js
-                        </button>
-                    </div>
-                </div>
-                <pre id="code-verify-auth" class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-200 overflow-x-auto max-h-60">// Letakkan file ini di: /api/verify-auth.js pada repository GitHub Anda.
-// Vercel otomatis menjalankan kode ini di SERVER (pengunjung tidak bisa melihat daftar email ini).
-
-const WHITELISTED_EMAILS = [
-  "uz.research@gmail.com",
-  "member.vip@gmail.com",
-  "admin.uz@gmail.com"
-  // Tambahkan alamat Gmail anggota resmi Anda di sini, atau simpan di Environment Variable Vercel: WHITELIST_EMAILS
-];
-
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ allowed: false, error: "Method not allowed" });
-  }
-
-  try {
-    const { accessToken, idToken } = req.body || {};
-    let googleUser = null;
-
-    if (accessToken) {
-      const googleRes = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
-        headers: { Authorization: `Bearer ${accessToken}` }
-      });
-      if (googleRes.ok) googleUser = await googleRes.json();
-    } else if (idToken) {
-      const tokenRes = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(idToken)}`);
-      if (tokenRes.ok) googleUser = await tokenRes.json();
-    }
-
-    if (!googleUser || !googleUser.email || googleUser.email_verified === false || googleUser.email_verified === "false") {
-      return res.status(401).json({ allowed: false, error: "Token Google tidak valid." });
-    }
-
-    const envEmails = process.env.WHITELIST_EMAILS
-      ? process.env.WHITELIST_EMAILS.split(",").map(e => e.trim().toLowerCase())
-      : [];
-    const masterList = [...WHITELISTED_EMAILS.map(e => e.trim().toLowerCase()), ...envEmails];
-
-    const email = googleUser.email.trim().toLowerCase();
-    const isAllowed = masterList.includes(email);
-
-    return res.status(200).json({
-      allowed: isAllowed,
-      email: email,
-      name: googleUser.name || "",
-      picture: googleUser.picture || ""
-    });
-  } catch (err) {
-    return res.status(500).json({ allowed: false, error: "Server verification error" });
-  }
-}</pre>
-            </div>
-
-            <!-- File 2: posts/index.json -->
-            <div class="mt-6 space-y-3">
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                    <div>
-                        <span class="text-xs font-extrabold uppercase text-sky-400">FILE 2 • MANIFEST DAFTAR ARTIKEL MARKDOWN (DI FOLDER /posts)</span>
-                        <h4 class="text-base font-extrabold text-white"><code>posts/index.json</code> (Daftar Postingan .MD Anda)</h4>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button type="button" onclick="copyCodeBlock('code-posts-json', this)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-slate-200 transition">
-                            📋 Salin Kode
-                        </button>
-                        <button type="button" onclick="downloadTextFile('index.json', document.getElementById('code-posts-json').textContent)" class="px-3.5 py-1.5 rounded-xl bg-blue-500 hover:bg-blue-400 text-white text-xs font-extrabold transition">
-                            ⬇️ Unduh posts/index.json
-                        </button>
-                    </div>
-                </div>
-                <pre id="code-posts-json" class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-xs font-mono text-sky-200 overflow-x-auto max-h-48">[
-  {
-    "id": "konfirmasi-siklus-2028",
-    "title": "Konfirmasi Makro & Matematika Sistemik: Mengapa 2028 Bukan Lagi Siklus Fiat Biasa",
-    "date": "16 Oktober 2026",
-    "category": "RISET MAKRO UTAMA",
-    "file": "posts/konfirmasi-siklus-2028.md",
-    "summary": "Bedah matematis neraca Bank Sentral mengapa pencetakan uang Fiat bebas mustahil diulang di 2028."
-  },
-  {
-    "id": "forensik-3-tabung-2023",
-    "title": "Bedah Forensik 3 Tabung Darurat 2023 vs. Titik Terminal 2028 ($0)",
-    "date": "16 Oktober 2026",
-    "category": "LIKUIDITAS BANK SENTRAL",
-    "file": "posts/forensik-3-tabung-2023.md",
-    "summary": "Mengapa Reverse Repo $2,55T, BTFP, dan T-Bills berhasil menunda krisis di 2023 namun habis total di 2028."
-  },
-  {
-    "id": "protokol-kedaulatan-50-50",
-    "title": "Protokol Eksekusi 50% Native BTC : 50% Emas Fisik & Strategi Kolateral CBDC",
-    "date": "16 Oktober 2026",
-    "category": "STRATEGI EKSEKUSI",
-    "file": "posts/protokol-kedaulatan-50-50.md",
-    "summary": "Panduan akumulasi tanpa bursa (DEX) di krisis 2028 dan mekanisme pinjaman pajak 0% pasca-revaluasi 10x."
-  }
-]</pre>
-            </div>
-
-            <div class="mt-6 flex justify-end">
-                <button type="button" onclick="closeVercelSetupModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-extrabold text-sm transition">
-                    Tutup Panel
-                </button>
-            </div>
-        </div>
-    </div>
             <div class="font-extrabold text-white text-base tracking-tight">UZ RESEARCH INSTITUTE</div>
             <p class="text-slate-400 max-w-xl">
                 Master Cetak Biru Siklus Likuiditas Makro, Bukti Matematis Titik Terminal Sistem Fiat 2028, Transisi CBDC &amp; Strategi Kedaulatan Aset Keras 50:50.
@@ -2453,7 +2109,8 @@ export default async function handler(req, res) {
         // 2. DAFTAR ALAMAT GMAIL RESMI YANG DIIZINKAN MASUK (WHITELIST):
         //    Hanya akun Google asli yang emailnya ada di daftar ini yang bisa membuka portal.
         const WHITELISTED_EMAILS = [
-            "uzancyber@gmail.com"
+            "uzancyber@gmail.com",
+			"uzancyberx@gmail.com"
         ];
 
         let googleTokenClient = null;
@@ -2494,77 +2151,14 @@ export default async function handler(req, res) {
             );
         }
 
-        function unlockPortalWithProfile(email, pictureUrl) {
+        /* Verifikasi akhir terhadap email asli yang dikembalikan oleh Server Google */
+        function verifyAuthenticatedGoogleProfile(profile) {
             const errBox = document.getElementById('auth-error-box');
             const sysBox = document.getElementById('auth-system-msg');
+            const rejectedText = document.getElementById('rejected-email-text');
             const gate = document.getElementById('uz-auth-gate');
             const appContent = document.getElementById('uz-app-content');
 
-            currentVerifiedEmail = email;
-            if (errBox) errBox.classList.add('hidden');
-            if (sysBox) sysBox.classList.add('hidden');
-            document.getElementById('active-user-email').textContent = email;
-
-            const avatar = document.getElementById('active-user-avatar');
-            if (avatar && pictureUrl) {
-                avatar.src = pictureUrl;
-                avatar.classList.remove('hidden');
-            }
-
-            gate.classList.add('hidden');
-            if (appContent) appContent.classList.remove('hidden');
-            document.body.style.overflow = 'auto';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function rejectUnauthorizedEmail(email) {
-            const errBox = document.getElementById('auth-error-box');
-            const rejectedText = document.getElementById('rejected-email-text');
-            currentVerifiedEmail = null;
-            if (rejectedText) rejectedText.textContent = email || "Tidak dikenal";
-            if (errBox) errBox.classList.remove('hidden');
-            if (window.google && window.google.accounts && window.google.accounts.id) {
-                window.google.accounts.id.disableAutoSelect();
-            }
-        }
-
-        /* Verifikasi Utama: Prioritas 1 ke Backend Vercel (/api/verify-auth), Fallback ke daftar lokal jika ditest tanpa server */
-        async function verifyTokenWithBackendOrFallback({ accessToken, idToken, fallbackProfile }) {
-            const sysBox = document.getElementById('auth-system-msg');
-            if (sysBox) sysBox.classList.add('hidden');
-
-            try {
-                const apiRes = await fetch('/api/verify-auth', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ accessToken, idToken })
-                });
-
-                const contentType = apiRes.headers.get('content-type') || '';
-                if (contentType.includes('application/json')) {
-                    const data = await apiRes.json();
-                    if (apiRes.ok && data.allowed) {
-                        unlockPortalWithProfile(data.email, data.picture);
-                        return;
-                    } else if (apiRes.status === 200 && data.allowed === false) {
-                        rejectUnauthorizedEmail(data.email);
-                        return;
-                    }
-                }
-            } catch (networkErr) {
-                // Jika dijalankan secara lokal / preview sebelum deploy ke Vercel, gunakan verifikasi fallback
-            }
-
-            if (fallbackProfile) {
-                verifyAuthenticatedGoogleProfile(fallbackProfile);
-            } else {
-                showAuthSystemMessage("⚠️ <strong>Gagal menghubungi endpoint verifikasi.</strong> Pastikan <code>/api/verify-auth.js</code> sudah terpasang di Vercel.");
-            }
-        }
-
-        /* Verifikasi akhir terhadap email asli yang dikembalikan oleh Server Google */
-        function verifyAuthenticatedGoogleProfile(profile) {
-            const sysBox = document.getElementById('auth-system-msg');
             if (sysBox) sysBox.classList.add('hidden');
 
             if (!profile || !profile.email || profile.email_verified === false) {
@@ -2576,9 +2170,27 @@ export default async function handler(req, res) {
             const isWhitelisted = WHITELISTED_EMAILS.some(w => w.trim().toLowerCase() === email);
 
             if (isWhitelisted) {
-                unlockPortalWithProfile(email, profile.picture);
+                currentVerifiedEmail = email;
+                errBox.classList.add('hidden');
+                document.getElementById('active-user-email').textContent = email;
+
+                const avatar = document.getElementById('active-user-avatar');
+                if (avatar && profile.picture) {
+                    avatar.src = profile.picture;
+                    avatar.classList.remove('hidden');
+                }
+
+                gate.classList.add('hidden');
+                if (appContent) appContent.classList.remove('hidden');
+                document.body.style.overflow = 'auto';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                rejectUnauthorizedEmail(email);
+                currentVerifiedEmail = null;
+                rejectedText.textContent = email;
+                errBox.classList.remove('hidden');
+                if (window.google && window.google.accounts && window.google.accounts.id) {
+                    window.google.accounts.id.disableAutoSelect();
+                }
             }
         }
 
@@ -2593,14 +2205,11 @@ export default async function handler(req, res) {
                     }).join('')
                 );
                 const payload = JSON.parse(jsonPayload);
-                verifyTokenWithBackendOrFallback({
-                    idToken: response.credential,
-                    fallbackProfile: {
-                        email: payload.email,
-                        email_verified: payload.email_verified,
-                        name: payload.name,
-                        picture: payload.picture
-                    }
+                verifyAuthenticatedGoogleProfile({
+                    email: payload.email,
+                    email_verified: payload.email_verified,
+                    name: payload.name,
+                    picture: payload.picture
                 });
             } catch (e) {
                 showAuthSystemMessage("⚠️ <strong>Gagal mendekode token keamanan Google.</strong> Silakan coba kembali.");
@@ -2614,10 +2223,7 @@ export default async function handler(req, res) {
             if (!isClientIdConfigured()) {
                 showAuthSystemMessage(
                     "🔑 <strong>Google OAuth Client ID Belum Diisi:</strong><br>" +
-                    "Agar jendela login resmi <code>accounts.google.com</code> terbuka di Vercel, ganti <code>GOOGLE_CLIENT_ID</code> dengan Client ID Anda.<br>" +
-                    "<div class='mt-3 flex flex-wrap gap-2'>" +
-                    "<button type='button' onclick='unlockPortalWithProfile(\"uz.research@gmail.com\", \"\")' class='px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-extrabold text-xs hover:bg-amber-400 transition'>👁️ Masuk Mode Pratinjau (Lihat Fitur .MD & Unduh File .JS)</button>" +
-                    "</div>"
+                    "Agar jendela login resmi <code>accounts.google.com</code> terbuka, silakan ganti variabel <code>GOOGLE_CLIENT_ID</code> di dalam kode dengan Client ID milik Anda dari <strong>Google Cloud Console</strong>."
                 );
                 return;
             }
@@ -2639,10 +2245,7 @@ export default async function handler(req, res) {
                                     headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
                                 });
                                 const userInfo = await res.json();
-                                await verifyTokenWithBackendOrFallback({
-                                    accessToken: tokenResponse.access_token,
-                                    fallbackProfile: userInfo
-                                });
+                                verifyAuthenticatedGoogleProfile(userInfo);
                             } catch (err) {
                                 showAuthSystemMessage("⚠️ Gagal mengambil profil terverifikasi dari server Google.");
                             }
@@ -2697,280 +2300,87 @@ export default async function handler(req, res) {
         });
 
         /* ===================================================================== */
-        /* ENGINE PEMBACA POSTINGAN MARKDOWN (.MD) & MANAJEMEN FILE GITHUB/VERCEL */
+        /* KALKULATOR BAB 6: RENTANG RP 500 JUTA (0.5M) S.D. RP 20 MILIAR        */
         /* ===================================================================== */
-        const BUILTIN_MD_POSTS = [
-            {
-                id: "konfirmasi-siklus-2028",
-                title: "Konfirmasi Makro & Matematika Sistemik: Mengapa 2028 Bukan Lagi Siklus Fiat Biasa",
-                date: "16 Oktober 2026",
-                category: "RISET MAKRO UTAMA",
-                file: "posts/konfirmasi-siklus-2028.md",
-                summary: "Bedah matematis neraca Bank Sentral mengapa pencetakan uang Fiat bebas mustahil diulang di 2028.",
-                content: `# Konfirmasi Makro & Matematika Sistemik: Mengapa 2028 Bukan Lagi Siklus Fiat Biasa
-
-Pertanyaan paling krusial bagi setiap eksekutor makro adalah: *Apakah setelah Macro Bottom 2028 nanti dunia hanya akan mengulang siklus cetak uang Fiat biasa (seperti 2012, 2016, 2020, dan 2023), ataukah 2026–2027 benar-benar merupakan siklus bebas terakhir sebelum sistem dikunci ke dalam CBDC?*
-
-> **Kesimpulan Matematis:** Secara struktural dan neraca perbankan, Bank Sentral **TIDAK BISA LAGI** melakukan pencetakan uang Fiat bebas (*Unrestricted QE*) di tahun 2028 tanpa memicu hiperinflasi jalanan instan.
-
----
-
-## 1. Tiga Tembok Matematis yang Mematikan Siklus Fiat di 2028
-
-Mengapa resep lama (pangkas bunga ke 0% + cetak uang Fiat bebas) bekerja di 2012, 2016, dan 2020, tetapi mati total di 2028?
-
-| Parameter Sistemik | Siklus Lama (2012, 2016, 2020) | Titik Terminal (2028 – 2030+) |
-| :--- | :--- | :--- |
-| **Beban Utang & Bunga AS** | Utang $15T–$23T; beban bunga masih kecil dan mudah ditekan ke 0%. | Utang tembus **>$40 Triliun**; beban bunga saja menelan **>$1,5 Triliun/tahun**. |
-| **Kondisi Rantai Pasok Dunia** | Globalisasi barang murah Tiongkok & energi murah meredam inflasi. | De-globalisasi, perang tarif, dan blokade rantai pasok (inflasioner). |
-| **Tabung Cadangan Likuiditas** | Masih punya ruang neraca & celengan *Reverse Repo* ($2,55T di 2023). | **Seluruh 3 Tabung Darurat 2023 sudah bersaldo $0**. |
-
----
-
-## 2. Mengapa CBDC & Revaluasi 10x Adalah Satu-Satunya Jalan Keluar?
-
-Dalam persamaan moneter Irving Fisher (**M × V = P × Q**), ketika Bank Sentral wajib mencetak **+$35 Triliun hingga +$50 Triliun** di tahun 2028 untuk mencegah keruntuhan bank, satu-satunya cara mencegah hiperinflasi harga pangan adalah dengan **mengunci kecepatan perputaran uang (V) di tingkat ritel menggunakan kode algoritma CBDC**.
-
-Pada saat yang sama, nilai mata uang lama terdevaluasi **90%** terhadap kolateral dasar, yang secara otomatis menerbangkan nilai **50% Native Bitcoin & 50% Emas Fisik Murni** sebesar **10x lipat**.`
-            },
-            {
-                id: "forensik-3-tabung-2023",
-                title: "Bedah Forensik 3 Tabung Darurat 2023 vs. Titik Terminal 2028 ($0)",
-                date: "16 Oktober 2026",
-                category: "LIKUIDITAS BANK SENTRAL",
-                file: "posts/forensik-3-tabung-2023.md",
-                summary: "Mengapa Reverse Repo $2,55T, BTFP, dan T-Bills berhasil menunda krisis di 2023 namun habis total di 2028.",
-                content: `# Bedah Forensik 3 Tabung Darurat 2023 vs. Titik Terminal 2028
-
-Banyak analis bertanya: *Jika saat krisis bank SVB, Credit Suisse, dan FTX pada 2022–2023 sistem Fiat masih bisa selamat tanpa menurunkan suku bunga ke 0%, mengapa di tahun 2028 tidak bisa?*
-
-Jawabannya terletak pada **3 Tabung Cadangan Sisa COVID 2020** yang dikuras habis sejak Maret 2023 hingga 2026:
-
----
-
-## 1. Celengan Overnight Reverse Repo (ON RRP) — $2,55 Triliun
-* **Kondisi Maret 2023:** Terdapat **$2,55 Triliun** kelebihan uang tunai hasil cetakan tahun 2020–2021 yang diparkir di fasilitas ON RRP The Fed. Uang inilah yang ditarik keluar ke pasar untuk memompa reli menuju 2027.
-* **Kondisi Menuju 2028:** Saldo ON RRP telah **terkuras habis (~$0)**. Tandon air yang sudah kering tidak bisa dikuras untuk kedua kalinya.
-
-## 2. Fasilitas Pinjaman Talangan Bank (BTFP)
-* **Kondisi Maret 2023:** Bank hanya mengalami kerugian di atas kertas (*unrealized loss*) pada kepemilikan Surat Utang Negara AS, sehingga The Fed bisa menjaminnya 100% sesuai nilai par via BTFP.
-* **Kondisi Menuju 2028:** Di dalam **Kotak Hijau 2028**, yang meledak adalah gagal bayar kredit korporasi dan komersial nyata (*Credit Spread* meroket). Kredit bangkrut tidak bisa ditalangi tanpa mencetak uang baru.
-
-## 3. Bom Waktu Surat Utang Jangka Pendek (T-Bills)
-* **Kondisi 2023–2026:** Kementerian Keuangan AS membiayai defisit $2 Triliun/tahun dengan menerbitkan utang jangka sangat pendek (3–12 bulan) yang dibeli oleh kurasan uang RRP.
-* **Kondisi 2028:** Lebih dari **$15 Triliun** utang pendek tersebut jatuh tempo bersamaan sementara pembeli RRP sudah **$0**.`
-            },
-            {
-                id: "protokol-kedaulatan-50-50",
-                title: "Protokol Eksekusi 50% Native BTC : 50% Emas Fisik & Strategi Kolateral CBDC",
-                date: "16 Oktober 2026",
-                category: "STRATEGI EKSEKUSI",
-                file: "posts/protokol-kedaulatan-50-50.md",
-                summary: "Panduan akumulasi tanpa bursa (DEX) di krisis 2028 dan mekanisme pinjaman pajak 0% pasca-revaluasi 10x.",
-                content: `# Protokol Eksekusi 50% Native BTC : 50% Emas Fisik (999.9)
-
-Ketika jendela ekspansi **14 Bars** mencapai puncaknya di pertengahan hingga akhir 2027 (bertepatan dengan jenuhnya *Global M2 Stochastic RSI* di atas level 80 dan katalis Mega-IPO), seluruh aset risiko wajib dicairkan ke dalam formasi tunggu Dolar.
-
----
-
-## 1. Akumulasi di Dalam Kotak Hijau 2028 (6–10 Bulan)
-
-Saat *Credit Spread* melonjak ke puncak **Kotak Hijau 2028**, eksekusi dilakukan secara simetris:
-
-1. **50% Native Bitcoin (Cold Wallet Pribadi):**
-   * Diakumulasi menggunakan metode *Micro-Batching* melalui protokol lintas-rantai (**THORChain / Chainflip**) langsung dari dalam *Cold Wallet* tanpa menyentuh bursa terpusat (CEX).
-   * Dibagi menjadi **35% Compliant Vault** (siap diintegrasikan sebagai agunan *smart-contract* perbankan CBDC) dan **15% Ghost Vault** (cadangan kedaulatan lintas yurisdiksi).
-2. **50% Emas Fisik Murni (Batangan 999.9):**
-   * Seluruh bentuk emas kertas/digital (ETF, saldo aplikasi, maupun token emas yang memiliki fungsi \`freezeAddress\`) dicoret sepenuhnya.
-   * Diwujudkan 100% dalam batangan fisik murni (Antam/UBS/LBMA) yang berstatus **Agunan Kas Tier-1 (Basel III)**.
-
----
-
-## 2. Strategi "Buy, Borrow, Die" Pasca-Revaluasi 10x (2029–2030+)
-
-> Jangan pernah menjual Bitcoin atau Emas Fisik Anda ke mata uang CBDC. Jadikan keduanya **Kolateral Agunan** untuk menarik plafon likuiditas bebas Pajak Penghasilan (**0% PPh**), sementara 100% koin BTC dan gram Emas Anda tetap utuh selamanya.`
+        function fmtIDRFull(miliarVal) {
+            if (miliarVal >= 1) {
+                const dec = (miliarVal % 1 === 0) ? 1 : 2;
+                return "Rp " + miliarVal.toFixed(dec).replace('.', ',') + " Miliar";
             }
-        ];
+            const jutaVal = Math.round(miliarVal * 1000);
+            return "Rp " + jutaVal.toLocaleString('id-ID') + " Juta";
+        }
 
-        let activeMdPosts = [...BUILTIN_MD_POSTS];
-        let currentSelectedPostIdx = 0;
-
-        function renderMarkdownHTML(mdText) {
-            if (window.marked && typeof window.marked.parse === 'function') {
-                return window.marked.parse(mdText);
+        function fmtIDRShort(miliarVal) {
+            if (miliarVal >= 1) {
+                return "Rp " + miliarVal.toFixed(2).replace('.', ',') + " M";
             }
-            return "<pre class='whitespace-pre-wrap text-slate-200'>" + mdText.replace(/</g, "&lt;") + "</pre>";
+            const jutaVal = Math.round(miliarVal * 1000);
+            return "Rp " + jutaVal.toLocaleString('id-ID') + " Jt";
         }
 
-        function renderMdPostList() {
-            const listEl = document.getElementById('md-post-list');
-            const countEl = document.getElementById('md-post-count');
-            if (!listEl) return;
+        function updateSim50(val) {
+            const totalMiliar = parseFloat(val);
+            const totalUSDNum = (totalMiliar * 1000000000) / 16000;
+            const totalUSDStr = "(~ $" + Math.round(totalUSDNum).toLocaleString('en-US') + " USD)";
 
-            if (countEl) countEl.textContent = `${activeMdPosts.length} Artikel`;
+            document.getElementById('sim50-total-idr').textContent = fmtIDRFull(totalMiliar);
+            document.getElementById('sim50-total-usd').textContent = totalUSDStr;
 
-            listEl.innerHTML = activeMdPosts.map((post, idx) => {
-                const isSelected = idx === currentSelectedPostIdx;
-                const cardCls = isSelected
-                    ? "w-full text-left p-4 rounded-2xl border-2 border-blue-500 bg-blue-950/50 transition block"
-                    : "w-full text-left p-4 rounded-2xl border border-slate-800 bg-slate-950/80 hover:border-slate-600 transition block";
-                return `
-                    <button type="button" onclick="selectMdPost(${idx})" class="${cardCls}">
-                        <div class="flex items-center justify-between gap-2 text-[11px] font-extrabold uppercase tracking-wider ${isSelected ? 'text-blue-300' : 'text-amber-400'}">
-                            <span>${post.category || 'ARTIKEL RISET'}</span>
-                            <span class="text-slate-400 font-semibold">${post.date || ''}</span>
-                        </div>
-                        <div class="text-sm sm:text-base font-extrabold text-white mt-1.5 leading-snug">
-                            ${post.title}
-                        </div>
-                        <div class="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
-                            ${post.summary || post.file}
-                        </div>
-                    </button>
-                `;
-            }).join('');
-        }
+            const half = totalMiliar * 0.50;
+            document.getElementById('sim50-half-btc').textContent = fmtIDRFull(half);
+            document.getElementById('sim50-half-gold').textContent = fmtIDRFull(half);
 
-        async function selectMdPost(idx) {
-            if (idx < 0 || idx >= activeMdPosts.length) return;
-            currentSelectedPostIdx = idx;
-            renderMdPostList();
+            document.getElementById('pilar50-btc-total').textContent = fmtIDRFull(half);
+            document.getElementById('pilar50-gold-total').textContent = fmtIDRFull(half);
 
-            const post = activeMdPosts[idx];
-            document.getElementById('md-active-category').textContent = post.category || 'RISET MAKRO';
-            document.getElementById('md-active-date').textContent = "• " + (post.date || '2026');
-            document.getElementById('md-active-file').textContent = post.file || 'posts/artikel.md';
+            /* Pembagian internal BTC: 35% Compliant Vault & 15% Ghost Vault */
+            const btcLegal = totalMiliar * 0.35;
+            const btcGhost = totalMiliar * 0.15;
+            const btc10x = half * 10;
 
-            const outputEl = document.getElementById('md-reader-output');
+            document.getElementById('pilar50-btc-legal').textContent = fmtIDRFull(btcLegal);
+            document.getElementById('pilar50-btc-ghost').textContent = fmtIDRFull(btcGhost);
+            document.getElementById('pilar50-btc-10x').textContent = fmtIDRFull(btc10x);
 
-            // Jika dideploy di GitHub/Vercel dan file .md eksternal tersedia di folder /posts/, coba fetch langsung
-            if (post.file && !post.isLocalUpload) {
-                try {
-                    const res = await fetch(post.file, { cache: 'no-store' });
-                    if (res.ok) {
-                        const text = await res.text();
-                        if (text && !text.trim().toLowerCase().startsWith('<!doctype html')) {
-                            post.content = text;
-                        }
-                    }
-                } catch (e) {
-                    // Gunakan konten bawaan jika dijalankan secara lokal tanpa server file .md
-                }
-            }
+            /* Pembagian internal Emas Fisik (@ Rp1,8 Miliar/kg di dasar 2028) */
+            const goldKg = (half * 1000000000) / 1800000000;
+            const goldBig = half * 0.80;
+            const goldSmall = half * 0.20;
+            const gold10x = half * 10;
 
-            outputEl.innerHTML = renderMarkdownHTML(post.content || "# Kosong\nBelum ada konten pada file `.md` ini.");
-        }
-
-        /* Otomatis mendeteksi daftar artikel dari /posts/index.json saat di-deploy ke GitHub & Vercel */
-        async function loadExternalPostsManifest() {
-            try {
-                const res = await fetch('posts/index.json', { cache: 'no-store' });
-                if (res.ok) {
-                    const manifest = await res.json();
-                    if (Array.isArray(manifest) && manifest.length > 0) {
-                        const merged = manifest.map(item => {
-                            const existing = BUILTIN_MD_POSTS.find(b => b.id === item.id || b.file === item.file);
-                            return {
-                                ...item,
-                                content: item.content || (existing ? existing.content : `# ${item.title}\n\nMemuat dari \`${item.file}\`...`)
-                            };
-                        });
-                        activeMdPosts = merged;
-                    }
-                }
-            } catch (e) {
-                // Tetap gunakan BUILTIN_MD_POSTS jika posts/index.json belum dibuat
-            }
-            renderMdPostList();
-            selectMdPost(0);
-        }
-
-        /* Fitur Unggah / Uji Langsung File .MD dari Komputer Pengguna */
-        function handleLocalMarkdownUpload(event) {
-            const file = event.target.files && event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const mdContent = e.target.result;
-                const firstHeadingMatch = mdContent.match(/^#\s+(.+)$/m);
-                const extractedTitle = firstHeadingMatch ? firstHeadingMatch[1].trim() : file.name.replace(/\.md$/i, '');
-
-                const newPost = {
-                    id: "local-" + Date.now(),
-                    title: extractedTitle,
-                    date: "Baru Diunggah",
-                    category: "FILE .MD LOKAL",
-                    file: "posts/" + file.name,
-                    summary: "File Markdown yang diunggah langsung dari perangkat Anda.",
-                    content: mdContent,
-                    isLocalUpload: true
-                };
-
-                activeMdPosts.unshift(newPost);
-                renderMdPostList();
-                selectMdPost(0);
-            };
-            reader.readAsText(file);
-        }
-
-        function downloadTextFile(filename, content) {
-            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
-        function downloadCurrentMarkdownFile() {
-            const post = activeMdPosts[currentSelectedPostIdx];
-            if (!post) return;
-            const filename = (post.file || 'riset-uz.md').split('/').pop();
-            downloadTextFile(filename, post.content || '');
-        }
-
-        function openVercelSetupModal() {
-            const modal = document.getElementById('uz-vercel-modal');
-            if (modal) modal.classList.remove('hidden');
-        }
-
-        function closeVercelSetupModal() {
-            const modal = document.getElementById('uz-vercel-modal');
-            if (modal) modal.classList.add('hidden');
-        }
-
-        function copyCodeBlock(elementId, btnEl) {
-            const pre = document.getElementById(elementId);
-            if (!pre) return;
-            const textarea = document.createElement('textarea');
-            textarea.value = pre.textContent;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-
-            const originalText = btnEl.textContent;
-            btnEl.textContent = "✅ Tersalin!";
-            setTimeout(() => { btnEl.textContent = originalText; }, 1800);
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderFaviconPNG();
-            updateSim50(5);
-            loadExternalPostsManifest();
-            document.body.style.overflow = 'hidden';
-
-            // Inisialisasi Google Identity Services saat script selesai dimuat
-            if (window.google && window.google.accounts) {
-                initRealGoogleAuth();
+            if (goldKg < 1) {
+                const gramVal = Math.round(goldKg * 1000);
+                document.getElementById('pilar50-gold-kg').textContent = "~ " + gramVal.toLocaleString('id-ID') + " Gram (" + goldKg.toFixed(2).replace('.', ',') + " Kg)";
             } else {
-                window.addEventListener('load', initRealGoogleAuth);
+                document.getElementById('pilar50-gold-kg').textContent = "~ " + goldKg.toFixed(2).replace('.', ',') + " Kg Emas";
             }
-        });
+
+            document.getElementById('pilar50-gold-split').textContent = fmtIDRShort(goldBig) + " / " + fmtIDRShort(goldSmall);
+            document.getElementById('pilar50-gold-10x').textContent = fmtIDRFull(gold10x);
+
+            /* Revaluasi 10x Total & Plafon Kolateral LTV 70% dari (50% Emas + 35% BTC Compliant = 85% Modal) */
+            const totalReval10x = totalMiliar * 10;
+            const pledgeableReval10x = (half + btcLegal) * 10;
+            const safeLoan70 = pledgeableReval10x * 0.70;
+
+            document.getElementById('loop50-reval').textContent = fmtIDRFull(totalReval10x);
+            document.getElementById('loop50-loan').textContent = fmtIDRFull(safeLoan70);
+        }
+
+        function setPreset50(val) {
+            document.getElementById('sim50-slider').value = val;
+            updateSim50(val);
+
+            [0.5, 2, 5, 20].forEach(preset => {
+                const btn = document.getElementById(`p50-btn-${preset}`);
+                if (!btn) return;
+                if (preset === val) {
+                    btn.className = "px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 border border-amber-400 text-slate-950 font-extrabold transition shadow-md shadow-amber-500/20 text-center";
+                } else {
+                    btn.className = "px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-950 border border-slate-700 hover:border-amber-500 text-slate-200 transition text-center";
+                }
+            });
         }
     </script>
 </body>
